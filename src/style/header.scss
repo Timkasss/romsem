@@ -1,0 +1,38 @@
+.header {
+   font-family: 'DinPro-light', sans-serif;
+
+   .header__container {
+      .header_content {
+         .header_content_contact_inf {
+            .header_contact {
+               .header_contact_title {}
+
+               a {}
+
+               .header_work_time_wrapper {
+                  .header_work_time_icon {}
+
+                  .header_work_time {}
+               }
+            }
+
+            .header_content_contact_inf_city {
+               .header_city_name {}
+
+               .header_city {}
+            }
+         }
+
+         .header_work_information {
+            .header_work_information_done {
+               .header_work_information_reviews {}
+
+               .header_work_information_shipping_payment {}
+            }
+
+            .header_work_information_search {}
+         }
+
+      }
+   }
+}

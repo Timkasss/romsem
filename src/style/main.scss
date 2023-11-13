@@ -1,0 +1,29 @@
+.main {
+   .main__container {
+      .slider_wrapper {
+         .sliders {
+            .slider {
+               .slider_name {
+                  .slider_title {}
+
+                  .slider_untitle {}
+               }
+
+               .slider_cena_wrapper {
+                  .slider_cena_sale {}
+
+                  .slider_cena {}
+               }
+
+               .slider_button_wrapper {
+                  .slider_button {}
+               }
+            }
+         }
+
+         .slider_active {
+            span {}
+         }
+      }
+   }
+}
