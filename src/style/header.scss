@@ -1,36 +1,117 @@
+@import '../style.scss';
+
 .header {
    font-family: 'DinPro-light', sans-serif;
 
    .header__container {
       .header_content {
-         .header_content_contact_inf {
-            .header_contact {
-               .header_contact_title {}
+         background: #F2F2F2;
+         display: flex;
+         border-bottom: solid 0.5px #A4ACAD;
+         align-items: center;
+         justify-content: space-between;
+         @include adaptiv-value('padding-right', 40, 20, 0);
+         padding-top: 5px;
 
-               a {}
+         .header_content_contact_inf {
+            display: flex;
+            align-items: center;
+
+            .header_contact {
+               font-family: 'DinPro-medium', sans-serif;
+               font-style: normal;
+               font-weight: 500;
+               line-height: normal;
+               display: flex;
+               flex-direction: column;
+               text-align: center;
+               border-right: solid 0.5px #A4ACAD;
+               padding-right: 18px;
+               padding-left: 18px;
+
+               .header_contact_title {
+                  color: #111;
+                  font-size: 18px;
+               }
+
+               a {
+                  color: #FF9846;
+                  font-size: 18px;
+               }
 
                .header_work_time_wrapper {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  padding-top: 5px;
+
                   .header_work_time_icon {}
 
-                  .header_work_time {}
+                  .header_work_time {
+                     color: #A4ACAD;
+                     font-size: 14px;
+                     letter-spacing: 0.03em;
+                  }
                }
             }
 
             .header_content_contact_inf_city {
-               .header_city_name {}
+               padding-left: 18px;
 
-               .header_city {}
+               .header_city {
+                  color: #A4ACAD;
+                  font-family: 'DinPro-light', sans-serif;
+                  font-size: 14px;
+                  font-style: normal;
+                  font-weight: 300;
+                  line-height: normal;
+               }
+
+               .header_city_name {
+                  color: #000;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+               }
             }
          }
 
          .header_work_information {
+            display: flex;
+            align-items: center;
+            @include adaptiv-value('gap', 70, 30, 0);
+
             .header_work_information_done {
-               .header_work_information_reviews {}
+               color: #111;
+               font-family: 'DinPro-regular', sans-serif;
+               font-size: 18px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+
+               .header_work_information_reviews {
+                  margin-right: 10px;
+               }
+
+               .header_work_information_reviews:hover {
+                  color: #FF9846;
+               }
 
                .header_work_information_shipping_payment {}
+
+               .header_work_information_shipping_payment:hover {
+                  color: #FF9846;
+               }
             }
 
-            .header_work_information_search {}
+
+            .header_work_information_search {
+               .find {
+                  cursor: pointer;
+               }
+            }
          }
 
       }

@@ -73,6 +73,7 @@ body {
    flex-direction: column;
    overflow: clip;
    min-height: 100%;
+
 }
 
 .main {
@@ -83,4 +84,10 @@ body {
    max-width: 1200px;
    margin: 0px auto;
    padding: 0px 15px;
+}
+
+[class*="__min_container"] {
+   max-width: 950px;
+   margin: 0px auto;
+   padding: 0px 0px;
 }

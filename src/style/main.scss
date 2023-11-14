@@ -1,29 +1,363 @@
 .main {
    .main__container {
-      .slider_wrapper {
-         .sliders {
-            .slider {
-               .slider_name {
-                  .slider_title {}
+      .main_content {
+         background: #F2F2F2;
 
-                  .slider_untitle {}
+         //slider
+         .main__min_container {
+            padding-top: 30px;
+
+            .slider_wrapper {
+               background-color: #fff;
+               border-radius: 5px;
+               height: 470px;
+
+
+               .sliders {
+                  height: 100%;
+
+
+                  .slider {
+
+                     height: 100%;
+                     background-image: url('../image/main_img.png');
+                     background-position: -15px 65px;
+                     background-size: 80% 90%;
+                     background-repeat: no-repeat;
+                     display: flex;
+                     flex-direction: column;
+                     justify-content: space-between;
+                     align-items: flex-end;
+                     padding-right: 20px;
+                     text-align: right;
+                     padding-bottom: 20px;
+
+                     .slider_name {
+                        .slider_title {
+                           font-family: 'DinPro-medium', sans-serif;
+                           font-style: italic;
+                           font-weight: 500;
+                           font-size: 60px;
+                           padding-top: 15px;
+                        }
+
+                        .slider_title::before {
+                           content: '"';
+                        }
+
+                        .slider_title::after {
+                           content: '"';
+                        }
+
+                        .slider_untitle {
+                           padding-top: 10px;
+                           color: #FF9846;
+                           font-family: 'DinPro-medium', sans-serif;
+                           font-size: 30px;
+                           letter-spacing: normal;
+                        }
+                     }
+
+                     .slider_cena_wrapper {
+
+                        font-family: 'DinPro', sans-serif;
+
+
+                        .slider_cena_sale {
+                           font-size: 25px;
+                           position: relative;
+                        }
+
+                        .slider_cena_sale::before {
+                           content: '';
+                           position: absolute;
+                           right: -10px;
+                           top: 50%;
+                           height: 4px;
+                           width: 85%;
+                           background-color: #F46D40;
+                           transform: translateY(-50%);
+                           transform: rotate(-10deg);
+                        }
+
+                        .slider_cena {
+                           padding-top: 15px;
+                           font-size: 40px;
+                        }
+                     }
+
+                     .slider_button_wrapper {
+                        padding-right: 20px;
+
+                        .slider_button {
+                           background-color: #F46D40;
+                           width: 300px;
+                           height: 60px;
+                           color: white;
+                           font-size: 30px;
+                           font-family: 'DinPro-medium', sans-serif;
+                           //letter-spacing: 0.1em;
+                           border-radius: 5px;
+                        }
+                     }
+                  }
                }
 
-               .slider_cena_wrapper {
-                  .slider_cena_sale {}
+               .slider_active {
+                  display: flex;
+                  gap: 10px;
+                  padding-top: 10px;
+                  justify-content: center;
 
-                  .slider_cena {}
+                  span {
+                     background-color: #A4ACAD;
+                     width: 10px;
+                     height: 10px;
+                     border-radius: 50%;
+                  }
+
+                  .slider_acrive_point {
+                     background-color: #FF9846;
+                     transform: scale(1.2);
+                  }
+               }
+            }
+
+            // main-menu-food
+            .main_food {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+               grid-template-rows: 200px 200px;
+               gap: 30px;
+               padding-top: 50px;
+
+               .main_food_pos {
+                  position: relative;
+
+                  .main_food_name {
+                     position: absolute;
+                     left: 10px;
+                     bottom: 10px;
+                     font-family: 'DinPro-medium', sans-serif;
+                     color: #FFF;
+                     font-size: 24px;
+                     font-style: normal;
+                     font-weight: 500;
+                     line-height: normal;
+                     letter-spacing: 0.1em;
+                  }
+
+                  img {
+                     border-radius: 5px;
+                     max-width: 100%;
+                     width: 100%;
+                     height: 100%;
+                     object-fit: cover;
+                  }
                }
 
-               .slider_button_wrapper {
-                  .slider_button {}
+               .mainmain_food_chiken {}
+
+               .main_food_pizza {}
+
+               .main_food_pizza_min {
+                  display: grid;
+                  gap: 20px;
+                  grid-template-columns: 1fr 1fr;
+
+
+                  .main_food_corn {}
+
+                  .main_food_yger {}
+               }
+
+               .main_food_action {}
+
+            }
+
+            .popular_new_food {
+               padding-top: 50px;
+
+               .popular_new_food_switch {
+                  display: flex;
+                  gap: 30px;
+                  padding-bottom: 30px;
+
+                  .swith_hov {
+                     font-family: 'DinPro-medium', sans-serif;
+                     font-size: 24px;
+                     font-style: normal;
+                     font-weight: 500;
+                     line-height: normal;
+                     cursor: pointer;
+                  }
+
+                  .swith_hov:hover {
+                     color: #A4ACAD;
+                     text-decoration: underline;
+                  }
+
+                  .popular_new {
+                     color: #000;
+                  }
+
+                  .popular_popular {}
+               }
+
+               .slider_food_items {
+                  display: flex;
+                  gap: 40px;
+
+                  .slider_food_item {
+                     background-color: #FFF;
+                     display: flex;
+                     flex-direction: column;
+                     gap: 30px;
+
+                     .slider_food_item_img {
+                        img {
+                           max-width: 100%;
+                           width: 100%;
+                           height: 100%;
+                           object-fit: cover;
+                        }
+                     }
+
+                     .slider_food_item_name {
+                        color: #000;
+                        font-family: 'DinPro-medium', sans-serif;
+                        font-size: 24px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        padding-left: 15px;
+                     }
+
+                     .slider_food_item_quantity {
+                        color: #A4ACAD;
+                        font-family: 'DinPro-regular', sans-serif;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        padding-left: 15px;
+                     }
+
+                     .slider_food_item_buy {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        border-top: solid 0.5px #A4ACAD;
+                        padding-top: 10px;
+
+                        .slider_food_item_buy_cena {
+                           color: #000;
+                           font-family: 'DinPro', sans-serif;
+                           font-size: 24px;
+                           font-style: normal;
+                           font-weight: 700;
+                           line-height: normal;
+                           padding-left: 15px;
+                        }
+
+                        .slider_food_item_buy_button {
+                           padding-right: 10px;
+                           padding-bottom: 10px;
+
+                           .slider_item_button {
+                              border-radius: 5px;
+                              background: #F46D40;
+                              color: #F2F2F2;
+                              text-align: center;
+                              font-family: 'DinPro-medium', sans-serif;
+                              font-size: 24px;
+                              font-style: normal;
+                              font-weight: 500;
+                              line-height: normal;
+                              padding: 5px 42px;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+
+            .order_details {
+               padding-top: 50px;
+
+               .order_details_title {
+                  color: #A4ACAD;
+                  font-family: 'DinPro', sans-serif;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+               }
+
+               .order_details_text {
+                  color: #A4ACAD;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 100%;
+                  padding-top: 10px;
+
+               }
+
+               .order_details_text_list {
+                  padding-left: 20px;
+                  padding-top: 10px;
+
+                  .order_details_text_item {
+                     list-style: inside;
+                     color: #A4ACAD;
+                     font-family: 'DinPro-regular', sans-serif;
+                     font-size: 18px;
+                     font-style: normal;
+                     font-weight: 400;
+                     line-height: 100%;
+
+                  }
+               }
+
+               .details-shadow {
+                  position: relative;
+               }
+
+               .details-shadow::before {
+                  content: '';
+                  position: absolute;
+                  top: -20px;
+                  left: 0;
+                  width: 100%;
+                  height: 100px;
+                  background: linear-gradient(180deg, rgba(242, 242, 242, 0.00) 0%, #F2F2F2 100%);
+               }
+
+               .details-shadow-none {
+                  display: none;
+               }
+
+               .order_details_button {
+                  color: #F46D40;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 100%;
+                  padding-top: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 10px;
+
+                  svg {}
                }
             }
          }
 
-         .slider_active {
-            span {}
-         }
+
       }
    }
 }

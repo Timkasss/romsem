@@ -9,3 +9,15 @@
    src: url('../font/dinpro_light.otf') format('opentype');
    font-weight: 300;
 }
+
+@font-face {
+   font-family: 'DinPro-regular';
+   src: url('../font/dinpro_condensedregular.otf') format('opentype');
+   font-weight: 400;
+}
+
+@font-face {
+   font-family: 'DinPro-medium';
+   src: url('../font/dinpro_condensedmedium.otf') format('opentype');
+   font-weight: 500;
+}
