@@ -1,0 +1,107 @@
+.dev_bask_wrapper {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
+   position: fixed;
+   top: 55px;
+   right: 40px;
+
+   .basket {
+      border-radius: 5px;
+      background: #F2F2F2;
+      width: 290px;
+      min-height: 140px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .basket_state {
+         color: #000;
+         text-align: center;
+         font-family: 'DinPro-medium', sans-serif;
+         font-size: 24px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         padding-top: 12px;
+         padding-bottom: 10px;
+      }
+
+      .basket_call {
+         color: #A4ACAD;
+         text-align: center;
+         font-family: 'DinPro-regular', sans-serif;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+         padding-bottom: 25px;
+      }
+
+      .basket_button_wrapper {
+         .busket_button {
+            color: #F2F2F2;
+            font-family: 'DinPro-regular', sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            width: 100%;
+            height: 40px;
+            background-color: #FF9846;
+            border-radius: 0px 0px 5px 5px;
+         }
+      }
+   }
+
+   .delivery {
+      width: 290px;
+      height: 225px;
+      border-radius: 5px;
+      background: #F2F2F2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+
+      iframe {
+         height: 116px;
+         max-width: 100%;
+      }
+
+      .deliver_icon {
+         position: absolute;
+         top: 50%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: 60px;
+         height: 60px;
+         border-radius: 50%;
+         background-color: #FF9846;
+         transform: translateY(-50%);
+         flex-shrink: 0;
+      }
+
+      .delivery_address {
+         color: #000;
+         text-align: center;
+         font-family: 'DinPro-medium', sans-serif;
+         font-size: 24px;
+         font-style: normal;
+         font-weight: 500;
+         line-height: normal;
+         padding-bottom: 10px;
+         padding-top: 38px;
+      }
+
+      .delivery_time {
+         color: #A4ACAD;
+         text-align: center;
+         font-family: 'DinPro-regular', sans-serif;
+         font-size: 18px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+      }
+   }
+}

@@ -1,0 +1,137 @@
+@import '../style.scss';
+
+
+.footer {
+   .footer__container {
+      .footer_content {
+         background: #F2F2F2;
+         @include adaptiv-value('padding-top', 60, 20, 0);
+
+
+         .footer__min_container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-top: solid 0.5px #A4ACAD;
+            padding-top: 22px;
+
+
+            .footer_menu {
+               border-right: solid 0.5px #A4ACAD;
+
+               .footer_menu_list {
+                  .footer_menu_item {
+                     .footer_menu_link {
+                        color: #000;
+                        font-family: 'DinPro-regular', sans-serif;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 100%;
+                        /* 18px */
+                     }
+
+                     .footer_menu_link:hover {
+                        color: #FF9846;
+                     }
+                  }
+
+                  .footer_menu_item:not(:last-child) {
+                     padding-bottom: 20px;
+                  }
+               }
+
+
+            }
+
+            .footer_feedback {
+               border-right: solid 0.5px #A4ACAD;
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+               @include adaptiv-value('padding-bottom', 60, 20, 0);
+               @include adaptiv-value('padding-left', 40, 10, 0);
+
+               .footer_feedback_title {
+                  color: #000;
+                  font-family: 'DinPro-medium', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+               }
+
+               #phone {
+                  width: 120px;
+                  height: 22px;
+                  color: #A4ACAD;
+                  font-family: 'DinPro-medium', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 500;
+                  line-height: normal;
+                  letter-spacing: 0.01em;
+                  margin-bottom: 10px;
+               }
+
+               .footer_pick_messenger_title {
+                  color: #A4ACAD;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+               }
+
+               .footer_list_messenger {
+                  display: flex;
+                  gap: 30px;
+
+                  .messenger_link {
+                     svg {}
+
+                     svg:hover {
+                        g {
+                           rect {
+                              fill-opacity: 0;
+                           }
+                        }
+                     }
+                  }
+               }
+
+            }
+
+            .footer_address {
+               display: flex;
+               flex-direction: column;
+               @include adaptiv-value('padding-left', 40, 10, 0);
+
+               .footer_address_phone {
+                  color: #A4ACAD;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  letter-spacing: 0.01em;
+                  cursor: pointer;
+               }
+
+               .footer_address_phone:hover {
+                  text-decoration: underline;
+               }
+
+               .footer_address_address {
+                  color: #A4ACAD;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  letter-spacing: 0.01em;
+               }
+            }
+         }
+      }
+   }
+}
