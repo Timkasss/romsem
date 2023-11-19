@@ -56,17 +56,19 @@
             padding-top: 30px;
 
             .slider_wrapper {
-               background-color: #fff;
                border-radius: 5px;
                height: 470px;
-
+               max-width: 950px;
+               width: 100%;
+               overflow: hidden;
 
                .sliders {
                   height: 100%;
-
+                  display: flex;
+                  transform: translate3d(0px, 0px, 0px);
 
                   .slider {
-
+                     background-color: #fff;
                      height: 100%;
                      background-image: url('../image/main_img.png');
                      background-position: -15px 65px;
@@ -79,6 +81,9 @@
                      padding-right: 20px;
                      text-align: right;
                      padding-bottom: 20px;
+                     width: 100%;
+                     flex-shrink: 0;
+                     user-select: none;
 
                      .slider_name {
                         .slider_title {

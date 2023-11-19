@@ -21,9 +21,19 @@ import AsIcon8 from '../image/corn.svg'
 import AsIcon9 from '../image/drink.svg'
 import AsIcon10 from '../image/action.svg'
 
+// import Swiper from 'swiper';
+// // import Swiper styles
+// import 'swiper/css';
+// import { Navigation, Pagination } from 'swiper/modules';
+
+// const swiper = new Swiper('.swiper', {
+//    // configure Swiper to use modules
+//    modules: [Navigation, Pagination]
+// });
 
 import Basket from '../components/Basket';
 
+import { useEffect } from 'react';
 
 function Home() {
 
@@ -43,6 +53,60 @@ function Home() {
       })
       button.style.display = "none"
    }
+   useEffect(() => {
+      slider()
+   });
+   function slider() {
+
+      let isDragging = false;
+      let startPosition = 0;
+      let currentTranslate = 0;
+
+      const slider = document.querySelector('.sliders');
+      const slide = document.querySelectorAll('.slider');
+      function mouseClick(event) {
+         isDragging = true;
+         startPosition = event.clientX - slider.offsetLeft;
+         currentTranslate = currentTranslate || 0;
+         slider.style.cursor = 'grabbing';
+      }
+      function mouseMove(event) {
+         if (!isDragging) return;
+
+         let currentPosition = (event.clientX - slider.offsetLeft) - startPosition + currentTranslate;
+
+         if (currentPosition <= 0) {
+            slider.style.transform = `translate3d(${currentPosition}px, 0px,0px)`;
+         }
+         let end = (slide.length - 1) * slide[0].offsetWidth;
+         if (Math.abs(currentPosition) >= end) {
+            slider.style.transform = `translate3d(${-end}px, 0px,0px)`;
+         }
+
+      }
+
+
+      slider.addEventListener('mousedown', mouseClick);
+
+      slider.addEventListener('mousemove', mouseMove);
+
+      slider.addEventListener('mouseup', (event) => {
+         isDragging = false;
+         slider.style.cursor = 'grab';
+         currentTranslate += event.clientX - slider.offsetLeft - startPosition;
+      });
+
+      slider.addEventListener('mouseleave', (event) => {
+         isDragging = false;
+         slider.style.cursor = 'grab';
+         currentTranslate += event.clientX - slider.offsetLeft - startPosition;
+      });
+      slider.ondragstart = function () {
+         return false;
+      }
+
+   }
+
 
    return (
       <main className="main">
@@ -94,6 +158,32 @@ function Home() {
                         <div className="slider">
                            <div className="slider_name">
                               <div className="slider_title">Філадельфія і лосось</div>
+                              <div className="slider_untitle">1260 грамм 36 кусочек</div>
+                           </div>
+                           <div className="slider_cena_wrapper">
+                              <div className="slider_cena_sale">1599 COM</div>
+                              <div className="slider_cena">599 COM</div>
+                           </div>
+                           <div className="slider_button_wrapper">
+                              <button className="slider_button">Want!</button>
+                           </div>
+                        </div>
+                        <div className="slider">
+                           <div className="slider_name">
+                              <div className="slider_title">Британія і лосось</div>
+                              <div className="slider_untitle">1260 грамм 36 кусочек</div>
+                           </div>
+                           <div className="slider_cena_wrapper">
+                              <div className="slider_cena_sale">1599 COM</div>
+                              <div className="slider_cena">599 COM</div>
+                           </div>
+                           <div className="slider_button_wrapper">
+                              <button className="slider_button">Want!</button>
+                           </div>
+                        </div>
+                        <div className="slider">
+                           <div className="slider_name">
+                              <div className="slider_title">Кавказ і лосось</div>
                               <div className="slider_untitle">1260 грамм 36 кусочек</div>
                            </div>
                            <div className="slider_cena_wrapper">
