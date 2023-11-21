@@ -1,0 +1,49 @@
+@import '../style.scss';
+
+.aside_menu_wrapper {
+   .aside_logo {
+      padding-bottom: 30px;
+
+      img {
+         max-width: 100%;
+      }
+   }
+
+   .aside_menu {
+      border-top: solid 0.5px #A4ACAD;
+      padding-top: 30px;
+
+      .aside_menu_list {
+         .aside_menu_item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            img {}
+
+            .aside_menu_link {
+               color: #000;
+               font-family: 'DinPro-regular', sans-serif;
+               font-size: 24px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+            }
+
+            .aside_menu_link:hover {
+               color: #FF9846;
+            }
+         }
+
+         .aside_menu_item:not(:last-child) {
+            padding-bottom: 20px;
+         }
+      }
+   }
+}
+
+@media (max-width:$tablet) {
+   .aside_menu_wrapper {
+      display: none;
+   }
+}

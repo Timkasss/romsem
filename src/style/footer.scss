@@ -5,7 +5,7 @@
    .footer__container {
       .footer_content {
          background: #F2F2F2;
-         @include adaptiv-value('padding-top', 60, 20, 0);
+         @include adaptiv-value('padding-top', 60, 00, 0);
 
 
          .footer__min_container {
@@ -43,6 +43,12 @@
 
             }
 
+            @media (max-width:$laptop) {
+               .footer_menu {
+                  display: none;
+               }
+            }
+
             .footer_feedback {
                border-right: solid 0.5px #A4ACAD;
                display: flex;
@@ -73,6 +79,16 @@
                   margin-bottom: 10px;
                }
 
+               @media (max-width:$tablet) {
+                  .footer_feedback_title {
+                     display: none;
+                  }
+
+                  #phone {
+                     display: none;
+                  }
+               }
+
                .footer_pick_messenger_title {
                   color: #A4ACAD;
                   font-family: 'DinPro-regular', sans-serif;
@@ -84,10 +100,15 @@
 
                .footer_list_messenger {
                   display: flex;
-                  gap: 30px;
+                  @include adaptiv-value('gap', 30, 15, 0);
 
                   .messenger_link {
-                     svg {}
+                     svg {
+                        width: 50px;
+                        height: 50px;
+                        // @include adaptiv-value('width', 50, 30, 0);
+                        // @include adaptiv-value('height', 50, 30, 0);
+                     }
 
                      svg:hover {
                         g {
@@ -99,6 +120,17 @@
                   }
                }
 
+            }
+
+            @media (max-width:$tablet) {
+               .footer_feedback {
+                  padding-left: 0;
+                  border-right: solid 0px #A4ACAD;
+               }
+
+               .footer_menu {
+                  border-right: solid 0px #A4ACAD;
+               }
             }
 
             .footer_address {
@@ -132,6 +164,28 @@
                }
             }
          }
+
+         @media (max-width:$laptop) {
+            .footer__min_container {
+               grid-template-columns: 1fr 1fr;
+            }
+         }
+
+         @media (max-width:$tablet) {
+            .footer__min_container {
+               grid-template-columns: 1fr;
+               justify-items: center;
+               border-top: 0px;
+               padding-bottom: 30px;
+
+            }
+         }
       }
+   }
+}
+
+@media (max-width:$laptop) {
+   .footer {
+      padding-bottom: 72px;
    }
 }

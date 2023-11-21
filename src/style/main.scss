@@ -1,53 +1,47 @@
+@import '../style.scss';
+
 .main {
-   position: relative;
 
-   .aside_menu_wrapper {
+   //position: relative;
+
+   .adaptive_block {
       position: fixed;
-      top: 25px;
-      left: 130px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      display: none;
+      gap: 40px;
+      width: 100%;
+      height: 72px;
+      justify-content: center;
 
-      .aside_logo {
-         padding-bottom: 30px;
+      .adaptive_block_menu {}
 
-         img {
-            max-width: 100%;
+      .adaptive_block_basket {}
+
+      .adaptive_block_reviews {}
+
+      .adapt_item {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+
+         svg {
+            min-height: 38px;
          }
+
       }
+   }
 
-      .aside_menu {
-         border-top: solid 0.5px #A4ACAD;
-         padding-top: 30px;
-
-         .aside_menu_list {
-            .aside_menu_item {
-               display: flex;
-               align-items: center;
-               gap: 20px;
-
-               img {}
-
-               .aside_menu_link {
-                  color: #000;
-                  font-family: 'DinPro-regular', sans-serif;
-                  font-size: 24px;
-                  font-style: normal;
-                  font-weight: 400;
-                  line-height: normal;
-               }
-
-               .aside_menu_link:hover {
-                  color: #FF9846;
-               }
-            }
-
-            .aside_menu_item:not(:last-child) {
-               padding-bottom: 20px;
-            }
-         }
+   @media (max-width:1200px) {
+      .adaptive_block {
+         display: flex;
       }
    }
 
    .main__container {
+
       .main_content {
          background: #F2F2F2;
 
@@ -176,6 +170,80 @@
                }
             }
 
+
+
+            //adaptive menu 1200
+            .menu_adaptive {
+               display: none;
+               grid-template-columns: repeat(2, 1fr);
+               grid-template-rows: auto;
+               gap: 10px;
+
+               .menu_item {
+                  position: relative;
+                  min-height: 157px;
+                  min-width: 158px;
+                  border-radius: 5px;
+
+                  img {
+                     position: absolute;
+                     left: 0;
+                     top: 0;
+                     width: 100%;
+                     height: 100%;
+                     object-fit: cover;
+                     border-radius: 5px;
+                  }
+
+                  .menu_item_name {
+                     position: absolute;
+                     top: 10px;
+                     left: 10px;
+                     color: #FFF;
+                     font-family: 'DinPro-medium', sans-serif;
+                     font-size: 18px;
+                     font-style: normal;
+                     font-weight: 500;
+                     line-height: normal;
+                  }
+
+                  .menu_item_events {
+                     position: absolute;
+                     top: 13px;
+                     right: 11px;
+                     display: none;
+                     align-items: center;
+                     justify-content: center;
+                     color: #FFF;
+                     font-family: 'DinPro-regular', sans-serif;
+                     font-size: 11px;
+                     font-style: normal;
+                     font-weight: 400;
+                     line-height: normal;
+                     text-transform: uppercase;
+                     width: 50px;
+                     height: 15px;
+                     flex-shrink: 0;
+                     border-radius: 10px;
+                     background-color: #EB5757;
+                  }
+
+                  .item_events_active {
+                     display: flex;
+                  }
+               }
+            }
+
+            @media (max-width:1200px) {
+               .slider_wrapper {
+                  display: none;
+               }
+
+               .menu_adaptive {
+                  display: grid;
+               }
+            }
+
             // main-menu-food
             .main_food {
                display: grid;
@@ -186,6 +254,7 @@
 
                .main_food_pos {
                   position: relative;
+                  @include adaptiv-value('height', 150, 200, 0);
 
                   .main_food_name {
                      position: absolute;
@@ -228,6 +297,13 @@
 
             }
 
+            @media (max-width:1200px) {
+               .main_food {
+                  grid-template-columns: 1fr;
+                  grid-template-rows: auto;
+               }
+            }
+
             .popular_new_food {
                padding-top: 50px;
 
@@ -256,100 +332,11 @@
 
                   .popular_popular {}
                }
+            }
 
-               .slider_food_items {
-                  display: flex;
-                  gap: 40px;
-                  position: relative;
-
-                  .slider_controller_pre {
-                     position: absolute;
-                     top: 50%;
-                     transform: translateY(-50%);
-                     left: -110px;
-                     cursor: pointer;
-                  }
-
-                  .slider_controller_next {
-                     position: absolute;
-                     top: 50%;
-                     transform: translateY(-50%);
-                     right: -110px;
-                     cursor: pointer;
-                  }
-
-
-                  .slider_food_item {
-                     background-color: #FFF;
-                     display: flex;
-                     flex-direction: column;
-                     gap: 30px;
-
-                     .slider_food_item_img {
-                        img {
-                           max-width: 100%;
-                           width: 100%;
-                           height: 100%;
-                           object-fit: cover;
-                        }
-                     }
-
-                     .slider_food_item_name {
-                        color: #000;
-                        font-family: 'DinPro-medium', sans-serif;
-                        font-size: 24px;
-                        font-style: normal;
-                        font-weight: 500;
-                        line-height: normal;
-                        padding-left: 15px;
-                     }
-
-                     .slider_food_item_quantity {
-                        color: #A4ACAD;
-                        font-family: 'DinPro-regular', sans-serif;
-                        font-size: 18px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: normal;
-                        padding-left: 15px;
-                     }
-
-                     .slider_food_item_buy {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        border-top: solid 0.5px #A4ACAD;
-                        padding-top: 10px;
-
-                        .slider_food_item_buy_cena {
-                           color: #000;
-                           font-family: 'DinPro', sans-serif;
-                           font-size: 24px;
-                           font-style: normal;
-                           font-weight: 700;
-                           line-height: normal;
-                           padding-left: 15px;
-                        }
-
-                        .slider_food_item_buy_button {
-                           padding-right: 10px;
-                           padding-bottom: 10px;
-
-                           .slider_item_button {
-                              border-radius: 5px;
-                              background: #F46D40;
-                              color: #F2F2F2;
-                              text-align: center;
-                              font-family: 'DinPro-medium', sans-serif;
-                              font-size: 24px;
-                              font-style: normal;
-                              font-weight: 500;
-                              line-height: normal;
-                              padding: 5px 42px;
-                           }
-                        }
-                     }
-                  }
+            @media (max-width:$laptop) {
+               .popular_new_food {
+                  display: none;
                }
             }
 

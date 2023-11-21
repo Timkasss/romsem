@@ -1,0 +1,114 @@
+@import '../style.scss';
+
+
+.slider_food_wrapper {
+   //position: relative;
+   position: relative;
+
+   .slider_food {
+      overflow: hidden;
+
+
+      .slider_food_items {
+         display: flex;
+         gap: 40px;
+         //transform: translate3d(-200px, 0px, 0px);
+
+         .slider_food_item {
+            background-color: #FFF;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            flex-shrink: 0;
+            max-width: 290px;
+
+
+            .slider_food_item_img {
+               img {
+                  max-width: 100%;
+                  width: 100%;
+                  height: 100%;
+                  object-fit: cover;
+               }
+            }
+
+            .slider_food_item_name {
+               color: #000;
+               font-family: 'DinPro-medium', sans-serif;
+               font-size: 24px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: normal;
+               padding-left: 15px;
+            }
+
+            .slider_food_item_quantity {
+               color: #A4ACAD;
+               font-family: 'DinPro-regular', sans-serif;
+               font-size: 18px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+               padding-left: 15px;
+            }
+
+            .slider_food_item_buy {
+               display: flex;
+               justify-content: space-between;
+               align-items: center;
+               border-top: solid 0.5px #A4ACAD;
+               padding-top: 10px;
+
+               .slider_food_item_buy_cena {
+                  color: #000;
+                  font-family: 'DinPro', sans-serif;
+                  font-size: 24px;
+                  font-style: normal;
+                  font-weight: 700;
+                  line-height: normal;
+                  padding-left: 15px;
+               }
+
+               .slider_food_item_buy_button {
+                  padding-right: 10px;
+                  padding-bottom: 10px;
+
+                  .slider_item_button {
+                     border-radius: 5px;
+                     background: #F46D40;
+                     color: #F2F2F2;
+                     text-align: center;
+                     font-family: 'DinPro-medium', sans-serif;
+                     font-size: 24px;
+                     font-style: normal;
+                     font-weight: 500;
+                     line-height: normal;
+                     padding: 5px 42px;
+                  }
+               }
+            }
+         }
+      }
+
+      .slider_food_controls {
+
+         .slider_controller_pre {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -110px;
+            cursor: pointer;
+
+         }
+
+         .slider_controller_next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -110px;
+            cursor: pointer;
+         }
+      }
+   }
+
+}

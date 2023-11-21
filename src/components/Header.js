@@ -1,15 +1,23 @@
 import '../style/header.scss'
 
+import logoTablet from '../image/logo_tablet.png';
+
 function Header() {
    return (
       <header className="header">
          <div className="header__container">
             <div className="header_content">
+               <div className="tablet_logo">
+                  <img src={logoTablet} alt="logo" className="tablet_logo_img" />
+               </div>
                <div className="header_content_contact_inf">
                   <address className="header_contact">
-                     <h1 className="header_contact_title">Us phone</h1>
-                     <a href="tel: +996705188955">+996 705 188 955</a>
-                     <a href="tel: +996555188955">+996 555 188 955</a>
+                     <div className="header_contact_phone">
+                        <h1 className="header_contact_title">Us phone</h1>
+                        <a href="tel: +996705188955">+996 705 188 955</a>
+                        <a href="tel: +996555188955">+996 555 188 955</a>
+                     </div>
+
                      <div className="header_work_time_wrapper">
                         <svg className="header_work_time_icon" width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <g clipPath="url(#clip0_7_41)">
@@ -29,7 +37,7 @@ function Header() {
                               </clipPath>
                            </defs>
                         </svg>
-                        <div className="header_work_time">Работаем с 10:00 до 00:00</div>
+                        <div className="header_work_time">работаем с 10:00 до 00:00</div>
                      </div>
                   </address>
                   <div className="header_content_contact_inf_city">

@@ -14,6 +14,25 @@
          padding-top: 5px;
          padding-bottom: 8px;
 
+         .tablet_logo {
+            @include adaptiv-value('width', 87, 47, 0);
+            @include adaptiv-value('height', 83, 43, 0);
+            display: none;
+
+            .tablet_logo_img {
+               width: 100%;
+               height: 100%;
+               max-width: 100%;
+            }
+         }
+
+         @media (max-width:$tablet) {
+            .tablet_logo {
+               display: block;
+               flex-shrink: 0;
+            }
+         }
+
          .header_content_contact_inf {
             display: flex;
             align-items: center;
@@ -23,22 +42,26 @@
                font-style: normal;
                font-weight: 500;
                line-height: normal;
-               display: flex;
-               flex-direction: column;
-               text-align: center;
                border-right: solid 0.5px #A4ACAD;
                padding-right: 18px;
                padding-left: 18px;
 
-               .header_contact_title {
-                  color: #111;
-                  font-size: 18px;
+               .header_contact_phone {
+                  display: flex;
+                  flex-direction: column;
+                  text-align: center;
+
+                  .header_contact_title {
+                     color: #111;
+                     @include adaptiv-value('font-size', 18, 12, 0);
+                  }
+
+                  a {
+                     color: #FF9846;
+                     @include adaptiv-value('font-size', 18, 12, 0);
+                  }
                }
 
-               a {
-                  color: #FF9846;
-                  font-size: 18px;
-               }
 
                .header_work_time_wrapper {
                   display: flex;
@@ -52,6 +75,25 @@
                      color: #A4ACAD;
                      font-size: 14px;
                      letter-spacing: 0.03em;
+                  }
+               }
+            }
+
+            @media (max-width:$tablet) {
+               .header_contact {
+                  display: flex;
+                  gap: 30px;
+                  border-right: 0px;
+                  align-items: center;
+
+                  .header_work_time_wrapper {
+                     flex-direction: column;
+
+                     .header_work_time {
+                        text-align: center;
+                        font-size: 12px;
+                        max-width: 75px;
+                     }
                   }
                }
             }
@@ -75,6 +117,12 @@
                   font-style: normal;
                   font-weight: 400;
                   line-height: normal;
+               }
+            }
+
+            @media (max-width:$tablet) {
+               .header_content_contact_inf_city {
+                  display: none;
                }
             }
          }
@@ -107,6 +155,11 @@
                }
             }
 
+            @media (max-width:$laptop) {
+               .header_work_information_done {
+                  display: none;
+               }
+            }
 
             .header_work_information_search {
                .find {
@@ -115,6 +168,17 @@
             }
          }
 
+
+
+      }
+
+      @media (max-width: $tablet) {
+         .header_content {
+            justify-content: none;
+            column-gap: 30px;
+            padding-right: 15px;
+
+         }
       }
    }
 }

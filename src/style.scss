@@ -1,3 +1,7 @@
+$laptop: 1200px;
+$tablet: 768px;
+
+
 //Адаптивное свойство
 $maxWidth: 1920;
 $maxWidthContainer: 1200;
@@ -10,7 +14,7 @@ $maxWidthContainer: 1200;
       #{$property}: $startSize + px;
 
       @media (max-width: #{$maxWidthContainer + px}) {
-         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidthContainer - 320}));
       }
    }
 
@@ -19,13 +23,13 @@ $maxWidthContainer: 1200;
       #{$property}: $startSize + px;
 
       @media (min-width: #{$maxWidthContainer + px}) {
-         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+         #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360}));
       }
    }
 
    @else {
       //Всегда
-      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360}));
    }
 }
 
@@ -64,20 +68,49 @@ body {
 }
 
 #root {
-   height: 100%;
-   line-height: 1;
+   // height: 100%;
+   // line-height: 1;
 }
 
 .wrapper {
-   display: flex;
-   flex-direction: column;
-   overflow: clip;
-   min-height: 100%;
+   // display: flex;
+   // flex-direction: column;
+   // overflow: clip;
+   // min-height: 100%;
+   display: grid;
+   grid-template-areas:
+      'menu header basket'
+      'menu main basket'
+      'menu footer basket';
+   grid-template-columns: auto minmax(0, 1200px) auto;
+}
 
+.header {
+   grid-area: header;
+}
+
+.footer {
+   grid-area: footer;
+}
+
+.aside_menu_wrapper {
+   grid-area: menu;
+   justify-self: end;
+   padding-right: 15px;
+   padding-top: 30px;
+   padding-left: 15px;
+}
+
+.dev_bask_wrapper {
+   grid-area: basket;
+   padding-left: 15px;
+   padding-top: 55px;
+   padding-right: 15px;
 }
 
 .main {
-   flex: 1 1 auto;
+   grid-area: main;
+   //padding: 0 15px 0 15px;
 }
 
 [class*="__container"] {
@@ -86,8 +119,16 @@ body {
    padding: 0px 15px;
 }
 
+@media (max-width:$tablet) {
+   [class*="__container"] {
+      max-width: 1200px;
+      margin: 0px auto;
+      padding: 0px 0px;
+   }
+}
+
 [class*="__min_container"] {
-   max-width: 950px;
+   max-width: 980px;
    margin: 0px auto;
-   padding: 0px 0px;
+   padding: 0px 15px;
 }

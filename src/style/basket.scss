@@ -1,19 +1,19 @@
+@import '../style.scss';
+
 .dev_bask_wrapper {
    display: flex;
    flex-direction: column;
    gap: 20px;
-   position: fixed;
-   top: 55px;
-   right: 40px;
+
 
    .basket {
       border-radius: 5px;
       background: #F2F2F2;
-      width: 290px;
       min-height: 140px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      @include adaptiv-value(' max-width', 290, 200, 0);
 
       .basket_state {
          color: #000;
@@ -54,7 +54,6 @@
    }
 
    .delivery {
-      width: 290px;
       height: 225px;
       border-radius: 5px;
       background: #F2F2F2;
@@ -62,6 +61,7 @@
       flex-direction: column;
       align-items: center;
       position: relative;
+      @include adaptiv-value(' max-width', 290, 200, 0);
 
       iframe {
          height: 116px;
@@ -103,5 +103,11 @@
          font-weight: 400;
          line-height: normal;
       }
+   }
+}
+
+@media (max-width:$laptop) {
+   .dev_bask_wrapper {
+      display: none;
    }
 }
