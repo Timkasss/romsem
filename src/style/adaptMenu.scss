@@ -1,0 +1,29 @@
+.adaptive_block {
+   position: fixed;
+   bottom: 0;
+   left: 0;
+   background-color: #fff;
+   display: none;
+   gap: 40px;
+   width: 100%;
+   height: 72px;
+   justify-content: center;
+
+   .adaptive_block_menu {}
+
+   .adaptive_block_basket {}
+
+   .adaptive_block_reviews {}
+
+   .adapt_item {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      svg {
+         min-height: 38px;
+      }
+
+   }
+}

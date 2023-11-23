@@ -8,11 +8,11 @@
    .slider_food {
       overflow: hidden;
 
-
       .slider_food_items {
          display: flex;
          gap: 40px;
-         //transform: translate3d(-200px, 0px, 0px);
+         transform: translate3d(0px, 0px, 0px);
+         transition: all 0.5s ease-in-out;
 
          .slider_food_item {
             background-color: #FFF;

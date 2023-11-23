@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Menu from './components/Menu';
 import Basket from './components/Basket';
+import Goods from './pages/Goods';
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
       <Header />
       <Menu />
       <Basket />
-      <Home />
+      <main className="main">
+        {/* <Home /> */}
+        <Goods />
+      </main>
+
       <Footer />
     </div>
   );
