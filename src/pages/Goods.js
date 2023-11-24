@@ -16,6 +16,17 @@ import AdaptMenu from '../components/AdaptMenu';
 
 
 function Goods() {
+
+   function filterOpen(event) {
+      if (!event.target.closest('.filter_but_active')) return;
+      const filter = document.querySelector('.goods_filter_button_close');
+      if (filter.style.display === 'flex') {
+         filter.style.display = 'none';
+      } else {
+         filter.style.display = 'flex';
+      }
+
+   }
    return (
       <div className="goods">
          <div className="goods__container">
@@ -35,7 +46,7 @@ function Goods() {
                         </svg>
                         <span className='goods_title'>Сеты</span>
                      </div>
-                     <div className="goods_header_filter">
+                     <div className="goods_header_filter" onClick={filterOpen}>
                         <div className="goods_filter_burger">
                            <div className="filter_burger">
                               <span></span>

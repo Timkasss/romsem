@@ -6,19 +6,25 @@ import Footer from './components/Footer';
 import Menu from './components/Menu';
 import Basket from './components/Basket';
 import Goods from './pages/Goods';
+import ProductItem from './pages/ProductItem';
+import Reviews from './components/Reviews';
+import Order from './pages/Order';
 
 function App() {
   return (
     <div className="wrapper">
-      <Header />
+      {/* <Header />
       <Menu />
-      <Basket />
+      <Basket /> */}
       <main className="main">
+        <Order />
         {/* <Home /> */}
-        <Goods />
+        {/* <Goods /> */}
+        {/* <ProductItem /> */}
+        {/* <Reviews /> */}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

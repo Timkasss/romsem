@@ -1,0 +1,111 @@
+@import '../style.scss';
+
+.order {
+   background: #F2F2F2;
+   width: 100%;
+   height: 100%;
+
+
+   .header_contact_phone {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      border-bottom: solid 0.5px #A4ACAD;
+      padding-bottom: 5px;
+
+      .header_contact_title {
+         color: #111;
+         @include adaptiv-value('font-size', 18, 12, 0);
+      }
+
+      a {
+         color: #FF9846;
+         @include adaptiv-value('font-size', 18, 12, 0);
+      }
+
+      .header_work_time_wrapper {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         gap: 5px;
+         padding-top: 5px;
+
+         .header_work_time_icon {}
+
+         .header_work_time {
+            color: #A4ACAD;
+            font-size: 14px;
+            letter-spacing: 0.03em;
+         }
+      }
+   }
+
+   .order-form {
+      max-width: 400px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .form-group_counter {
+         display: flex;
+         flex-direction: column;
+         gap: 10px;
+
+         h3 {
+            flex: 1 1 auto;
+         }
+
+         #counter {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+         }
+
+         #counter2 {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+         }
+      }
+
+      .form-group {
+         display: flex;
+      }
+
+      label {
+         display: block;
+         margin-bottom: 5px;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      textarea {
+         width: 100%;
+         padding: 8px;
+         border-radius: 5px;
+         border: 1px solid #ccc;
+         height: 40px;
+      }
+
+      button {
+         padding: 10px 20px;
+         background-color: #3498db;
+         color: #fff;
+         border: none;
+         border-radius: 5px;
+         cursor: pointer;
+         transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+         background-color: #2980b9;
+      }
+
+   }
+
+
+
+}
