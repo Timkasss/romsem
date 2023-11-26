@@ -1,111 +1,263 @@
 @import '../style.scss';
 
-.order {
-   background: #F2F2F2;
-   width: 100%;
-   height: 100%;
+.order_wrapper {
+   display: flex;
 
 
-   .header_contact_phone {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      border-bottom: solid 0.5px #A4ACAD;
-      padding-bottom: 5px;
+   .order {
+      background: #F2F2F2;
+      width: 100%;
+      height: 100%;
 
-      .header_contact_title {
-         color: #111;
-         @include adaptiv-value('font-size', 18, 12, 0);
-      }
 
-      a {
-         color: #FF9846;
-         @include adaptiv-value('font-size', 18, 12, 0);
-      }
-
-      .header_work_time_wrapper {
+      .header_contact_phone {
          display: flex;
-         align-items: center;
-         justify-content: center;
-         gap: 5px;
-         padding-top: 5px;
+         border-bottom: solid 0.5px #A4ACAD;
+         padding-bottom: 5px;
 
-         .header_work_time_icon {}
-
-         .header_work_time {
-            color: #A4ACAD;
-            font-size: 14px;
-            letter-spacing: 0.03em;
-         }
-      }
-   }
-
-   .order-form {
-      max-width: 400px;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-
-      .form-group_counter {
-         display: flex;
-         flex-direction: column;
-         gap: 10px;
-
-         h3 {
-            flex: 1 1 auto;
-         }
-
-         #counter {
+         .header_navigation {
             display: flex;
             align-items: center;
-            gap: 9px;
+            gap: 10px;
          }
 
-         #counter2 {
+         .header_contact_phone_inf {
+            text-align: center;
             display: flex;
-            align-items: center;
-            gap: 9px;
+            flex-direction: column;
+            margin: 0 auto;
+
+            .header_contact_title {
+               color: #111;
+               @include adaptiv-value('font-size', 18, 12, 0);
+            }
+
+            a {
+               color: #FF9846;
+               @include adaptiv-value('font-size', 18, 12, 0);
+            }
+
+            .header_work_time_wrapper {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               gap: 5px;
+               padding-top: 5px;
+
+               .header_work_time_icon {}
+
+               .header_work_time {
+                  color: #A4ACAD;
+                  font-size: 14px;
+                  letter-spacing: 0.03em;
+               }
+            }
+         }
+
+      }
+
+      #offerta {
+         color: #000;
+         text-align: center;
+         font-family: 'DinPro-regular', sans-serif;
+         font-size: 14px;
+         font-style: normal;
+         font-weight: 400;
+         line-height: normal;
+
+         a {
+            text-decoration: underline;
          }
       }
 
-      .form-group {
-         display: flex;
-      }
-
-      label {
-         display: block;
-         margin-bottom: 5px;
-      }
-
-      input[type="text"],
-      input[type="tel"],
-      textarea {
-         width: 100%;
-         padding: 8px;
-         border-radius: 5px;
+      .order-form {
+         padding: 20px;
          border: 1px solid #ccc;
-         height: 40px;
+         border-radius: 8px;
+         display: grid;
+         grid-template-areas:
+            'name .'
+            'one two'
+            'button button';
+         gap: 20px;
+         grid-template-columns: 1fr 1fr;
+
+         #order {
+            color: #FFF;
+            font-family: 'DinPro-medium', sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            border-radius: 5px;
+            background: #F46D40;
+         }
+
+
+
+         #name_form {
+            grid-area: name;
+         }
+
+
+         .half_form_one {
+            grid-area: one;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .form-group {
+               display: flex;
+
+               #cash,
+               #card {
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+                  height: 40px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 10px;
+                  width: 100%;
+               }
+
+               #cash {
+                  color: #FFF;
+                  border-radius: 5px 0px 0px 5px;
+                  background: #FF9846;
+                  width: 100%;
+               }
+
+               #card {
+                  color: #111;
+                  border-radius: 0px 5px 5px 0px;
+                  background: #FFF;
+               }
+            }
+
+            .form-group_counter {
+               display: flex;
+               flex-direction: column;
+               gap: 10px;
+
+               h3 {
+                  flex: 1 1 auto;
+               }
+
+               #counter {
+                  display: flex;
+                  align-items: center;
+                  gap: 9px;
+               }
+
+               #counter2 {
+                  display: flex;
+                  align-items: center;
+                  gap: 9px;
+               }
+            }
+
+
+
+         }
+
+
+         .half_form_two {
+            grid-area: two;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .form-group {
+
+               .button_delivery {
+                  width: 50%;
+                  color: #111;
+               }
+
+               .button_time {
+                  width: 50%;
+                  color: #111;
+               }
+
+               .color_button {
+                  border-radius: 5px 0px 0px 5px;
+                  background: #FF9846;
+               }
+
+               #email {
+                  width: 100%;
+                  height: 40px;
+               }
+            }
+
+            .place {
+               display: flex;
+               flex-direction: column;
+
+               .form-group_place_one {
+                  display: flex;
+                  height: 40px;
+                  gap: 30px;
+                  margin-bottom: 20px;
+               }
+
+               .form-group_place_two {
+                  display: flex;
+
+                  height: 40px;
+                  gap: 15px;
+
+                  .place {
+                     width: 30%;
+                  }
+               }
+            }
+         }
+
+
+
+
+
+         label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            width: 100%;
+         }
+
+         input[type="text"],
+         input[type="tel"],
+         textarea {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            height: 40px;
+         }
+
+         button {
+            padding: 10px 20px;
+            background: #FFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            grid-area: button;
+
+         }
+
+         button:hover {
+            background-color: #2980b9;
+         }
+
       }
 
-      button {
-         padding: 10px 20px;
-         background-color: #3498db;
-         color: #fff;
-         border: none;
-         border-radius: 5px;
-         cursor: pointer;
-         transition: background-color 0.3s ease;
-      }
 
-      button:hover {
-         background-color: #2980b9;
-      }
 
    }
-
-
-
 }

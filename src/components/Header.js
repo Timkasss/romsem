@@ -2,6 +2,8 @@ import '../style/header.scss'
 
 import logoTablet from '../image/logo_tablet.png';
 
+import { NavLink } from 'react-router-dom';
+
 function Header() {
    return (
       <header className="header">
@@ -47,7 +49,7 @@ function Header() {
                </div>
                <div className="header_work_information">
                   <div className="header_work_information_done">
-                     <a href="#" className="header_work_information_reviews">Reviews</a>
+                     <NavLink to="/reviews" className="header_work_information_reviews">Reviews</NavLink>
                      <a href="#" className="header_work_information_shipping_payment">Shipping and payment</a>
                   </div>
                   <div className="header_work_information_search">
@@ -65,8 +67,6 @@ function Header() {
                   </div>
                </div>
             </div>
-
-
          </div>
       </header>
    );

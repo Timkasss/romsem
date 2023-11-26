@@ -1,19 +1,13 @@
 import '../style/goods.scss';
 
-import set1 from '../image/setu/set1.png';
-import set2 from '../image/setu/set2.png';
-import set3 from '../image/setu/set3.png';
-import set4 from '../image/setu/set4.png';
-import set5 from '../image/setu/set5.png';
-import set6 from '../image/setu/set6.png';
-import set7 from '../image/setu/set7.png';
-import set8 from '../image/setu/set8.png';
-import set9 from '../image/setu/set9.png';
+
 import OrderInf from '../components/OrderInf';
 
-import arrFilter from '../image/arr_filter.svg';
+//import arrFilter from '../image/arr_filter.svg';
 import AdaptMenu from '../components/AdaptMenu';
+import Item from '../components/Item';
 
+import { goods } from '../data/foods-item';
 
 function Goods() {
 
@@ -68,141 +62,14 @@ function Goods() {
                      </div>
                   </div>
                   <div className="goods_items_wrapper">
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set1} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Саломон сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set2} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Сет "5 Филадельфий"</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set3} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Филадельфия и лосось сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set4} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Сет "6 Филадельфий"</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set5} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Топовый сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set6} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Камикадзе сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set7} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Сет "4 Филадельфии"</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set8} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Филадельфия LOVE сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
-                     <article className="goods_item item_block">
-                        <div className="goods_item_img item_block_img">
-                           <img className='item_img' src={set9} alt="food" />
-                        </div>
-                        <div className="goods_item_detail item_detail">
-                           <div className="goods_item_name item_block_name">Якудза сет</div>
-                           <div className="goods_item_quantity item_block_quantity">2050 грамм, 45 кусочков</div>
-                           <div className="goods_item_buy item_block_buy">
-                              <div className="goods_item_buy_cena item_block_cena">2100 COM</div>
-                              <div className="goods_item_buy_button item_block_button">
-                                 <button className="goods_item_button item_button">Want!</button>
-                              </div>
-                           </div>
-                        </div>
-                     </article>
+                     {
+                        goods.map(item => {
+                           return (
+                              <Item key={item.id} goods={item} />
+                           )
+
+                        })
+                     }
                   </div>
                   <OrderInf />
                </div>

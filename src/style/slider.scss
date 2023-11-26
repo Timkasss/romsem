@@ -98,7 +98,7 @@
             transform: translateY(-50%);
             left: -110px;
             cursor: pointer;
-
+            user-select: none;
          }
 
          .slider_controller_next {
@@ -107,6 +107,7 @@
             transform: translateY(-50%);
             right: -110px;
             cursor: pointer;
+            user-select: none;
          }
       }
    }

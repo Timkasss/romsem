@@ -12,44 +12,59 @@ import AsIcon8 from '../image/corn.svg'
 import AsIcon9 from '../image/drink.svg'
 import AsIcon10 from '../image/action.svg'
 
+import { NavLink } from 'react-router-dom'
+
 function Menu() {
    return (
       <aside className="aside_menu_wrapper">
          <div className="aside_logo">
-            <img src={AsLogo} alt="logo" />
+            <NavLink to="/">
+               <img src={AsLogo} alt="logo" />
+            </NavLink>
+
          </div>
          <nav className="aside_menu">
             <ul className="aside_menu_list">
                <li className="aside_menu_item">
                   <img src={AsIcon1} alt="icon" />
-                  <a href="#" className="aside_menu_link">Пицца</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Пицца</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon2} alt="icon" />
-                  <a href="#" className="aside_menu_link">Сеты</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Сеты</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon3} alt="icon" />
-                  <a href="#" className="aside_menu_link">WOK</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>WOK</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon4} alt="icon" />
-                  <a href="#" className="aside_menu_link">Роллы</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Роллы</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon5} alt="icon" />
-                  <a href="#" className="aside_menu_link">Суши</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Суши</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon6} alt="icon" />
-                  <a href="#" className="aside_menu_link">Салаты</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Салаты</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon7} alt="icon" />
-                  <a href="#" className="aside_menu_link">Супы</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Супы</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon8} alt="icon" />
-                  <a href="#" className="aside_menu_link">Корн доги</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Корн доги</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon9} alt="icon" />
-                  <a href="#" className="aside_menu_link">Напитки</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Напитки</NavLink >
+               </li>
                <li className="aside_menu_item">
                   <img src={AsIcon10} alt="icon" />
-                  <a href="#" className="aside_menu_link">Акции</a></li>
+                  <NavLink className="aside_menu_link" to='/goods'>Акции</NavLink >
+               </li>
             </ul>
          </nav>
       </aside>

@@ -10,21 +10,39 @@ import ProductItem from './pages/ProductItem';
 import Reviews from './components/Reviews';
 import Order from './pages/Order';
 
+
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+
+
+
+
 function App() {
   return (
     <div className="wrapper">
-      {/* <Header />
-      <Menu />
-      <Basket /> */}
-      <main className="main">
-        <Order />
-        {/* <Home /> */}
-        {/* <Goods /> */}
-        {/* <ProductItem /> */}
-        {/* <Reviews /> */}
-      </main>
+      <Router>
 
-      {/* <Footer /> */}
+        <Header />
+        <Menu />
+        <Basket />
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/goods" element={<Goods />} />
+            <Route path="/reviews" element={<Reviews />} />
+          </Routes>
+          {/* <Order /> */}
+          {/* <ProductItem /> */}
+
+        </main>
+
+        <Footer />
+
+      </Router>
+
     </div>
   );
 }
