@@ -55,84 +55,84 @@ function Slider() {
       <div className="slider_food_wrapper">
          <div className="slider_food">
             <div className="slider_food_items">
-               <div className="slider_food_item">
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={salomon} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Саломон сет</div>
-                  <div className="slider_food_item_quantity">1050 грамм, 30 кусочков</div>
+                  <h1 className="slider_food_item_name">Саломон сет</h1>
+                  <p className="slider_food_item_quantity">1050 грамм, 30 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">1500 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>1150</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
-               <div className="slider_food_item">
+               </article>
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={filadelfia} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Филадельфия и лосось сет</div>
-                  <div className="slider_food_item_quantity">1260 грамм, 36 кусочков</div>
+                  <h1 className="slider_food_item_name">Филадельфия и лосось сет</h1>
+                  <p className="slider_food_item_quantity">1260 грамм, 36 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">1150 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>1150</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
-               <div className="slider_food_item">
+               </article>
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={themostbigfil} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Самая большая Филадельфия</div>
-                  <div className="slider_food_item_quantity">2050 грамм, 45 кусочков</div>
+                  <h1 className="slider_food_item_name">Самая большая Филадельфия</h1>
+                  <p className="slider_food_item_quantity">2050 грамм, 45 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">2100 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>2100</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
-               <div className="slider_food_item">
+               </article>
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={themostbigfil} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Самая большая Филадельфия</div>
-                  <div className="slider_food_item_quantity">2050 грамм, 45 кусочков</div>
+                  <h1 className="slider_food_item_name">Самая большая Филадельфия</h1>
+                  <p className="slider_food_item_quantity">2050 грамм, 45 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">2100 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>2100</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
-               <div className="slider_food_item">
+               </article>
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={themostbigfil} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Самая большая Филадельфия</div>
-                  <div className="slider_food_item_quantity">2050 грамм, 45 кусочков</div>
+                  <h1 className="slider_food_item_name">Самая большая Филадельфия</h1>
+                  <p className="slider_food_item_quantity">2050 грамм, 45 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">2100 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>2100</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
-               <div className="slider_food_item">
+               </article>
+               <article className="slider_food_item">
                   <div className="slider_food_item_img">
                      <img src={themostbigfil} alt="food" />
                   </div>
-                  <div className="slider_food_item_name">Самая большая Филадельфия</div>
-                  <div className="slider_food_item_quantity">2050 грамм, 45 кусочков</div>
+                  <h1 className="slider_food_item_name">Самая большая Филадельфия</h1>
+                  <p className="slider_food_item_quantity">2050 грамм, 45 кусочков</p>
                   <div className="slider_food_item_buy">
-                     <div className="slider_food_item_buy_cena">2100 COM</div>
+                     <p className="slider_food_item_buy_cena"><span>2100</span> COM</p>
                      <div className="slider_food_item_buy_button">
                         <button className="slider_item_button">Want!</button>
                      </div>
                   </div>
-               </div>
+               </article>
             </div>
             <div className="slider_food_controls">
                <div className="slider_controller_pre">

@@ -3,14 +3,6 @@
 .main {
    //position: relative;
 
-
-
-   @media (max-width:1200px) {
-      .adaptive_block {
-         display: flex;
-      }
-   }
-
    .main__container {
 
       .main_content {
@@ -84,6 +76,7 @@
                         .slider_cena_sale {
                            font-size: 25px;
                            position: relative;
+                           display: block;
                         }
 
                         .slider_cena_sale::before {
@@ -101,6 +94,7 @@
                         .slider_cena {
                            padding-top: 15px;
                            font-size: 40px;
+                           display: block;
                         }
                      }
 

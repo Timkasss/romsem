@@ -90,45 +90,51 @@ function Home() {
                <div className="main__min_container">
                   <div className="slider_wrapper">
                      <div className="sliders">
-                        <div className="slider">
+                        <article className="slider">
                            <div className="slider_name">
-                              <div className="slider_title">Філадельфія і лосось</div>
-                              <div className="slider_untitle">1260 грамм 36 кусочек</div>
+                              <h1 className="slider_title">Філадельфія і лосось</h1>
+                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
                            </div>
                            <div className="slider_cena_wrapper">
-                              <div className="slider_cena_sale">1599 COM</div>
-                              <div className="slider_cena">599 COM</div>
+                              <p className="food_price">
+                                 <span className="slider_cena_sale">1599 COM</span>
+                                 <span className="slider_cena">599 COM</span>
+                              </p>
                            </div>
                            <div className="slider_button_wrapper">
                               <button className="slider_button">Want!</button>
                            </div>
-                        </div>
-                        <div className="slider">
+                        </article>
+                        <article className="slider">
                            <div className="slider_name">
-                              <div className="slider_title">Британія і лосось</div>
-                              <div className="slider_untitle">1260 грамм 36 кусочек</div>
+                              <h1 className="slider_title">Британія і лосось</h1>
+                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
                            </div>
                            <div className="slider_cena_wrapper">
-                              <div className="slider_cena_sale">1599 COM</div>
-                              <div className="slider_cena">599 COM</div>
+                              <p className="food_price">
+                                 <span className="slider_cena_sale">1599 COM</span>
+                                 <span className="slider_cena">599 COM</span>
+                              </p>
                            </div>
                            <div className="slider_button_wrapper">
                               <button className="slider_button">Want!</button>
                            </div>
-                        </div>
-                        <div className="slider">
+                        </article>
+                        <article className="slider">
                            <div className="slider_name">
-                              <div className="slider_title">Кавказ і лосось</div>
-                              <div className="slider_untitle">1260 грамм 36 кусочек</div>
+                              <h1 className="slider_title">Кавказ і лосось</h1>
+                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
                            </div>
                            <div className="slider_cena_wrapper">
-                              <div className="slider_cena_sale">1599 COM</div>
-                              <div className="slider_cena">599 COM</div>
+                              <p className="food_price">
+                                 <span className="slider_cena_sale">1599 COM</span>
+                                 <span className="slider_cena">599 COM</span>
+                              </p>
                            </div>
                            <div className="slider_button_wrapper">
                               <button className="slider_button">Want!</button>
                            </div>
-                        </div>
+                        </article>
                      </div>
                      <div className="slider_active">
                         <span className="slider_acrive_point"></span>
@@ -138,78 +144,102 @@ function Home() {
                         <span></span>
                      </div>
                   </div>
-                  <div className="menu_adaptive">
-                     <div className="menu_item">
-                        <img src={miniPizza} alt="background" />
-                        <span className="menu_item_name">Пицца</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniSetu} alt="background" />
-                        <span className="menu_item_name">Сеты</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniWok} alt="background" />
-                        <span className="menu_item_name">WOK</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniRolu} alt="background" />
-                        <span className="menu_item_name">Роллы</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniSywi} alt="background" />
-                        <span className="menu_item_name">Суши</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniSoup} alt="background" />
-                        <span className="menu_item_name">Супы</span>
-                        <span className="menu_item_events item_events_active">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniSalade} alt="background" />
-                        <span className="menu_item_name">Салаты</span>
-                        <span className="menu_item_events item_events_active">скоро</span>
-                     </div>
-                     <div className="menu_item">
-                        <img src={miniDrink} alt="background" />
-                        <span className="menu_item_name">Напитки</span>
-                        <span className="menu_item_events">скоро</span>
-                     </div>
-                  </div>
-                  <div className="main_food">
-                     <div className="main_food_chiken main_food_pos">
-                        <img src={chiken} alt="chiken" />
-                        <span className="main_food_name">Chiken</span>
-                     </div>
-                     <div className="main_food_pizza_min">
-                        <div className="main_food_yger main_food_pos">
-                           <img src={yger} alt="yger" />
-                           <span className="main_food_name">With eel</span>
-                        </div>
-                        <div className="main_food_corn main_food_pos">
-                           <img src={corn} alt="corn" />
-                           <span className="main_food_name">Corn dog</span>
-                        </div>
-                     </div>
-                     <div className="main_food_pizza main_food_pos">
-                        <img src={pizza} alt="pizza" />
-                        <span className="main_food_name">Pizza</span>
-                     </div>
-                     <div className="main_food_action main_food_pos">
-                        <img src={action} alt="action" />
-                        <span className="main_food_name">Action</span>
-                     </div>
+                  <nav className="menu_adaptive_wrapper">
+                     <ul className="menu_adaptive">
+                        <li className="menu_item">
+                           <a href="#" className="menu_item_link">
+                              <img src={miniPizza} alt="background" />
+                              <h1 className="menu_item_name">Пицца</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniSetu} alt="background" />
+                              <h1 className="menu_item_name">Сеты</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniWok} alt="background" />
+                              <h1 className="menu_item_name">WOK</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniRolu} alt="background" />
+                              <h1 className="menu_item_name">Роллы</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniSywi} alt="background" />
+                              <h1 className="menu_item_name">Суши</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
 
-                  </div>
-                  <div className="popular_new_food">
-                     <div className="popular_new_food_switch">
-                        <div className="popular_new swith_hov">New</div>
-                        <div className="popular_popular swith_hov">Popular</div>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniSoup} alt="background" />
+                              <h1 className="menu_item_name">Супы</h1>
+                              <span className="menu_item_events item_events_active">скоро</span>
+                           </a>
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniSalade} alt="background" />
+                              <h1 className="menu_item_name">Салаты</h1>
+                              <span className="menu_item_events item_events_active">скоро</span>
+                           </a>
+
+                        </li>
+                        <li className="menu_item">
+                           <a href="#">
+                              <img src={miniDrink} alt="background" />
+                              <h1 className="menu_item_name">Напитки</h1>
+                              <span className="menu_item_events">скоро</span>
+                           </a>
+                        </li>
+                     </ul>
+                  </nav>
+
+                  <div className="main_food">
+                     <article className="main_food_chiken main_food_pos">
+                        <img src={chiken} alt="chiken" />
+                        <h1 className="main_food_name">Chiken</h1>
+                     </article>
+                     <div className="main_food_pizza_min">
+                        <article className="main_food_yger main_food_pos">
+                           <img src={yger} alt="yger" />
+                           <h1 className="main_food_name">With eel</h1>
+                        </article>
+                        <article className="main_food_corn main_food_pos">
+                           <img src={corn} alt="corn" />
+                           <h1 className="main_food_name">Corn dog</h1>
+                        </article>
                      </div>
+                     <article className="main_food_pizza main_food_pos">
+                        <img src={pizza} alt="pizza" />
+                        <h1 className="main_food_name">Pizza</h1>
+                     </article>
+                     <article className="main_food_action main_food_pos">
+                        <img src={action} alt="action" />
+                        <h1 className="main_food_name">Action</h1>
+                     </article>
+                  </div>
+                  <div className="popular_new_food_wrapper">
+                     <header className='popular_new_food_header'>
+                        <nav className="popular_new_food">
+                           <ul className="popular_new_food_switch">
+                              <li className="popular_new "><a className='swith_hov' href="#">New</a></li>
+                              <li className="popular_popular "><a className='swith_hov' href="#">Popular</a></li>
+                           </ul>
+                        </nav>
+                     </header>
                      <Slider />
                   </div>
                   <OrderInf />

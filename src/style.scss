@@ -157,7 +157,6 @@ body {
       font-weight: 400;
       line-height: 100%;
       padding-top: 10px;
-
    }
 
    .order_details_text_list {
@@ -190,23 +189,40 @@ body {
       background: linear-gradient(180deg, rgba(242, 242, 242, 0.00) 0%, #F2F2F2 100%);
    }
 
-   .details-shadow-none {
-      display: none;
+   .order_details_button_wrapper {
+      text-align: center;
+
+
+      .order_details_button,
+      .arrow_rotate {
+         color: #F46D40;
+         font-family: 'DinPro-regular', sans-serif;
+         font-size: 24px;
+         font-style: normal;
+         font-weight: 400;
+         margin-top: 40px;
+         gap: 10px;
+         position: relative;
+         cursor: pointer;
+         user-select: none;
+      }
+
+      .order_details_button::after,
+      .arrow_rotate::after {
+         content: '';
+         position: absolute;
+         top: 55%;
+         transform: translateY(-55%);
+         right: -27px;
+         width: 17px;
+         height: 9px;
+         background-image: url('./image/arrow.svg');
+         background-repeat: no-repeat;
+      }
+
+      .arrow_rotate::after {
+         transform: translateY(-55%) rotate(-180deg);
+      }
    }
 
-   .order_details_button {
-      color: #F46D40;
-      font-family: 'DinPro-regular', sans-serif;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 100%;
-      padding-top: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-
-      svg {}
-   }
 }
