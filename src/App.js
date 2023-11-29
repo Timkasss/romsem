@@ -33,9 +33,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/goods" element={<Goods />} />
             <Route path="/reviews" element={<Reviews />} />
+            <Route path="/set/:id" element={<ProductItem />} />
           </Routes>
           {/* <Order /> */}
-          {/* <ProductItem /> */}
 
         </main>
 

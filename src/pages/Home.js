@@ -20,6 +20,8 @@ import miniDrink from '../image/mobile_img/drink.jpg';
 
 
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
 import Slider from '../components/Slider';
 import OrderInf from '../components/OrderInf';
 import AdaptMenu from '../components/AdaptMenu';
@@ -154,11 +156,11 @@ function Home() {
                            </a>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
-                              <img src={miniSetu} alt="background" />
+                           <Link to={'/goods'}>
+                              < img src={miniSetu} alt="background" />
                               <h1 className="menu_item_name">Сеты</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                         <li className="menu_item">
                            <a href="#">
@@ -245,7 +247,7 @@ function Home() {
                   <OrderInf />
                </div>
             </div>
-         </div>
+         </div >
          <AdaptMenu />
       </>
    );

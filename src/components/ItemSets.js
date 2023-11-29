@@ -1,14 +1,19 @@
+import { NavLink } from 'react-router-dom';
 
-import '../style/item.scss';
+import '../style/itemSets.scss';
 
-function Item({ goods }) {
+function Item({ goods, index }) {
    return (
       <article className="goods_item item_block">
          <div className="goods_item_img item_block_img">
-            <img className='item_img' src={goods.img} alt="food" />
+            <NavLink to={`/set/${index}`}>
+               <img className='item_img' src={goods.img} alt="food" />
+            </NavLink>
          </div>
          <div className="goods_item_detail item_detail">
-            <h1 className="goods_item_name item_block_name">{goods.name}</h1>
+            <NavLink to={`/set/${index}`}>
+               <h1 className="goods_item_name item_block_name">{goods.name}</h1>
+            </NavLink>
             <p className="goods_item_quantity item_block_quantity">{goods.quantity}</p>
             <div className="goods_item_buy item_block_buy">
                <p className="goods_item_buy_cena item_block_cena">{goods.cost}</p>

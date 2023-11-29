@@ -4,9 +4,9 @@ import OrderInf from '../components/OrderInf';
 
 //import arrFilter from '../image/arr_filter.svg';
 import AdaptMenu from '../components/AdaptMenu';
-import Item from '../components/Item';
+import ItemSets from '../components/ItemSets';
 
-import { goods } from '../data/foods-item';
+import { goods } from '../data/sets';
 
 import { useState } from 'react';
 
@@ -49,9 +49,9 @@ function Goods() {
                   </div>
                   <div className="goods_items_wrapper">
                      {
-                        goods.map(item => {
+                        goods.map((item, index) => {
                            return (
-                              <Item key={item.id} goods={item} />
+                              <ItemSets key={item.id} goods={item} index={index} />
                            )
 
                         })

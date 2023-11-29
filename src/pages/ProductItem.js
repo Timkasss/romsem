@@ -1,43 +1,44 @@
 import '../style/productItem.scss'
 
-import foodImage from '../image/fil.png'
-
-import slide1 from '../image/slide1.png';
-import slide2 from '../image/slide2.png';
-import slide3 from '../image/slide3.png';
 import OrderInf from '../components/OrderInf';
 import AdaptMenu from '../components/AdaptMenu';
+import { goods } from '../data/sets';
 
+import { useParams } from 'react-router-dom';
+import AdditiveSet from '../components/AdditiveSet';
+import { additives } from '../data/additives';
+
+import { NavLink } from 'react-router-dom';
 function ProductItem() {
+
+   const { id } = useParams();
+   const set = goods[id];
+
    return (
       <div className="product_item_wrapper">
          <div className="product_item__container">
-            <div className="prodct_item_content">
-               <div className="product_item_controls">
-                  <div className="product_item_controls_pre">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="10" fill="#FF9846" />
-                        <path d="M11.75 5.75L7.25 10.25L11.75 14.75" stroke="#F2F2F2" strokeLinecap="round" />
-                     </svg>
-                     <span>Back</span>
-                  </div>
-                  <div className="product_item_controls_next">
-                     <span>Next</span>
-                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <circle cx="10" cy="10" r="10" fill="#FF9846" />
-                        <path d="M8 6L12.5 10.5L8 15" stroke="#F2F2F2" strokeLinecap="round" />
-                     </svg>
-                  </div>
-               </div>
+            <div className="product_item_content">
+               <header className="product_item_controls_wrapper">
+                  <nav className='product_item_controls'>
+                     <ul className='product_item_controls_list'>
+                        <li className='product_item_controls_item'>
+                           <NavLink className='product_item_controls_link control_pre' to="/goods">Back</NavLink>
+                        </li>
+                        <li className='product_item_controls_item'>
+                           <NavLink className='product_item_controls_link control_next' to={`/set/${set.id}`}>Next</NavLink>
+                        </li>
+                     </ul>
+                  </nav>
+               </header>
                <article className="product_item">
-                  <figure className="product_item_img">
-                     <img src={foodImage} alt="food" />
-                  </figure>
+                  <div className="product_item_img">
+                     <img src={set.img} alt="food" />
+                  </div>
                   <section className="product_item_info">
-                     <h2 className="product_item_name">Филадельфия и лосось сет</h2>
-                     <p className="product_item_weight">290 грамм</p>
+                     <h2 className="product_item_name">{set.name}</h2>
+                     <p className="product_item_weight">{set.quantity}</p>
                      <div className="product_price_count">
-                        <p className="product_item_price">1150 СОМ</p>
+                        <p className="product_item_price">{set.cost}</p>
                         <div className="product_item_count">
                            <button className="product_counter_button">
                               <svg xmlns="http://www.w3.org/2000/svg" width="23" height="2" viewBox="0 0 23 2" fill="none">
@@ -54,93 +55,53 @@ function ProductItem() {
                            </button>
                         </div>
                      </div>
-                     <h3 className="product_item_composition_title">Состав</h3>
+                     <p className="product_item_composition_title">Состав</p>
                      <p className="product_item_composition_details">
                         Лосось, сыр "Филадельфия", огурец, авокадо
                      </p>
                      <button className="product_buy_button">Want!</button>
                   </section>
                </article>
-               <div className="product_slider_wrapper">
+               <section className="product_slider_wrapper">
                   <h3 className="product_slider_title">Рекомендуем к этому товару</h3>
+                  <header className="product_slider_control_wrapper">
+                     <nav className='product_slider_control'>
+                        <ul className='product_slider_control_list'>
+                           <li className='product_slider_control_item'>
+                              <a className='product_slider_control_link' href="#">
+                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+                                    <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
+                                    <path d="M36 15L23 28.5L36 42" stroke="#F2F2F2" strokeLinecap="round" />
+                                 </svg>
+                              </a>
+                           </li>
+                           <li className='product_slider_control_item'>
+                              <a className='product_slider_control_link' href="#">
+                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
+                                    <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
+                                    <path d="M23 15L36 28.5L23 42" stroke="#F2F2F2" strokeLinecap="round" />
+                                 </svg>
+                              </a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </header>
                   <div className="product_slider">
                      <div className="product_sliders">
-                        <div className="product_slide">
-                           <figure className="product_slide_img">
-                              <img src={slide1} alt="food" />
-                           </figure>
-                           <h3 className="product_slide_name">Филадельфия</h3>
-                           <div className="product_slide_cena">
-                              <p className="product_slide_price">140 COM</p>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                 <ellipse cx="13" cy="13" rx="13" ry="13" transform="rotate(90 13 13)" fill="#F46D40" />
-                                 <path d="M13 5.84998V19.5" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 <path d="M6.5 12.35L20.15 12.35" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                              </svg>
-                           </div>
-                        </div>
-                        <div className="product_slide">
-                           <figure className="product_slide_img">
-                              <img src={slide3} alt="food" />
-                           </figure>
-                           <h3 className="product_slide_name">Банзай</h3>
-                           <div className="product_slide_cena">
-                              <p className="product_slide_price">140 COM</p>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                 <ellipse cx="13" cy="13" rx="13" ry="13" transform="rotate(90 13 13)" fill="#F46D40" />
-                                 <path d="M13 5.84998V19.5" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 <path d="M6.5 12.35L20.15 12.35" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                              </svg>
-                           </div>
-                        </div>
-                        <div className="product_slide">
-                           <figure className="product_slide_img">
-                              <img src={slide2} alt="food" />
-                           </figure>
-                           <h3 className="product_slide_name">Аригато</h3>
-                           <div className="product_slide_cena">
-                              <p className="product_slide_price">140 COM</p>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                 <ellipse cx="13" cy="13" rx="13" ry="13" transform="rotate(90 13 13)" fill="#F46D40" />
-                                 <path d="M13 5.84998V19.5" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 <path d="M6.5 12.35L20.15 12.35" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                              </svg>
-                           </div>
-                        </div>
-                        <div className="product_slide">
-                           <figure className="product_slide_img">
-                              <img src={slide2} alt="food" />
-                           </figure>
-                           <h3 className="product_slide_name">НеАригато</h3>
-                           <div className="product_slide_cena">
-                              <p className="product_slide_price">140 COM</p>
-                              <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none">
-                                 <ellipse cx="13" cy="13" rx="13" ry="13" transform="rotate(90 13 13)" fill="#F46D40" />
-                                 <path d="M13 5.84998V19.5" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 <path d="M6.5 12.35L20.15 12.35" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                              </svg>
-                           </div>
-                        </div>
+                        {
+                           additives.map(additive => {
+                              return (
+                                 <AdditiveSet key={additive.id} additives={additive} />
+                              )
+                           })
+                        }
                      </div>
                   </div>
-                  <div className="product_slider_control">
-                     <div className="product_slider_control_pre">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
-                           <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
-                           <path d="M36 15L23 28.5L36 42" stroke="#F2F2F2" strokeLinecap="round" />
-                        </svg>
-                     </div>
-                     <div className="product_slider_control_next">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
-                           <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
-                           <path d="M23 15L36 28.5L23 42" stroke="#F2F2F2" strokeLinecap="round" />
-                        </svg>
-                     </div>
-                  </div>
+               </section>
+               <div id="add_inf">
+                  <OrderInf />
                </div>
-               <OrderInf />
             </div>
-
          </div>
          <AdaptMenu />
       </div>

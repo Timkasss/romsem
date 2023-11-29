@@ -1,0 +1,52 @@
+@import '../style.scss';
+
+.product_slide {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   align-items: center;
+   @include adaptiv-value('width', 200, 90, 0);
+
+   .product_slide_img {
+      @include adaptiv-value('width', 200, 66, 0);
+      @include adaptiv-value('height', 200, 66, 0);
+      border-radius: 50%;
+      order: 0;
+
+      img {
+         border-radius: 50%;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         max-width: 100%;
+      }
+   }
+
+   .product_slide_name {
+      order: 1;
+      color: #000;
+      text-align: center;
+      font-family: 'DinPro-medium', sans-serif;
+      @include adaptiv-value('font-size', 18, 14, 0);
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+   }
+
+   .product_slide_cena {
+      order: 2;
+      display: flex;
+      gap: 10px;
+      white-space: nowrap;
+
+      .product_slide_price {
+         color: #000;
+         text-align: right;
+         font-family: 'DinPro', sans-serif;
+         @include adaptiv-value('font-size', 24, 18, 0);
+         font-style: normal;
+         font-weight: 700;
+         line-height: normal;
+      }
+   }
+}
