@@ -16,10 +16,7 @@
       .aside_menu_list {
          .aside_menu_item {
             display: flex;
-            align-items: center;
             gap: 20px;
-
-            img {}
 
             .aside_menu_link {
                color: #000;
@@ -28,18 +25,63 @@
                font-style: normal;
                font-weight: 400;
                line-height: normal;
+               padding-left: 50px;
             }
 
-            .aside_menu_link:hover {
-               color: #FF9846;
+            .mIcon_1,
+            .mIcon_2,
+            .mIcon_3,
+            .mIcon_4,
+            .mIcon_5,
+            .mIcon_6,
+            .mIcon_7,
+            .mIcon_8,
+            .mIcon_9,
+            .mIcon_10 {
+               position: relative;
             }
+
+            @mixin icon-before($index, $image-url) {
+               .mIcon_#{$index}::before {
+                  content: '';
+                  position: absolute;
+                  left: 0;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  width: 30px;
+                  height: 30px;
+                  background-repeat: no-repeat;
+                  background-image: url($image-url);
+               }
+            }
+
+            @for $i from 1 through 10 {
+               $image-url: '../image/';
+               $icons: (
+                  'pizza.svg',
+                  'set.svg',
+                  'wok.svg',
+                  'rol.svg',
+                  'syw.svg',
+                  'salate.svg',
+                  'soup.svg',
+                  'corn.svg',
+                  'drink.svg',
+                  'action.svg'
+               );
+            @include icon-before($i, $image-url + nth($icons, $i));
          }
 
-         .aside_menu_item:not(:last-child) {
-            padding-bottom: 20px;
+         .aside_menu_link:hover {
+            color: #FF9846;
          }
       }
+
+      .aside_menu_item:not(:last-child) {
+         padding-bottom: 20px;
+      }
    }
+}
 }
 
 @media (max-width:$tablet) {

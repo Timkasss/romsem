@@ -2,16 +2,18 @@
 function Basket() {
    return (
       <div className="dev_bask_wrapper">
-         <div className="basket">
+         <section className="basket">
             <h1 className="basket_state">Ваша корзина пуста.</h1>
-            <h2 className="basket_call">Добавьте же скорее что-нибудь!</h2>
+            <p className="basket_call">Добавьте же скорее что-нибудь!</p>
             <div className="basket_button_wrapper">
                <button className="busket_button">
                   Бесплатная доставка от 800 СОМ
                </button>
             </div>
-         </div>
-         <div className="delivery">
+         </section>
+         <section className="delivery">
+            <h1 className="delivery_address">Укажите адрес</h1>
+            <p className="delivery_time">И узнайте время доставки</p>
             <iframe
                title="Google Maps"
                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.606907400295!2d-73.9289123!3d40.8585535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f404615e1ead%3A0x6b83a5cd474c2e30!2zNjQgSGlsbHNpZGUgQXZlLCBOZXcgWW9yaywgTlkgMTAwNDAsINCh0KjQkA!5e0!3m2!1sru!2sua!4v1700072101333!5m2!1sru!2sua"
@@ -35,9 +37,7 @@ function Basket() {
                   </defs>
                </svg>
             </div>
-            <h1 className="delivery_address">Укажите адрес</h1>
-            <h2 className="delivery_time">И узнайте время доставки</h2>
-         </div>
+         </section>
       </div>
 
    )

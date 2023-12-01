@@ -1,6 +1,7 @@
 @import '../style.scss';
 
 
+
 .item_block {
    background-color: #FFF;
    display: flex;
@@ -14,6 +15,7 @@
       @include adaptiv-value('width', 253, 100, 0);
       @include adaptiv-value('height', 210, 84, 0);
       margin: 0 auto;
+      width: 100%;
 
       .item_img {
          max-width: 100%;

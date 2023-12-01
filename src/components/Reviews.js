@@ -6,9 +6,9 @@ import { reviews } from '../data/reviews';
 function Reviews() {
    return (
       <div className="reviews__container">
-         <div className="reviews__content">
+         <section className="reviews__content">
             <div className="reviews__content_header">
-               <div className="reviews__content_name">Отзывы</div>
+               <h1 className="reviews__content_name">Отзывы</h1>
                <div className="reviews__content_function">
                   <button id="reviews_add">+ Добавить отзыв</button>
                </div>
@@ -17,20 +17,20 @@ function Reviews() {
                {
                   reviews.map(review => {
                      return (
-                        <div className="response" key={review.id}>
-                           <div className="response_header">
-                              <div className="response_header_name">{review.name}</div>
-                              <div className="response_header_date">{review.date}</div>
-                           </div>
+                        <article className="response" key={review.id}>
+                           <header className="response_header">
+                              <h1 className="response_header_name">{review.name}</h1>
+                              <p className="response_header_date">{review.date}</p>
+                           </header>
                            <div className="response_text_content">
                               <p className="response_text">{review.comment}</p>
                            </div>
-                        </div>
+                        </article>
                      )
                   })
                }
             </div>
-         </div>
+         </section>
          <AdaptMenu />
       </div>
    )

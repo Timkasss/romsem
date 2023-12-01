@@ -9,10 +9,51 @@ import AdditiveSet from '../components/AdditiveSet';
 import { additives } from '../data/additives';
 
 import { NavLink } from 'react-router-dom';
+
+import { useState, useRef } from 'react';
+import { flushSync } from 'react-dom';
+
 function ProductItem() {
 
    const { id } = useParams();
    const set = goods[id];
+
+   const [activeSlide, setActiveSlide] = useState(0);
+   const visibleSlides = 3;
+   const refSlide = useRef(null);
+
+   function preSlide() {
+      flushSync(() => {
+         if (activeSlide > 0) {
+            setActiveSlide(Math.max(activeSlide - visibleSlides, 0));
+         } else {
+            setActiveSlide(0)
+         }
+      })
+
+      refSlide.current.scrollIntoView({
+         behavior: 'smooth',
+         block: 'nearest',
+         inline: 'center'
+      }
+      )
+   }
+   function nextSlide() {
+      flushSync(() => {
+         if (activeSlide < additives.length - visibleSlides) {
+            setActiveSlide(activeSlide + visibleSlides);
+         } else {
+            setActiveSlide(additives.length - 1)
+         }
+      })
+
+      refSlide.current.scrollIntoView({
+         behavior: 'smooth',
+         block: 'nearest',
+         inline: 'center'
+      }
+      )
+   }
 
    return (
       <div className="product_item_wrapper">
@@ -68,20 +109,20 @@ function ProductItem() {
                      <nav className='product_slider_control'>
                         <ul className='product_slider_control_list'>
                            <li className='product_slider_control_item'>
-                              <a className='product_slider_control_link' href="#">
+                              <button className='product_slider_control_link' onClick={preSlide}>
                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
                                     <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
                                     <path d="M36 15L23 28.5L36 42" stroke="#F2F2F2" strokeLinecap="round" />
                                  </svg>
-                              </a>
+                              </button>
                            </li>
                            <li className='product_slider_control_item'>
-                              <a className='product_slider_control_link' href="#">
+                              <button className='product_slider_control_link' onClick={nextSlide}>
                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 60" fill="none">
                                     <ellipse cx="30" cy="30" rx="30" ry="30" transform="rotate(90 30 30)" fill="#111111" />
                                     <path d="M23 15L36 28.5L23 42" stroke="#F2F2F2" strokeLinecap="round" />
                                  </svg>
-                              </a>
+                              </button>
                            </li>
                         </ul>
                      </nav>
@@ -89,9 +130,9 @@ function ProductItem() {
                   <div className="product_slider">
                      <div className="product_sliders">
                         {
-                           additives.map(additive => {
+                           additives.map((additive, index) => {
                               return (
-                                 <AdditiveSet key={additive.id} additives={additive} />
+                                 <AdditiveSet key={additive.id} additives={additive} ref={activeSlide === index ? refSlide : null} />
                               )
                            })
                         }

@@ -26,73 +26,81 @@ import Slider from '../components/Slider';
 import OrderInf from '../components/OrderInf';
 import AdaptMenu from '../components/AdaptMenu';
 
+import Swiper from 'swiper';
+import 'swiper/css';
 
 function Home() {
-
-
    useEffect(() => {
-      slider()
-   });
-   function slider() {
-
-      let isDragging = false;
-      let startPosition = 0;
-      let currentTranslate = 0;
-
-      const slider = document.querySelector('.sliders');
-      const slide = document.querySelectorAll('.slider');
-      function mouseClick(event) {
-         isDragging = true;
-         startPosition = event.clientX - slider.offsetLeft;
-         currentTranslate = currentTranslate || 0;
-         slider.style.cursor = 'grabbing';
-      }
-      function mouseMove(event) {
-         if (!isDragging) return;
-
-         let currentPosition = (event.clientX - slider.offsetLeft) - startPosition + currentTranslate;
-
-         if (currentPosition <= 0) {
-            slider.style.transform = `translate3d(${currentPosition}px, 0px,0px)`;
-         }
-         let end = (slide.length - 1) * slide[0].offsetWidth;
-         if (Math.abs(currentPosition) >= end) {
-            slider.style.transform = `translate3d(${-end}px, 0px,0px)`;
-         }
-
-      }
-
-
-      slider.addEventListener('mousedown', mouseClick);
-
-      slider.addEventListener('mousemove', mouseMove);
-
-      slider.addEventListener('mouseup', (event) => {
-         isDragging = false;
-         slider.style.cursor = 'grab';
-         currentTranslate += event.clientX - slider.offsetLeft - startPosition;
+      const swiper = new Swiper('.swiper', {
+         loop: true,
+         simulateTouch: true,
+         grabCursor: true,
+         slideToClickedSlide: true,
       });
+   }, []);
 
-      slider.addEventListener('mouseleave', (event) => {
-         isDragging = false;
-         slider.style.cursor = 'grab';
-         currentTranslate += event.clientX - slider.offsetLeft - startPosition;
-      });
-      slider.ondragstart = function () {
-         return false;
-      }
+   // useEffect(() => {
+   //    slider()
+   // });
+   // function slider() {
 
-   }
+   //    let isDragging = false;
+   //    let startPosition = 0;
+   //    let currentTranslate = 0;
 
+   //    const slider = document.querySelector('.sliders');
+   //    const slide = document.querySelectorAll('.slider');
+   //    function mouseClick(event) {
+   //       isDragging = true;
+   //       startPosition = event.clientX - slider.offsetLeft;
+   //       currentTranslate = currentTranslate || 0;
+   //       slider.style.cursor = 'grabbing';
+   //    }
+   //    function mouseMove(event) {
+   //       if (!isDragging) return;
+
+   //       let currentPosition = (event.clientX - slider.offsetLeft) - startPosition + currentTranslate;
+
+   //       if (currentPosition <= 0) {
+   //          slider.style.transform = `translate3d(${currentPosition}px, 0px,0px)`;
+   //       }
+   //       let end = (slide.length - 1) * slide[0].offsetWidth;
+   //       if (Math.abs(currentPosition) >= end) {
+   //          slider.style.transform = `translate3d(${-end}px, 0px,0px)`;
+   //       }
+
+   //    }
+
+
+   //    slider.addEventListener('mousedown', mouseClick);
+
+   //    slider.addEventListener('mousemove', mouseMove);
+
+   //    slider.addEventListener('mouseup', (event) => {
+   //       isDragging = false;
+   //       slider.style.cursor = 'grab';
+   //       currentTranslate += event.clientX - slider.offsetLeft - startPosition;
+   //    });
+
+   //    slider.addEventListener('mouseleave', (event) => {
+   //       isDragging = false;
+   //       slider.style.cursor = 'grab';
+   //       currentTranslate += event.clientX - slider.offsetLeft - startPosition;
+   //    });
+   //    slider.ondragstart = function () {
+   //       return false;
+   //    }
+
+   // }
 
    return (
       <>
          <div className="main__container">
             <div className="main_content">
                <div className="main__min_container">
-                  <div className="slider_wrapper">
-                     <div className="sliders">
-                        <article className="slider">
+                  <div className="slider_wrapper swiper">
+                     <div className="sliders swiper-wrapper">
+                        <article className="slider swiper-slide">
                            <div className="slider_name">
                               <h1 className="slider_title">Філадельфія і лосось</h1>
                               <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
@@ -100,14 +108,14 @@ function Home() {
                            <div className="slider_cena_wrapper">
                               <p className="food_price">
                                  <span className="slider_cena_sale">1599 COM</span>
-                                 <span className="slider_cena">599 COM</span>
+                                 <span className="slider_cena">120 COM</span>
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <button className="slider_button">Want!</button>
+                              <button className="slider_button" >Want!</button>
                            </div>
                         </article>
-                        <article className="slider">
+                        <article className="slider swiper-slide">
                            <div className="slider_name">
                               <h1 className="slider_title">Британія і лосось</h1>
                               <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
@@ -122,7 +130,7 @@ function Home() {
                               <button className="slider_button">Want!</button>
                            </div>
                         </article>
-                        <article className="slider">
+                        <article className="slider swiper-slide">
                            <div className="slider_name">
                               <h1 className="slider_title">Кавказ і лосось</h1>
                               <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
@@ -149,62 +157,61 @@ function Home() {
                   <nav className="menu_adaptive_wrapper">
                      <ul className="menu_adaptive">
                         <li className="menu_item">
-                           <a href="#" className="menu_item_link">
+                           <Link to={'/goods'} className="menu_item_link">
                               <img src={miniPizza} alt="background" />
                               <h1 className="menu_item_name">Пицца</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
-                              < img src={miniSetu} alt="background" />
+                              <img src={miniSetu} alt="background" />
                               <h1 className="menu_item_name">Сеты</h1>
                               <span className="menu_item_events">скоро</span>
                            </Link>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniWok} alt="background" />
                               <h1 className="menu_item_name">WOK</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniRolu} alt="background" />
                               <h1 className="menu_item_name">Роллы</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniSywi} alt="background" />
                               <h1 className="menu_item_name">Суши</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
-
+                           </Link>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniSoup} alt="background" />
                               <h1 className="menu_item_name">Супы</h1>
                               <span className="menu_item_events item_events_active">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniSalade} alt="background" />
                               <h1 className="menu_item_name">Салаты</h1>
                               <span className="menu_item_events item_events_active">скоро</span>
-                           </a>
+                           </Link>
 
                         </li>
                         <li className="menu_item">
-                           <a href="#">
+                           <Link to={'/goods'}>
                               <img src={miniDrink} alt="background" />
                               <h1 className="menu_item_name">Напитки</h1>
                               <span className="menu_item_events">скоро</span>
-                           </a>
+                           </Link>
                         </li>
                      </ul>
                   </nav>
@@ -237,8 +244,8 @@ function Home() {
                      <header className='popular_new_food_header'>
                         <nav className="popular_new_food">
                            <ul className="popular_new_food_switch">
-                              <li className="popular_new "><a className='swith_hov' href="#">New</a></li>
-                              <li className="popular_popular "><a className='swith_hov' href="#">Popular</a></li>
+                              <li className="popular_new "><button className='swith_hov'>New</button></li>
+                              <li className="popular_popular "><button className='swith_hov'>Popular</button></li>
                            </ul>
                         </nav>
                      </header>

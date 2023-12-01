@@ -92,6 +92,7 @@
          line-height: normal;
          padding-bottom: 10px;
          padding-top: 38px;
+         order: 1;
       }
 
       .delivery_time {
@@ -102,6 +103,7 @@
          font-style: normal;
          font-weight: 400;
          line-height: normal;
+         order: 2;
       }
    }
 }

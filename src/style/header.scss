@@ -67,17 +67,26 @@
 
 
                .header_work_time_wrapper {
-                  display: flex;
-                  align-items: center;
-                  gap: 5px;
                   padding-top: 5px;
-
-                  .header_work_time_icon {}
 
                   .header_work_time {
                      color: #A4ACAD;
                      font-size: 14px;
                      letter-spacing: 0.03em;
+                     padding-left: 25px;
+                     position: relative;
+                  }
+
+                  .header_work_time::before {
+                     content: '';
+                     position: absolute;
+                     left: 0;
+                     top: 50%;
+                     transform: translateY(-50%);
+                     background-image: url('../image/clock.svg');
+                     background-repeat: no-repeat;
+                     width: 15px;
+                     height: 15px;
                   }
                }
             }
@@ -87,15 +96,21 @@
                   display: flex;
                   gap: 30px;
                   border-right: 0px;
-                  align-items: center;
+                  align-items: flex-end;
+                  padding: 0;
 
                   .header_work_time_wrapper {
-                     flex-direction: column;
-
                      .header_work_time {
                         text-align: center;
                         font-size: 12px;
-                        max-width: 75px;
+                        max-width: 90px;
+                        padding-left: 0px;
+                     }
+
+                     .header_work_time::before {
+                        top: -15px;
+                        left: 50%;
+                        transform: translateX(-50%);
                      }
                   }
                }
@@ -130,36 +145,31 @@
             }
          }
 
-         .header_work_information {
+         .header_work_information_nav {
             display: flex;
             align-items: center;
             @include adaptiv-value('gap', 70, 30, 0);
 
-            .header_work_information_done {
+            .header_work_information_list {
                color: #111;
                font-family: 'DinPro-regular', sans-serif;
                font-size: 18px;
                font-style: normal;
                font-weight: 400;
                line-height: normal;
+               display: flex;
 
-               .header_work_information_reviews {
+               .header_work_information_link {
                   margin-right: 10px;
                }
 
-               .header_work_information_reviews:hover {
-                  color: #FF9846;
-               }
-
-               .header_work_information_shipping_payment {}
-
-               .header_work_information_shipping_payment:hover {
+               .header_work_information_link:hover {
                   color: #FF9846;
                }
             }
 
             @media (max-width:$laptop) {
-               .header_work_information_done {
+               .header_work_information_list {
                   display: none;
                }
             }
