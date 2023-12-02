@@ -213,7 +213,11 @@
                      .goods_item_detail {
                         .goods_item_name {}
 
-                        .goods_item_quantity {}
+                        .goods_item_quantity {
+                           span {
+                              padding-right: 5px;
+                           }
+                        }
 
                         .goods_item_buy {
                            .goods_item_buy_cena {}

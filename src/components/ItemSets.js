@@ -18,7 +18,7 @@ export default forwardRef(
                <NavLink to={`/set/${props.index}`}>
                   <h1 className="goods_item_name item_block_name">{props.goods.name}</h1>
                </NavLink>
-               <p className="goods_item_quantity item_block_quantity">{props.goods.quantity}</p>
+               <p className="goods_item_quantity item_block_quantity"><span>{props.goods.weight}</span>{props.goods.quantity}</p>
                <div className="goods_item_buy item_block_buy">
                   <p className="goods_item_buy_cena item_block_cena">{props.goods.cost}</p>
                   <div className="goods_item_buy_button item_block_button">

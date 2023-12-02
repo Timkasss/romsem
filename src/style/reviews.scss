@@ -2,6 +2,83 @@
 
 .reviews__container {
 
+   .model_reviews_wrapper {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 420px;
+      background-color: #FFFFFF;
+      border-radius: 20px;
+      font-family: 'DinPro-medium', sans-serif;
+      animation: 1s modelOpen;
+
+      h1 {
+         padding: 20px;
+         border-bottom: 2px solid #cfb3b3;
+         padding-bottom: 10px;
+      }
+
+      .model_reviews_form {
+         display: flex;
+         flex-direction: column;
+         padding: 20px;
+
+         label {
+            padding-top: 20px;
+         }
+
+         #name {
+            border: 2px solid #A4ACAD;
+            border-radius: 5px;
+            margin-top: 5px;
+            height: 40px;
+            font-family: 'DinPro-medium', sans-serif;
+            font-size: 20px;
+         }
+
+         #comment_text {
+            border: 2px solid #A4ACAD;
+            border-radius: 5px;
+            margin-top: 5px;
+            font-family: 'DinPro-medium', sans-serif;
+            font-size: 20px;
+         }
+
+         .model_reviews_button {
+            display: flex;
+            height: 40px;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 30px;
+
+            button {
+               width: 100%;
+               border-radius: 5px;
+            }
+
+            #cancel {}
+
+            #send {
+               background-color: #00a046;
+               color: #fff;
+            }
+         }
+      }
+   }
+
+   @keyframes modelOpen {
+      from {
+         transform: translate(50%, -100%);
+         width: 200px;
+      }
+
+      to {
+         transform: translate(-50%, -50%);
+         width: 600px;
+      }
+   }
 
    .reviews__content {
       background-color: #F2F2F2;
