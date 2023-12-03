@@ -82,4 +82,12 @@ export const goods = [
       quantity: '40 кусочков',
       cost: '1200 COM',
    },
+   {
+      id: 10,
+      img: set1,
+      name: 'Саломон сет',
+      weight: '1050 грамм',
+      quantity: '35 кусочков',
+      cost: '2100 COM',
+   },
 ]

@@ -9,7 +9,7 @@
          display: flex;
          border-bottom: solid 0.5px #A4ACAD;
          align-items: center;
-         justify-content: space-between;
+         //justify-content: space-between;
          @include adaptiv-value('padding-right', 40, 20, 0);
          padding-top: 5px;
          padding-bottom: 8px;
@@ -148,7 +148,9 @@
          .header_work_information_nav {
             display: flex;
             align-items: center;
-            @include adaptiv-value('gap', 70, 30, 0);
+            @include adaptiv-value('padding-right', 70, 30, 0);
+            flex: 1 1 auto;
+            justify-content: flex-end;
 
             .header_work_information_list {
                color: #111;
@@ -158,6 +160,7 @@
                font-weight: 400;
                line-height: normal;
                display: flex;
+
 
                .header_work_information_link {
                   margin-right: 10px;
@@ -173,21 +176,162 @@
                   display: none;
                }
             }
+         }
+
+         .search_active {
+            flex: 1 1 auto;
+            border-bottom: 2px solid #A4ACAD;
+            transition: all 0.8s ease-in-out;
+            width: 600px;
 
             .header_work_information_search {
-               .find {
-                  cursor: pointer;
+               position: relative;
+
+               #search_input {
+                  width: 100%;
+                  height: 50px;
+                  border-radius: 5px;
+                  padding-left: 15px;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
                }
+
+               #search_input[hidden] {
+                  display: inline-block;
+               }
+
+               #search_button {
+                  .find {
+                     position: absolute;
+                     right: 15px;
+                     top: 50%;
+                     transform: translateY(-50%);
+                  }
+               }
+
+
             }
          }
 
+         .body_background {
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            z-index: 8;
+            width: 100%;
+            height: 100%;
+         }
+
+         .header_work_information_search_wrapper {
+
+            background-color: #fff;
+
+            position: relative;
+            z-index: 12;
+
+            .result_search_wrapper {
+               max-height: 300px;
+               overflow: auto;
+               position: absolute;
+               z-index: 10;
+               background-color: #fff;
+               width: 100%;
+               border-bottom-left-radius: 10px;
+               border-bottom-right-radius: 10px;
+
+               .result_search {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 10px;
+
+                  .result_found {
+                     display: flex;
+                     height: 80px;
+                     justify-content: space-between;
+                     border-bottom: 1px solid #A4ACAD;
+
+                     .body_background {
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        background-color: transparent;
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+                     }
+
+                     .result_img {
+                        max-width: 130px;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                     }
+
+                     .result_found_content {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        flex: 1 1 auto;
+
+                        .result_found_name {
+                           color: #000;
+                           font-family: 'DinPro', sans-serif;
+                           @include adaptiv-value('font-size', 22, 18, 0);
+                           font-style: normal;
+                           line-height: none;
+                        }
+
+                        .result_found_weight {
+                           color: #A4ACAD;
+                           font-family: 'DinPro-light', sans-serif;
+                           @include adaptiv-value('font-size', 18, 16, 0);
+                           font-style: normal;
+                           font-weight: 300;
+                           line-height: normal;
+
+                           span {
+                              padding-right: 5px;
+                           }
+                        }
+
+                        .result_found_cost {
+                           color: #000;
+                           font-family: 'DinPro', sans-serif;
+                           @include adaptiv-value('font-size', 22, 18, 0);
+                           font-style: normal;
+                           line-height: normal;
+                        }
+                     }
+
+                     .buy {
+                        border-radius: 5px;
+                        background: #F46D40;
+                        color: #F2F2F2;
+                        text-align: center;
+                        font-family: "DinPro-medium", sans-serif;
+                        font-size: calc(18px + 6 * (100vw - 360px) / 1560);
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        padding: 0 30px 0 30px;
+                     }
+                  }
+
+                  .result_found:hover {
+                     background-color: #f8e0e0;
+                  }
+
+               }
+            }
 
 
+         }
       }
 
       @media (max-width: $tablet) {
          .header_content {
-            justify-content: none;
+            flex-wrap: wrap;
             column-gap: 30px;
             padding-right: 15px;
 
