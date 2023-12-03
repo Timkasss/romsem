@@ -12,36 +12,39 @@ import Order from './pages/Order';
 
 
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
+  useLocation,
 } from 'react-router-dom';
 
 
-
-
 function App() {
+  const location = useLocation();
+  const showOnlyOrder = location.pathname === '/order';
+
   return (
     <div className="wrapper">
-      <Router>
+      {showOnlyOrder ? (
+        <Order />
+      ) : (
+        <>
+          <Header />
+          <Menu />
+          <Basket />
+          <main className="main">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/goods" element={<Goods />} />
+              <Route path="/reviews" element={<Reviews />} />
+              <Route path="/set/:id" element={<ProductItem />} />
+            </Routes>
 
-        <Header />
-        <Menu />
-        <Basket />
-        <main className="main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/goods" element={<Goods />} />
-            <Route path="/reviews" element={<Reviews />} />
-            <Route path="/set/:id" element={<ProductItem />} />
-          </Routes>
-          {/* <Order /> */}
+          </main>
 
-        </main>
-
-        <Footer />
-
-      </Router>
+          <Footer />
+        </>
+      )
+      }
 
     </div>
   );

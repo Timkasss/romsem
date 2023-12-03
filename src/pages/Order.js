@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import BasketList from '../components/BasketList';
 import '../style/order.scss'
 
@@ -6,12 +7,14 @@ function Order() {
       <div className="order_wrapper">
          <div className="order">
             <div className="header_contact_phone">
-               <div className="header_navigation">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                     <circle cx="10" cy="10" r="10" fill="#FF9846" />
-                     <path d="M11.75 5.75L7.25 10.25L11.75 14.75" stroke="#F2F2F2" strokeLinecap="round" />
-                  </svg>
-                  Продовжити вибір</div>
+               <NavLink to={'/'}>
+                  <div className="header_navigation">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <circle cx="10" cy="10" r="10" fill="#FF9846" />
+                        <path d="M11.75 5.75L7.25 10.25L11.75 14.75" stroke="#F2F2F2" strokeLinecap="round" />
+                     </svg>
+                     Продовжити вибір</div>
+               </NavLink>
                <div className="header_contact_phone_inf">
                   <h1 className="header_contact_title">Us phone</h1>
                   <a href="tel: +996705188955">+996 705 188 955</a>
@@ -155,9 +158,9 @@ function Order() {
             <p id="offerta">
                Натискаючи на кнопку Оформити замовлення, Ви підтверджуєте свою згоду на обробку персональних даних відповідно до <a href="#">Публічної оферти</a>
             </p>
-         </div>
+         </div >
          <BasketList />
-      </div>
+      </div >
    )
 }
 

@@ -70,24 +70,7 @@
             white-space: nowrap;
          }
 
-         .item_block_button {
-
-            .item_button {
-               border-radius: 5px;
-               background: #F46D40;
-               color: #F2F2F2;
-               text-align: center;
-               font-family: 'DinPro-medium', sans-serif;
-               @include adaptiv-value('font-size', 24, 18, 0);
-               font-style: normal;
-               font-weight: 500;
-               line-height: normal;
-               padding-top: 5px;
-               padding-bottom: 5px;
-               @include adaptiv-value('padding-left', 42, 25, 0);
-               @include adaptiv-value('padding-right', 42, 25, 0);
-            }
-         }
+         .item_block_button {}
       }
    }
 

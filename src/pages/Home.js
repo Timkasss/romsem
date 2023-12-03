@@ -28,6 +28,7 @@ import AdaptMenu from '../components/AdaptMenu';
 
 import Swiper from 'swiper';
 import 'swiper/css';
+import Button from '../components/small-components/Button';
 
 function Home() {
    useEffect(() => {
@@ -112,7 +113,7 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <button className="slider_button" >Want!</button>
+                              <Button cls="slider_button" />
                            </div>
                         </article>
                         <article className="slider swiper-slide">
@@ -127,7 +128,7 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <button className="slider_button">Want!</button>
+                              <Button cls="slider_button" />
                            </div>
                         </article>
                         <article className="slider swiper-slide">
@@ -142,7 +143,7 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <button className="slider_button">Want!</button>
+                              <Button cls="slider_button" />
                            </div>
                         </article>
                      </div>

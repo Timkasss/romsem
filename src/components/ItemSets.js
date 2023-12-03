@@ -3,6 +3,7 @@ import { forwardRef } from 'react';
 
 import '../style/itemSets.scss';
 
+import Button from './small-components/Button';
 
 export default forwardRef(
 
@@ -22,7 +23,7 @@ export default forwardRef(
                <div className="goods_item_buy item_block_buy">
                   <p className="goods_item_buy_cena item_block_cena">{props.goods.cost}</p>
                   <div className="goods_item_buy_button item_block_button">
-                     <button className="goods_item_button item_button">Want!</button>
+                     <Button />
                   </div>
                </div>
             </div>

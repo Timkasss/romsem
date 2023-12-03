@@ -8,12 +8,11 @@
 
    .basket {
       border-radius: 5px;
-      background: #F2F2F2;
       min-height: 140px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      @include adaptiv-value(' max-width', 290, 200, 0);
+      @include adaptiv-value('max-width', 290, 200, 0);
 
       .basket_state {
          color: #000;
@@ -25,6 +24,8 @@
          line-height: normal;
          padding-top: 12px;
          padding-bottom: 10px;
+         background: #F2F2F2;
+         border-radius: 5px;
       }
 
       .basket_call {
@@ -36,10 +37,81 @@
          font-weight: 400;
          line-height: normal;
          padding-bottom: 25px;
+         background: #F2F2F2;
+      }
+
+      .basket_item_wrapper {
+         background-color: #fff;
+         padding-top: 10px;
+
+         .basket_item {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            padding-top: 10px;
+
+            .basket_item_img {
+               width: 70px;
+               height: 47px;
+               flex-shrink: 0;
+
+               img {
+                  max-width: 100%;
+               }
+            }
+
+            .basket_item_content {
+               overflow: hidden;
+               text-overflow: ellipsis;
+
+               .basket_item_content_name {
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  color: #000;
+                  font-family: 'DinPro-regular', sans-serif;
+                  font-size: 18px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: normal;
+               }
+
+               .basket_item_content_cena {
+                  display: flex;
+                  justify-content: space-between;
+
+                  .basket_item_content_count {
+                     display: flex;
+                     align-items: center;
+                     gap: 9px;
+
+                     span {
+                        color: #000;
+                        font-family: 'DinPro';
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                     }
+                  }
+
+                  .basket_item_content_suma {
+                     color: #000;
+                     text-align: right;
+                     font-family: 'DinPro';
+                     font-size: 18px;
+                     font-style: normal;
+                     font-weight: 700;
+                     line-height: normal;
+                  }
+               }
+            }
+         }
       }
 
       .basket_button_wrapper {
-         .busket_button {
+
+         .basket_button {
             color: #F2F2F2;
             font-family: 'DinPro-regular', sans-serif;
             font-size: 14px;
@@ -50,8 +122,40 @@
             background-color: #FF9846;
             border-radius: 0px 0px 5px 5px;
          }
+
+         .basket_button_end {
+            display: flex;
+            height: 100%;
+            padding-top: 20px;
+
+            .basket_cost_full {
+               flex: 1 0 40%;
+               color: #000;
+               text-align: center;
+               font-family: 'DinPro';
+               font-size: 24px;
+               font-style: normal;
+               font-weight: 700;
+               line-height: normal;
+            }
+
+            .basket_button_order {
+               flex: 1 0 60%;
+               color: #F2F2F2;
+               text-align: center;
+               font-family: 'DinPro-regular';
+               font-size: 18px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+               border-radius: 5px;
+               background: #F46D40;
+               height: 100%;
+            }
+         }
       }
    }
+
 
    .delivery {
       height: 225px;

@@ -1,0 +1,28 @@
+@import '../../style.scss';
+
+.slider_button {
+   background-color: #F46D40;
+   width: 300px;
+   height: 60px;
+   color: white;
+   font-size: 30px;
+   font-family: 'DinPro-medium', sans-serif;
+   //letter-spacing: 0.1em;
+   border-radius: 5px;
+}
+
+.item_button {
+   border-radius: 5px;
+   background: #F46D40;
+   color: #F2F2F2;
+   text-align: center;
+   font-family: 'DinPro-medium', sans-serif;
+   @include adaptiv-value('font-size', 24, 18, 0);
+   font-style: normal;
+   font-weight: 500;
+   line-height: normal;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   @include adaptiv-value('padding-left', 42, 25, 0);
+   @include adaptiv-value('padding-right', 42, 25, 0);
+}
