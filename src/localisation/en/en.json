@@ -1,0 +1,174 @@
+{
+   "order": {
+      "continue_selection": "Continue selection",
+      "us_phone": "US phone",
+      "working_hours": "Working hours: 10:00 AM to 12:00 AM",
+      "your_data": "Your data",
+      "cash_on_delivery": "Cash on delivery",
+      "card_payment": "Card payment",
+      "prepare_change_for": "Prepare change for",
+      "chopsticks_and_sauce_holder": "Chopsticks + regular sauce holder",
+      "courier_delivery": "Courier delivery",
+      "self_pickup": "Self pickup",
+      "immediate_delivery": "Immediate delivery",
+      "scheduled_delivery": "Scheduled delivery",
+      "place_order": "Place order",
+      "confirmation_message": "By clicking the Place Order button, you confirm your consent to the processing of personal data in accordance with the Public Offer.",
+      "public_offert": "Public offer",
+      "placeholder": {
+         "phone": "Phone",
+         "name": "Name",
+         "amount": "Amount",
+         "order_comment": "Order comment",
+         "enter_promo_code": "Enter promo code",
+         "street": "Street",
+         "house": "House",
+         "apartment": "Apartment",
+         "entrance": "Entrance",
+         "floor": "Floor",
+         "code": "Code",
+         "optional": "E-mail(Optional)"
+      }
+   },
+   "home": {
+      "Philadelphia_salmon": "Philadelphia salmon",
+      "gram": "gram",
+      "piece": "piece",
+      "Britain_salmon": "Britain salmon",
+      "Caucasus_salmon": "Caucasus salmon",
+      "soon": "soon",
+      "Chicken": "Chicken",
+      "With_eel": "With eel",
+      "Corn_dog": "Corn dog",
+      "Pizza": "Pizza",
+      "Action": "Action",
+      "New": "New",
+      "Popular": "Popular"
+   },
+   "sets": {
+      "sets": "Sets",
+      "sorting": "Sorting",
+      "default": "Default",
+      "title": "Title",
+      "cheaper_first": "Cheaper first",
+      "expensive_first": "Expensive first",
+      "pieces": "Number of pieces",
+      "weight": "Weight"
+   },
+   "reviews": {
+      "review": "Write review",
+      "name": "Name",
+      "comment": "Comment",
+      "cancel": "Cancel",
+      "send": "Send",
+      "reviews": "Reviews",
+      "add_review": "+ Add Review"
+   },
+   "infa": {
+      "order": "Ordering sushi in Bishkek",
+      "restaurant_info": "Restaurant 'Sushi and Noodles' offers its customers the most delicious sushi with home delivery. Prepared according to classic recipes adapted for the European audience and unique developments of our chefs. We value our customers' time, so you can order sushi for home or office delivery in Kharkiv.",
+      "menu_types": "More than 20 types of sushi in our menu:",
+      "classic_sushi": "Classics: with raw salmon, tuna, perch.",
+      "exotic_sushi": "Exotic: with tiger shrimp, giant scallop.",
+      "spicy_sushi": "Spicy: with smoked salmon, eel.",
+      "specialty_items": "Our menu also includes gunkans with a filling of red caviar and tobiko, as well as felixes where Japanese mayonnaise is combined with fish, seafood, and eel. Fans of spicy dishes can purchase sushi with spicy sauce. Popular fillings: smoked chicken, snow crab, shrimps, giant scallops, tuna, salmon, and perch.",
+      "details": "More details"
+   },
+   "menu": {
+      "pizza": "Pizza",
+      "sets": "Sets",
+      "wok": "WOK",
+      "rolls": "Rolls",
+      "sushi": "Sushi",
+      "salads": "Salads",
+      "soups": "Soups",
+      "cornDogs": "Corn Dogs",
+      "drinks": "Drinks",
+      "promotions": "Promotions"
+   },
+   "header": {
+      "usPhone": "Us phone",
+      "workingHours": "Working hours: 10:00 AM to 12:00 AM",
+      "city": "City",
+      "newYork": "New York",
+      "reviews": "Reviews",
+      "shippingPayment": "Shipping and payment"
+   },
+   "footer": {
+      "aboutCompany": "About company",
+      "shippingPayment": "Shipping and payment",
+      "materialFeed": "Material feed",
+      "returnPolicy": "Return policy",
+      "enterNumber": "Enter number",
+      "pickMessenger": "Pick a comfortable messenger for conversation"
+   },
+   "basket": {
+      "title": "Your basket is empty",
+      "untitle": "Basket",
+      "addPrompt": "Add something quickly!",
+      "freeShipping": "Free delivery for orders over 800 COM",
+      "checkout": "Place Order",
+      "enterAddress": "Provide Address",
+      "deliveryTime": "Find out delivery time"
+   },
+   "menuAdapt": {
+      "menu": "Menu",
+      "basket": "Basket",
+      "reviews": "Reviews"
+   },
+   "button": {
+      "button": "Want"
+   },
+   "goods": [
+      {
+         "name": "Salmon set",
+         "weight": "1050 grams",
+         "quantity": "35 pieces"
+      },
+      {
+         "name": "Set \"5 Philadelphias\"",
+         "weight": "250 grams",
+         "quantity": "45 pieces"
+      },
+      {
+         "name": "Philadelphia and salmon set",
+         "weight": "2050 grams",
+         "quantity": "25 pieces"
+      },
+      {
+         "name": "Set \"6 Philadelphias\"",
+         "weight": "1050 grams",
+         "quantity": "15 pieces"
+      },
+      {
+         "name": "Top set",
+         "weight": "3150 grams",
+         "quantity": "65 pieces"
+      },
+      {
+         "name": "Kamikaze set",
+         "weight": "850 grams",
+         "quantity": "75 pieces"
+      },
+      {
+         "name": "Set \"4 Philadelphias\"",
+         "weight": "650 grams",
+         "quantity": "15 pieces"
+      },
+      {
+         "name": "Philadelphia LOVE set",
+         "weight": "2150 grams",
+         "quantity": " 10 pieces"
+      },
+      {
+         "name": "Yakuza set",
+         "weight": "820 grams",
+         "quantity": "40 pieces"
+      },
+      {
+         "name": "Salmon set",
+         "weight": "1050 grams",
+         "quantity": "35 pieces"
+      }
+   ]
+}

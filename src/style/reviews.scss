@@ -1,13 +1,15 @@
 @import '../style.scss';
 
 .reviews__container {
+   -webkit-animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+   animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 
    .model_reviews_wrapper {
       position: absolute;
       left: 50%;
-      top: 50%;
+      top: 40%;
       transform: translate(-50%, -50%);
-      width: 600px;
+      width: 75vh;
       height: 420px;
       background-color: #FFFFFF;
       border-radius: 20px;
@@ -68,15 +70,22 @@
       }
    }
 
+   @media (max-width:$tablet) {
+      .model_reviews_wrapper {
+         top: 33%;
+         width: 50vh;
+      }
+   }
+
    @keyframes modelOpen {
       from {
-         transform: translate(50%, -100%);
-         width: 200px;
+         transform: translate(-50%, -65%);
+         opacity: 0;
       }
 
       to {
          transform: translate(-50%, -50%);
-         width: 600px;
+         opacity: 1;
       }
    }
 
@@ -166,5 +175,29 @@
             }
          }
       }
+   }
+}
+
+@-webkit-keyframes scale-up-hor-center {
+   0% {
+      -webkit-transform: scaleX(0.4);
+      transform: scaleX(0.4);
+   }
+
+   100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+   }
+}
+
+@keyframes scale-up-hor-center {
+   0% {
+      -webkit-transform: scaleX(0.4);
+      transform: scaleX(0.4);
+   }
+
+   100% {
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
    }
 }

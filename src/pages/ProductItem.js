@@ -1,7 +1,6 @@
 import '../style/productItem.scss'
 
 import OrderInf from '../components/OrderInf';
-import AdaptMenu from '../components/AdaptMenu';
 import { goods } from '../data/sets';
 
 import { useParams } from 'react-router-dom';
@@ -56,6 +55,14 @@ function ProductItem() {
       )
    }
 
+   const nextProduct = () => {
+      let result = id;
+      if (set.id < goods.length - 1) {
+         result++
+      }
+      return result;
+   }
+   let nextId = nextProduct()
    return (
       <div className="product_item_wrapper">
          <div className="product_item__container">
@@ -67,14 +74,14 @@ function ProductItem() {
                            <NavLink className='product_item_controls_link control_pre' to="/goods">Back</NavLink>
                         </li>
                         <li className='product_item_controls_item'>
-                           <NavLink className='product_item_controls_link control_next' to={`/set/${set.id}`}>Next</NavLink>
+                           <NavLink className='product_item_controls_link control_next' to={`/set/${nextId}`}>Next</NavLink>
                         </li>
                      </ul>
                   </nav>
                </header>
                <Product set={set} />
                <section className="product_slider_wrapper">
-                  <h3 className="product_slider_title">Рекомендуем к этому товару</h3>
+                  <h3 className="product_slider_title">Рекомендуємо до цього товару</h3>
                   <header className="product_slider_control_wrapper">
                      <nav className='product_slider_control'>
                         <ul className='product_slider_control_list'>
@@ -114,7 +121,6 @@ function ProductItem() {
                </div>
             </div>
          </div>
-         <AdaptMenu />
       </div>
    )
 }

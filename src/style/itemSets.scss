@@ -9,6 +9,8 @@
    flex-shrink: 0;
    max-width: 290px;
    justify-content: space-between;
+   -webkit-animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+   animation: flip-horizontal-top 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 
    .item_block_img {
       height: 48%;
@@ -75,4 +77,29 @@
    }
 
 
+}
+
+@-webkit-keyframes flip-horizontal-top {
+   0% {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+   }
+
+   100% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+   }
+}
+
+@keyframes flip-horizontal-top {
+   0% {
+      -webkit-transform: rotateX(180deg);
+      transform: rotateX(180deg);
+
+   }
+
+   100% {
+      -webkit-transform: rotateX(0);
+      transform: rotateX(0);
+   }
 }

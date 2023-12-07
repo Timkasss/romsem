@@ -1,7 +1,56 @@
+.basket_wrapper {
+   position: fixed;
+   bottom: 12%;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 55vh;
+   height: 70vh;
+   background-color: #fff;
+   border-radius: 10px;
+   outline: solid 2px #f0dbdb;
+   display: flex;
+   animation: open-model 1s;
+
+   .dev_bask_wrapper {
+      display: block;
+      flex: 1 1 auto;
+      padding-bottom: 50px;
+
+      .basket {
+         max-width: none;
+         height: 100%;
+
+
+         .basket_item_wrapper {
+            overflow: auto;
+
+            .basket_item {}
+         }
+      }
+
+      .basket_button_wrapper {
+
+         .basket_button_end {}
+      }
+
+   }
+}
+
+@keyframes open-model {
+   from {
+      bottom: -100%;
+   }
+
+   to {
+      bottom: 12%;
+   }
+}
+
 .adaptive_block_wrapper {
    position: fixed;
    bottom: 0;
    left: 0;
+   z-index: 2;
    background-color: #fff;
    display: none;
    width: 100%;

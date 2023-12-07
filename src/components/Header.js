@@ -8,24 +8,25 @@ import { NavLink } from 'react-router-dom';
 
 
 import { goods } from '../data/sets';
+import { useTranslation } from 'react-i18next';
+import SearchProduct from './SearchProduct';
 
 function Header() {
-
+   const { t, i18n } = useTranslation();
    const [searActive, setSearchActive] = useState(false);
 
    const [searchInput, setsearchInput] = useState('');
 
-
    function search() {
       if (searchInput && searchInput.trim() !== '') {
          let result = goods.filter(item => {
-            return item.name.toLowerCase().includes(searchInput.toLowerCase());
+            const itemName = i18n.language === 'ua' ? item.name : item.name_en;
+            return itemName.toLowerCase().includes(searchInput.toLowerCase());
          });
 
          return result;
       }
    }
-
    let sets = search();
 
    function searchActive(e) {
@@ -33,37 +34,54 @@ function Header() {
       setSearchActive(!searActive);
    }
 
+   function changeLangUA() {
+      i18n.changeLanguage('ua')
+      localStorage.setItem('lang', i18n.language)
+   }
+   function changeLangEN() {
+      i18n.changeLanguage('en')
+      localStorage.setItem('lang', i18n.language)
+   }
+
    return (
       <div className="header">
          <div className="header__container">
             <header className="header_content">
                <div className="tablet_logo">
-                  <img src={logoTablet} alt="logo" className="tablet_logo_img" />
+                  <NavLink to={'/'}>
+                     <img src={logoTablet} alt="logo" className="tablet_logo_img" />
+                  </NavLink>
+
                </div>
                <div className="header_content_contact_inf">
+
                   <address className="header_contact">
                      <div className="header_contact_phone">
-                        <h1 className="header_contact_title">Us phone</h1>
+                        <h1 className="header_contact_title">{t('header.usPhone')}</h1>
                         <a href="tel: +996705188955">+996 705 188 955</a>
                         <a href="tel: +996555188955">+996 555 188 955</a>
                      </div>
 
                      <div className="header_work_time_wrapper">
-                        <p className="header_work_time">работаем с 10:00 до 00:00</p>
+                        <p className="header_work_time">{t('header.workingHours')}</p>
                      </div>
                   </address>
                   <section className="header_content_contact_inf_city">
-                     <h1 className="header_city">City</h1>
-                     <p className="header_city_name">New York</p>
+                     <h1 className="header_city">{t('header.city')}</h1>
+                     <p className="header_city_name">{t('header.newYork')}</p>
+                     <button className='lang' onClick={changeLangUA}>ua</button>
+                     <button className='lang' onClick={changeLangEN}>en</button>
                   </section>
+
+
                </div>
                <nav className="header_work_information_nav">
                   <ul className="header_work_information_list">
                      <li className='header_work_information_item'>
-                        <NavLink to="/reviews" className="header_work_information_link">Reviews</NavLink>
+                        <NavLink to="/reviews" className="header_work_information_link">{t('header.reviews')}</NavLink>
                      </li>
                      <li className='header_work_information_item'>
-                        <a href="#" className="header_work_information_link">Shipping and payment</a>
+                        <a href="#" className="header_work_information_link">{t('header.shippingPayment')}</a>
                      </li>
                   </ul>
                </nav>
@@ -93,18 +111,21 @@ function Header() {
                      <div className='result_search'>
                         {(sets && searActive) &&
                            sets.map((item, index) => (
-                              <NavLink to={`/set/${index}`} className="search_hover">
-                                 <article className='result_found' key={item.id}>
+                              <SearchProduct item={item} index={index} key={item.id} />
 
-                                    <img className='result_img' src={item.img} alt="food" />
-                                    <div className="result_found_content">
-                                       <h1 className="result_found_name">{item.name}</h1>
-                                       <p className="result_found_weight"><span>{item.weight}</span>{item.quantity}</p>
-                                       <p className="result_found_cost">{item.cost}</p>
-                                    </div>
-                                    <button className='buy'>Want!</button>
-                                 </article>
-                              </NavLink>
+                              // <NavLink to={`/set/${index}`} className="search_hover">
+
+                              //     <article className='result_found'>
+
+                              //       <img className='result_img' src={item.img} alt="food" />
+                              //       <div className="result_found_content">
+                              //          <h1 className="result_found_name">{t(`goods.${index}.name`, { defaultValue: item.name })}</h1>
+                              //          <p className="result_found_weight"><span>{t(`goods.${index}.weight`, { defaultValue: item.weight })}</span>{t(`goods.${index}.quantity`, { defaultValue: item.quantity })}</p>
+                              //          <p className="result_found_cost">{item.cost}</p>
+                              //       </div>
+                              //       <button className='buy'>Want!</button>
+                              //    </article> 
+                              // </NavLink>
                            ))
                         }
                      </div>

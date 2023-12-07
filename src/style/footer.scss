@@ -17,6 +17,7 @@
 
             .footer_menu {
                border-right: solid 0.5px #A4ACAD;
+               height: 100%;
 
                .footer_menu_list {
                   .footer_menu_item {
@@ -44,10 +45,38 @@
             }
 
             @media (max-width:$laptop) {
-               .footer_menu {
+               .footer_menu_wrapper {
+                  background-color: #fff;
+                  position: fixed;
+                  bottom: 0;
+                  left: 35%;
+                  transform: translate(-35%, -45%);
+                  z-index: 1;
+                  padding: 20px;
+                  border-radius: 10px;
+                  animation: open-menu 1s;
                   display: none;
+
+                  .footer_menu {
+                     border: none;
+                  }
+               }
+
+               .f_menu_active {
+                  display: block;
+               }
+
+               @keyframes open-menu {
+                  from {
+                     transform: translate(-35%, 105%);
+                  }
+
+                  to {
+                     transform: translate(-35%, -45%);
+                  }
                }
             }
+
 
             .footer_feedback {
                border-right: solid 0.5px #A4ACAD;

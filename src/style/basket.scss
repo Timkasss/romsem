@@ -11,7 +11,6 @@
       min-height: 140px;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       @include adaptiv-value('max-width', 290, 200, 0);
 
       .basket_state {
@@ -38,11 +37,13 @@
          line-height: normal;
          padding-bottom: 25px;
          background: #F2F2F2;
+         padding-top: 10px;
       }
 
       .basket_item_wrapper {
          background-color: #fff;
          padding-top: 10px;
+
 
          .basket_item {
             text-overflow: ellipsis;
@@ -50,6 +51,7 @@
             white-space: nowrap;
             display: flex;
             padding-top: 10px;
+            gap: 10px;
 
             .basket_item_img {
                width: 70px;
@@ -64,6 +66,8 @@
             .basket_item_content {
                overflow: hidden;
                text-overflow: ellipsis;
+               width: 100%;
+               padding-right: 42px;
 
                .basket_item_content_name {
                   overflow: hidden;
@@ -79,6 +83,7 @@
                .basket_item_content_cena {
                   display: flex;
                   justify-content: space-between;
+                  gap: 30px;
 
                   .basket_item_content_count {
                      display: flex;
@@ -109,6 +114,54 @@
          }
       }
 
+      .basket_list_infa {
+         padding-top: 100%;
+
+         .basket_infa:last-child {
+            border-bottom: none;
+         }
+
+         .basket_infa {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: solid 0.5px #A4ACAD;
+            padding-bottom: 10px;
+            padding-top: 10px;
+
+            .basket_list_infa_count_name {
+               color: #000;
+               font-family: 'DinPro-medium', sans-serif;
+               font-size: 18px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: normal;
+
+            }
+
+            .basket_list_infa_count_meaning {
+               color: #000;
+               text-align: right;
+               font-family: 'DinPro-medium', sans-serif;
+               font-size: 18px;
+               font-style: normal;
+               font-weight: 500;
+               line-height: normal;
+            }
+
+            .col {
+               color: #FF9846;
+            }
+         }
+
+         .basket_list_infa_count {}
+
+         .basket_list_infa_sale {}
+
+         .basket_list_infa_delivery {}
+
+         .basket_list_infa_total {}
+      }
+
       .basket_button_wrapper {
 
          .basket_button {
@@ -118,15 +171,15 @@
             font-style: normal;
             font-weight: 400;
             width: 100%;
-            height: 40px;
             background-color: #FF9846;
             border-radius: 0px 0px 5px 5px;
+            height: 40px;
          }
 
          .basket_button_end {
             display: flex;
-            height: 100%;
             padding-top: 20px;
+            align-items: center;
 
             .basket_cost_full {
                flex: 1 0 40%;
@@ -150,7 +203,10 @@
                line-height: normal;
                border-radius: 5px;
                background: #F46D40;
-               height: 100%;
+               height: 40px;
+               display: flex;
+               align-items: center;
+               justify-content: center;
             }
          }
       }

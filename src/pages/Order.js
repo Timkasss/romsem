@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import BasketList from '../components/BasketList';
 import '../style/order.scss'
-
+import { useTranslation } from 'react-i18next';
+import Basket from '../components/Basket';
 function Order() {
+   const { t } = useTranslation();
    return (
       <div className="order_wrapper">
          <div className="order">
@@ -13,10 +14,10 @@ function Order() {
                         <circle cx="10" cy="10" r="10" fill="#FF9846" />
                         <path d="M11.75 5.75L7.25 10.25L11.75 14.75" stroke="#F2F2F2" strokeLinecap="round" />
                      </svg>
-                     Продовжити вибір</div>
+                     {t("order.continue_selection")}</div>
                </NavLink>
                <div className="header_contact_phone_inf">
-                  <h1 className="header_contact_title">Us phone</h1>
+                  <h1 className="header_contact_title"> {t("order.us_phone")}</h1>
                   <a href="tel: +996705188955">+996 705 188 955</a>
                   <a href="tel: +996555188955">+996 555 188 955</a>
                   <div className="header_work_time_wrapper">
@@ -38,16 +39,16 @@ function Order() {
                            </clipPath>
                         </defs>
                      </svg>
-                     <div className="header_work_time">работаем с 10:00 до 00:00</div>
+                     <div className="header_work_time">{t("order.working_hours")}</div>
                   </div>
                </div>
             </div>
             <form className="order-form">
-               <h2 id="name_form">Ваші дані</h2>
+               <h2 id="name_form">{t("order.your_data")}</h2>
                <div className="half_form_one">
                   <div className="form-group">
-                     <input type="tel" id="phone" name="phone" required placeholder='Телефон' />
-                     <input type="text" id="name" name="name" required placeholder="Ім'я" />
+                     <input type="tel" id="phone" name="phone" required placeholder={t("order.placeholder.phone")} />
+                     <input type="text" id="name" name="name" required placeholder={t("order.placeholder.name")} />
                   </div>
                   <div className="form-group">
                      <label htmlFor="cash">
@@ -64,7 +65,7 @@ function Order() {
                                  </clipPath>
                               </defs>
                            </svg>
-                           Наложка</button>
+                           {t("order.cash_on_delivery")}</button>
 
                      </label>
                      <label htmlFor="card">
@@ -84,20 +85,20 @@ function Order() {
                                  </clipPath>
                               </defs>
                            </svg>
-                           Карта</button>
+                           {t("order.card_payment")}</button>
 
                      </label>
                   </div>
                   <div className="form-group">
-                     <label htmlFor="amount">Підготувати здачу з</label>
-                     <input type="text" id="amount" name="amount" placeholder='Сума' />
+                     <label htmlFor="amount">{t("order.prepare_change_for")}</label>
+                     <input type="text" id="amount" name="amount" placeholder={t("order.placeholder.amount")} />
                   </div>
                   <div className="form-group">
-                     <textarea id="comment" name="comment" rows="1" placeholder='Коментар до замовлення'></textarea>
+                     <textarea id="comment" name="comment" rows="1" placeholder={t("order.placeholder.order_comment")}></textarea>
                   </div>
                   <div className="form-group_counter">
                      <div id='counter'>
-                        <h3>Палички + соусник звичайні</h3>
+                        <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
                            <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
                         </svg>
@@ -109,7 +110,7 @@ function Order() {
                         </svg>
                      </div>
                      <div id='counter2'>
-                        <h3>Палички + соусник звичайні</h3>
+                        <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
                            <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
                         </svg>
@@ -122,44 +123,44 @@ function Order() {
                      </div>
                   </div>
                   <div className="form-group">
-                     <input type="text" id="promo" name="promo" placeholder='Введіть промокод' />
+                     <input type="text" id="promo" name="promo" placeholder={t("order.placeholder.enter_promo_code")} />
                   </div>
                </div>
                <div className="half_form_two">
                   <div className="form-group">
-                     <button className="button_delivery color_button" name="delivery" >Кур`єром</button>
-                     <button className="button_delivery" name="delivery" >Самовивоз</button>
+                     <button className="button_delivery color_button" name="delivery" >{t("order.courier_delivery")}</button>
+                     <button className="button_delivery" name="delivery" >{t("order.self_pickup")}</button>
                   </div>
                   <div className="form-group place">
                      <div className="form-group_place_one">
-                        <input type="text" className="place" name="street" placeholder='Вулиця' />
-                        <input type="text" className="place" name="home" placeholder="Дом" />
+                        <input type="text" className="place" name="street" placeholder={t("order.placeholder.street")} />
+                        <input type="text" className="place" name="home" placeholder={t("order.placeholder.house")} />
                      </div>
                      <div className="form-group_place_two">
-                        <input type="number" className="place" name="flat" placeholder='Кв' />
-                        <input type="number" className="place" name="flat" placeholder="Під'їзд" />
-                        <input type="number" className="place" name="floor" placeholder='Поверх' />
-                        <input type="number" className="place" name="code" placeholder="Код" />
+                        <input type="number" className="place" name="flat" placeholder={t("order.placeholder.apartment")} />
+                        <input type="number" className="place" name="flat" placeholder={t("order.placeholder.entrance")} />
+                        <input type="number" className="place" name="floor" placeholder={t("order.placeholder.floor")} />
+                        <input type="number" className="place" name="code" placeholder={t("order.placeholder.code")} />
                      </div>
 
                   </div>
                   <div className="form-group">
-                     <button className="button_time color_button" name="time">На зараз</button>
-                     <button className="button_time" name="time" >На час</button>
+                     <button className="button_time color_button" name="time">{t("order.immediate_delivery")}</button>
+                     <button className="button_time" name="time" >{t("order.scheduled_delivery")}</button>
                   </div>
                   <div className="form-group">
-                     <input type="mail" id="email" name="email" placeholder="E-mail(необов'язково)" />
+                     <input type="mail" id="email" name="email" placeholder={t("order.placeholder.optional")} />
                   </div>
                </div>
 
-               <button type="submit" id="order">Оформити замовлення</button>
+               <button type="submit" id="order">{t("order.place_order")}</button>
 
             </form>
             <p id="offerta">
-               Натискаючи на кнопку Оформити замовлення, Ви підтверджуєте свою згоду на обробку персональних даних відповідно до <a href="#">Публічної оферти</a>
+               {t("order.confirmation_message")} <a href="#"> {t("order.public_offert")}</a>
             </p>
          </div >
-         <BasketList />
+         <Basket />
       </div >
    )
 }

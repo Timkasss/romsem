@@ -7,7 +7,7 @@ import yger from '../image/ygr.jpg';
 import corn from '../image/corn_dog.jpg';
 import action from '../image/sale.jpg';
 
-
+import { useTranslation } from 'react-i18next';
 
 import miniPizza from '../image/mobile_img/pizza.jpg';
 import miniSetu from '../image/mobile_img/setu.jpg';
@@ -24,13 +24,14 @@ import { Link } from 'react-router-dom';
 
 import Slider from '../components/Slider';
 import OrderInf from '../components/OrderInf';
-import AdaptMenu from '../components/AdaptMenu';
 
 import Swiper from 'swiper';
 import 'swiper/css';
 import Button from '../components/small-components/Button';
 
+
 function Home() {
+   const { t } = useTranslation();
    useEffect(() => {
       const swiper = new Swiper('.swiper', {
          loop: true,
@@ -103,8 +104,8 @@ function Home() {
                      <div className="sliders swiper-wrapper">
                         <article className="slider swiper-slide">
                            <div className="slider_name">
-                              <h1 className="slider_title">Філадельфія і лосось</h1>
-                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
+                              <h1 className="slider_title">{t("home.Philadelphia_salmon")}</h1>
+                              <p className="slider_untitle"><span>1260</span> {t("home.gram")} <span>36</span> {t("home.piece")}</p>
                            </div>
                            <div className="slider_cena_wrapper">
                               <p className="food_price">
@@ -118,8 +119,8 @@ function Home() {
                         </article>
                         <article className="slider swiper-slide">
                            <div className="slider_name">
-                              <h1 className="slider_title">Британія і лосось</h1>
-                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
+                              <h1 className="slider_title">{t("home.Britain_salmon")}</h1>
+                              <p className="slider_untitle"><span>1260</span> {t("home.gram")} <span>36</span> {t("home.piece")}</p>
                            </div>
                            <div className="slider_cena_wrapper">
                               <p className="food_price">
@@ -133,8 +134,8 @@ function Home() {
                         </article>
                         <article className="slider swiper-slide">
                            <div className="slider_name">
-                              <h1 className="slider_title">Кавказ і лосось</h1>
-                              <p className="slider_untitle"><span>1260</span> грамм <span>36</span> кусочек</p>
+                              <h1 className="slider_title">{t("home.Caucasus_salmon")}</h1>
+                              <p className="slider_untitle"><span>1260</span> {t("home.gram")} <span>36</span> {t("home.piece")}</p>
                            </div>
                            <div className="slider_cena_wrapper">
                               <p className="food_price">
@@ -160,58 +161,58 @@ function Home() {
                         <li className="menu_item">
                            <Link to={'/goods'} className="menu_item_link">
                               <img src={miniPizza} alt="background" />
-                              <h1 className="menu_item_name">Пицца</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.pizza")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniSetu} alt="background" />
-                              <h1 className="menu_item_name">Сеты</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.sets")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniWok} alt="background" />
-                              <h1 className="menu_item_name">WOK</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.wok")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniRolu} alt="background" />
-                              <h1 className="menu_item_name">Роллы</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.rolls")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniSywi} alt="background" />
-                              <h1 className="menu_item_name">Суши</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.sushi")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniSoup} alt="background" />
-                              <h1 className="menu_item_name">Супы</h1>
-                              <span className="menu_item_events item_events_active">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.soups")}</h1>
+                              <span className="menu_item_events item_events_active">{t("home.soon")}</span>
                            </Link>
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniSalade} alt="background" />
-                              <h1 className="menu_item_name">Салаты</h1>
-                              <span className="menu_item_events item_events_active">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.salads")}</h1>
+                              <span className="menu_item_events item_events_active">{t("home.soon")}</span>
                            </Link>
 
                         </li>
                         <li className="menu_item">
                            <Link to={'/goods'}>
                               <img src={miniDrink} alt="background" />
-                              <h1 className="menu_item_name">Напитки</h1>
-                              <span className="menu_item_events">скоро</span>
+                              <h1 className="menu_item_name">{t("menu.drinks")}</h1>
+                              <span className="menu_item_events">{t("home.soon")}</span>
                            </Link>
                         </li>
                      </ul>
@@ -220,33 +221,33 @@ function Home() {
                   <div className="main_food">
                      <article className="main_food_chiken main_food_pos">
                         <img src={chiken} alt="chiken" />
-                        <h1 className="main_food_name">Chiken</h1>
+                        <h1 className="main_food_name">{t("home.Chicken")}</h1>
                      </article>
                      <div className="main_food_pizza_min">
                         <article className="main_food_yger main_food_pos">
                            <img src={yger} alt="yger" />
-                           <h1 className="main_food_name">With eel</h1>
+                           <h1 className="main_food_name">{t("home.With_eel")}</h1>
                         </article>
                         <article className="main_food_corn main_food_pos">
                            <img src={corn} alt="corn" />
-                           <h1 className="main_food_name">Corn dog</h1>
+                           <h1 className="main_food_name">{t("home.Corn_dog")}</h1>
                         </article>
                      </div>
                      <article className="main_food_pizza main_food_pos">
                         <img src={pizza} alt="pizza" />
-                        <h1 className="main_food_name">Pizza</h1>
+                        <h1 className="main_food_name">{t("home.Pizza")}</h1>
                      </article>
                      <article className="main_food_action main_food_pos">
                         <img src={action} alt="action" />
-                        <h1 className="main_food_name">Action</h1>
+                        <h1 className="main_food_name">{t("home.Action")}</h1>
                      </article>
                   </div>
                   <div className="popular_new_food_wrapper">
                      <header className='popular_new_food_header'>
                         <nav className="popular_new_food">
                            <ul className="popular_new_food_switch">
-                              <li className="popular_new "><button className='swith_hov'>New</button></li>
-                              <li className="popular_popular "><button className='swith_hov'>Popular</button></li>
+                              <li className="popular_new "><button className='swith_hov'>{t("home.New")}</button></li>
+                              <li className="popular_popular "><button className='swith_hov'>{t("home.Popular")}</button></li>
                            </ul>
                         </nav>
                      </header>
@@ -256,7 +257,6 @@ function Home() {
                </div>
             </div>
          </div >
-         <AdaptMenu />
       </>
    );
 }

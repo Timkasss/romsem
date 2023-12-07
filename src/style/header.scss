@@ -136,6 +136,13 @@
                   font-weight: 400;
                   line-height: normal;
                }
+
+               .lang {
+                  background-color: #F46D40;
+                  margin-right: 10px;
+                  color: white;
+                  padding: 5px;
+               }
             }
 
             @media (max-width:$tablet) {

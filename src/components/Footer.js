@@ -1,5 +1,6 @@
 import '../style/footer.scss'
 import IMask from "imask"
+import { useTranslation } from 'react-i18next';
 
 function Footer() {
    function maksNumber() {
@@ -9,29 +10,33 @@ function Footer() {
       };
       const mask = IMask(element, maskOptions);
    }
+   const { t } = useTranslation();
    return (
       <div className="footer">
          <div className="footer__container">
             <div className="footer_content">
                <div className="footer__min_container">
-                  <nav className="footer_menu">
-                     <ul className="footer_menu_list">
-                        <li className="footer_menu_item">
-                           <a href="#" className="footer_menu_link">About company</a>
-                        </li>
-                        <li className="footer_menu_item">
-                           <a href="#" className="footer_menu_link">Shipping and payment</a>
-                        </li>
-                        <li className="footer_menu_item">
-                           <a href="#" className="footer_menu_link">Material feed</a>
-                        </li>
-                        <li className="footer_menu_item">
-                           <a href="#" className="footer_menu_link">Return policy</a>
-                        </li>
-                     </ul>
-                  </nav>
+                  <div className='footer_menu_wrapper'>
+                     <nav className="footer_menu">
+                        <ul className="footer_menu_list">
+                           <li className="footer_menu_item">
+                              <a href="#" className="footer_menu_link">{t('footer.aboutCompany')}</a>
+                           </li>
+                           <li className="footer_menu_item">
+                              <a href="#" className="footer_menu_link">{t('footer.shippingPayment')}</a>
+                           </li>
+                           <li className="footer_menu_item">
+                              <a href="#" className="footer_menu_link">{t('footer.materialFeed')}</a>
+                           </li>
+                           <li className="footer_menu_item">
+                              <a href="#" className="footer_menu_link">{t('footer.returnPolicy')}</a>
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+
                   <section className="footer_feedback">
-                     <h4 className="footer_feedback_title">Enter number</h4>
+                     <h4 className="footer_feedback_title">{t('footer.enterNumber')}</h4>
                      <input type="tel"
                         name="phone"
                         id="phone"
@@ -39,7 +44,7 @@ function Footer() {
                         onClick={maksNumber}
                      />
                      <p className="footer_pick_messenger_title">
-                        Pick a comfortable <br></br>messenger for conversation
+                        {t('footer.pickMessenger')}
                      </p>
                      <nav className="footer_list_messenger_nav">
                         <ul className="footer_list_messenger_list">

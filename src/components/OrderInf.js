@@ -1,37 +1,35 @@
 import { useState } from "react";
-
+import { useTranslation } from 'react-i18next';
 function OrderInf() {
 
    const [showText, setShowText] = useState(false);
    function showDetails() {
       setShowText(!showText);
    }
-
+   const { t } = useTranslation();
    return (
-      <section className="order_details">
-         <h1 className="order_details_title">Заказать суши в Бишкеке</h1>
-         <p className="order_details_text">Ресторан “Суши и Лапша” предлагаем своим клиентам самые вкусные суши с доставкой на дом, приготовленные по классическим и адаптированным к европейской аудитории рецептам, а также собственным наработкам наших поваров. Мы ценим время наших клиентов, поэтому вы можете заказать суши в Харькове с доставкой на дом или в офис.</p>
-         <p className="order_details_text"> В нашем меню более 20 видов суши: </p>
+      <section className={`order_details ${showText ? '' : 'details-shadow'}`}>
+         <h1 className="order_details_title">{t('infa.order')}</h1>
+         <p className="order_details_text">{t('infa.restaurant_info')}</p>
+         <p className="order_details_text"> {t('infa.menu_types')}</p>
          <ul className="order_details_text_list">
-            <li className="order_details_text_item">Классические с сырым лососем, тунцом, окунем.</li>
-            <li className="order_details_text_item">Экзотические с тигровой креветкой, морским гребешком.</li>
-            <li className="order_details_text_item">Пикантные с копченым лососем, угрем.</li>
+            <li className="order_details_text_item">{t('infa.classic_sushi')}</li>
+            <li className="order_details_text_item">{t('infa.exotic_sushi')}</li>
+            <li className="order_details_text_item">{t('infa.spicy_sushi')}</li>
          </ul>
-         <p className="order_details_text details-shadow"> В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
+         <p className="order_details_text">{t('infa.specialty_items')} </p>
          {showText && (
             <>
-               <p className="order_details_text"> В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
-               <p className="order_details_text"> В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
-               <p className="order_details_text"> В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
-               <p className="order_details_text"> В меню также представлены гунканы: с начинкой из красной икры и тобико, а также феликсы, где японский майонез сочетается с рыбой, морепродуктами, угрем. Любители острых блюд могут купить суши с соусом спайси. Популярные начинки — копченая курица, снежный краб, креветки, гребешки, тунец, лосось и окунь.</p>
+               <p className="order_details_text">{t('infa.specialty_items')}</p>
+               <p className="order_details_text">{t('infa.specialty_items')}</p>
+               <p className="order_details_text">{t('infa.specialty_items')}</p>
+               <p className="order_details_text">{t('infa.specialty_items')}</p>
             </>
          )
          }
          <div onClick={showDetails} className="order_details_button_wrapper">
-            <span className={showText ? 'order_details_button' : 'arrow_rotate'}>Подробнее</span>
+            <span className={showText ? 'order_details_button' : 'arrow_rotate'}>{t('infa.details')}</span>
          </div>
-
-
       </section>
    )
 }

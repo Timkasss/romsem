@@ -16,6 +16,7 @@ import {
   Route,
   useLocation,
 } from 'react-router-dom';
+import AdaptMenu from './components/AdaptMenu';
 
 
 function App() {
@@ -38,7 +39,7 @@ function App() {
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/set/:id" element={<ProductItem />} />
             </Routes>
-
+            <AdaptMenu />
           </main>
 
           <Footer />

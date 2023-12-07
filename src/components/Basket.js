@@ -1,93 +1,104 @@
 import { useState } from "react";
-import miniImg from '../image/fil.png';
 
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, useLocation } from 'react-router-dom';
+import { addbasket } from "../data/addbasket";
+import { useTranslation } from 'react-i18next';
 function Basket() {
+   const { t, i18n } = useTranslation();
 
+   const [basketItems, setBasketItems] = useState(addbasket);
 
-   const [basketItems, setBasketItems] = useState(false);
+   const allCount = basketItems.reduce((all, item) => all + parseFloat(item.cost), 0);
 
-
+   const orderLocation = useLocation();
+   const orderRender = orderLocation.pathname;
    return (
       <div className="dev_bask_wrapper">
          <section className="basket">
-            <h1 className="basket_state">{basketItems ? 'Ваша корзина пуста.' : 'Корзина'}</h1>
+            <h1 className="basket_state">{!basketItems ? t('basket.title') : t('basket.untitle')}</h1>
             {
-               basketItems ?
-                  <p className="basket_call">Добавьте же скорее что-нибудь!</p>
+               basketItems.length === 0 ?
+                  <p className="basket_call">{t('basket.addPrompt')}</p>
                   :
                   <div className="basket_item_wrapper">
-                     <article className="basket_item">
-                        <div className="basket_item_img">
-                           <img src={miniImg} alt="food" />
-                        </div>
-                        <section className="basket_item_content">
-                           <h2 className="basket_item_content_name">Самая большая Филадельфия Филадельфия</h2>
-                           <div className="basket_item_content_cena">
-                              <div className="basket_item_content_count">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
-                                    <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-                                 </svg>
-                                 <span>10</span>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
-                                    <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                    <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 </svg>
-                              </div>
-                              <div className="basket_item_content_suma">
-                                 170 COM
-                              </div>
-                           </div>
-                        </section>
-                     </article>
-                     <article className="basket_item">
-                        <div className="basket_item_img">
-                           <img src={miniImg} alt="food" />
-                        </div>
-                        <section className="basket_item_content">
-                           <h2 className="basket_item_content_name">Самая большая Филадельфия Филадельфия</h2>
-                           <div className="basket_item_content_cena">
-                              <div className="basket_item_content_count">
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
-                                    <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-                                 </svg>
-                                 <span>10</span>
-                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                    <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
-                                    <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                    <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                 </svg>
-                              </div>
-                              <div className="basket_item_content_suma">
-                                 170 COM
-                              </div>
-                           </div>
-                        </section>
-                     </article>
+                     {
+                        basketItems.map((item) => {
+                           return (
+                              <article className="basket_item" key={item.id}>
+
+                                 <div className="basket_item_img">
+                                    <img src={item.img} alt="food" />
+                                 </div>
+                                 <section className="basket_item_content">
+                                    <h2 className="basket_item_content_name">{i18n.language === 'ua' ? item.name : item.name_en}</h2>
+                                    <div className="basket_item_content_cena">
+                                       <div className="basket_item_content_count">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                             <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
+                                          </svg>
+                                          <span>{item.count}</span>
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                             <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
+                                             <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                                             <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                                          </svg>
+                                       </div>
+                                       <div className="basket_item_content_suma">
+                                          {item.cost}
+                                       </div>
+                                    </div>
+                                 </section>
+                              </article>
+                           )
+                        })
+                     }
                   </div>
+            }
+            {
+               orderRender === '/order' ?
+                  <div className="basket_list_infa">
+                     <div className="basket_list_infa_count basket_infa">
+                        <h1 className="basket_list_infa_count_name">1 товар</h1>
+                        <h1 className="basket_list_infa_count_meaning">170 СОМ</h1>
+                     </div>
+                     <div className="basket_list_infa_sale basket_infa">
+                        <h1 className="basket_list_infa_count_name">Скидка</h1>
+                        <h1 className="basket_list_infa_count_meaning">0 СОМ</h1>
+                     </div>
+                     <div className="basket_list_infa_delivery basket_infa">
+                        <h1 className="basket_list_infa_count_name">Доставка</h1>
+                        <h1 className="basket_list_infa_count_meaning">Бесплатно</h1>
+                     </div>
+                     <div className="basket_list_infa_total basket_infa">
+                        <h1 className="basket_list_infa_count_name col">Итого</h1>
+                        <h1 className="basket_list_infa_count_meaning col">{allCount} СОМ</h1>
+                     </div>
+                  </div>
+                  : <></>
+
             }
 
             <div className="basket_button_wrapper">
                {
-                  basketItems ?
+                  basketItems.length === 0 ?
                      <button className="basket_button">
-                        Бесплатная доставка от 800 СОМ
+                        {t('basket.freeShipping')}
                      </button>
                      :
-                     <div className="basket_button_end">
-                        <p className="basket_cost_full">170 COM</p>
-                        <NavLink to={'/order'} className="basket_button_order">Оформить заказ</NavLink>
-                     </div>
+                     orderRender !== '/order' ?
+                        <div className="basket_button_end">
+                           <p className="basket_cost_full">{allCount}COM</p>
+                           <NavLink to={'/order'} className="basket_button_order">{t('basket.checkout')}</NavLink>
+                        </div>
+                        : <></>
                }
 
             </div>
          </section>
          {
-            basketItems && <section className="delivery">
-               <h1 className="delivery_address">Укажите адрес</h1>
-               <p className="delivery_time">И узнайте время доставки</p>
+            basketItems.length === 0 && <section className="delivery">
+               <h1 className="delivery_address">{t('basket.enterAddress')}</h1>
+               <p className="delivery_time">{t('basket.deliveryTime')}</p>
                <iframe
                   title="Google Maps"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3017.606907400295!2d-73.9289123!3d40.8585535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2f404615e1ead%3A0x6b83a5cd474c2e30!2zNjQgSGlsbHNpZGUgQXZlLCBOZXcgWW9yaywgTlkgMTAwNDAsINCh0KjQkA!5e0!3m2!1sru!2sua!4v1700072101333!5m2!1sru!2sua"

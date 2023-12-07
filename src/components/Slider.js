@@ -48,9 +48,10 @@ function Slider() {
 
    // }
 
+
+
    const [slide, setSlide] = useState(0);
    const clickRef = useRef(null)
-
    function nextSlide() {
       flushSync(() => {
          if (slide < goods.length - 1) {
@@ -84,7 +85,7 @@ function Slider() {
    }
    return (
       <div className="slider_food_wrapper">
-         <div className="slider_food">
+         <div className="slider_food ">
             <div className="slider_food_items">
                {
                   goods.map((item, index) => {
