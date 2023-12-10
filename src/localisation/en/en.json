@@ -109,7 +109,12 @@
       "freeShipping": "Free delivery for orders over 800 COM",
       "checkout": "Place Order",
       "enterAddress": "Provide Address",
-      "deliveryTime": "Find out delivery time"
+      "deliveryTime": "Find out delivery time",
+      "item": "item",
+      "discount": "Discount",
+      "shipping": "Shipping",
+      "free": "Free",
+      "total": "Total"
    },
    "menuAdapt": {
       "menu": "Menu",

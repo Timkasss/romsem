@@ -9,7 +9,7 @@
 
       .slider_food_items {
          display: flex;
-         gap: 40px;
+         @include adaptiv-value('gap', 40, 10, 0);
          transform: translate3d(0px, 0px, 0px);
          transition: all 0.5s ease-in-out;
       }
@@ -25,6 +25,14 @@
             user-select: none;
          }
 
+         .slider_controller_pre:hover {
+            svg {
+               ellipse {
+                  fill: #FF9846;
+               }
+            }
+         }
+
          .slider_controller_next {
             position: absolute;
             top: 50%;
@@ -32,6 +40,14 @@
             right: -110px;
             cursor: pointer;
             user-select: none;
+         }
+
+         .slider_controller_next:hover {
+            svg {
+               ellipse {
+                  fill: #FF9846;
+               }
+            }
          }
       }
    }

@@ -1,8 +1,13 @@
 import { NavLink } from 'react-router-dom';
-import '../style/adaptMenu.scss'
-import Basket from './Basket';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
+import Basket from './Basket';
+
+
+import '../style/adaptMenu.scss'
+
+
 
 function AdaptMenu() {
 

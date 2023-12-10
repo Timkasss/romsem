@@ -1,9 +1,16 @@
 import { NavLink } from 'react-router-dom';
-import '../style/order.scss'
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
+
 import Basket from '../components/Basket';
+
+import '../style/order.scss'
+
 function Order() {
    const { t } = useTranslation();
+
+   const [couter, setCounter] = useState(1);
+   const [couter2, setCounter2] = useState(1);
    return (
       <div className="order_wrapper">
          <div className="order">
@@ -45,14 +52,13 @@ function Order() {
             </div>
             <form className="order-form">
                <h2 id="name_form">{t("order.your_data")}</h2>
-               <div className="half_form_one">
+               <div className="half_form half_form_one">
                   <div className="form-group">
                      <input type="tel" id="phone" name="phone" required placeholder={t("order.placeholder.phone")} />
                      <input type="text" id="name" name="name" required placeholder={t("order.placeholder.name")} />
                   </div>
                   <div className="form-group">
                      <label htmlFor="cash">
-
                         <button id="cash" className="color_button" name="payment" value="cash">
                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
                               <g clipPath="url(#clip0_25_471)">
@@ -69,7 +75,6 @@ function Order() {
 
                      </label>
                      <label htmlFor="card">
-
                         <button id="card" name="payment" value="card">
                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22" fill="none">
                               <g clipPath="url(#clip0_24_1854)">
@@ -97,36 +102,45 @@ function Order() {
                      <textarea id="comment" name="comment" rows="1" placeholder={t("order.placeholder.order_comment")}></textarea>
                   </div>
                   <div className="form-group_counter">
-                     <div id='counter'>
+                     <div id='counter' >
                         <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
-                           <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                        <span>10</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                           <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
-                           <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                           <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
+                        <button className='counter' onClick={() => setCounter(couter > 1 ? couter - 1 : 1)}>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                              <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
+                           </svg>
+                        </button>
+                        <span>{couter}</span>
+                        <button className='counter' onClick={() => setCounter(couter + 1)}>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
+                              <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                              <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                           </svg>
+                        </button>
+
                      </div>
-                     <div id='counter2'>
+                     <div id='counter2' >
                         <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
-                           <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
-                        <span>10</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                           <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
-                           <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                           <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                        </svg>
+                        <button className='counter' onClick={() => setCounter2(couter2 > 1 ? couter2 - 1 : 1)}>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                              <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
+                           </svg>
+                        </button>
+                        <span>{couter2}</span>
+                        <button className='counter' onClick={() => setCounter2(couter2 + 1)}>
+                           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                              <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
+                              <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                              <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                           </svg>
+                        </button>
                      </div>
                   </div>
                   <div className="form-group">
                      <input type="text" id="promo" name="promo" placeholder={t("order.placeholder.enter_promo_code")} />
                   </div>
                </div>
-               <div className="half_form_two">
+               <div className="half_form half_form_two">
                   <div className="form-group">
                      <button className="button_delivery color_button" name="delivery" >{t("order.courier_delivery")}</button>
                      <button className="button_delivery" name="delivery" >{t("order.self_pickup")}</button>

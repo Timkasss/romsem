@@ -1,15 +1,17 @@
 import { useState } from 'react';
-
-import '../style/header.scss'
-
-import logoTablet from '../image/logo_tablet.png';
-
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
+import SearchProduct from './SearchProduct';
 
 import { goods } from '../data/sets';
-import { useTranslation } from 'react-i18next';
-import SearchProduct from './SearchProduct';
+
+import '../style/header.scss'
+import logoTablet from '../image/logo_tablet.png';
+
+
+
+
 
 function Header() {
    const { t, i18n } = useTranslation();
@@ -69,12 +71,13 @@ function Header() {
                   <section className="header_content_contact_inf_city">
                      <h1 className="header_city">{t('header.city')}</h1>
                      <p className="header_city_name">{t('header.newYork')}</p>
-                     <button className='lang' onClick={changeLangUA}>ua</button>
-                     <button className='lang' onClick={changeLangEN}>en</button>
                   </section>
-
-
+                  <div className="languages">
+                     <button className='lang ua' onClick={changeLangUA}>ua</button>
+                     <button className='lang en' onClick={changeLangEN}>en</button>
+                  </div>
                </div>
+
                <nav className="header_work_information_nav">
                   <ul className="header_work_information_list">
                      <li className='header_work_information_item'>

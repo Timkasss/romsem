@@ -1,31 +1,78 @@
-import { useState } from "react";
-
+import { useEffect, useContext } from "react";
 import { NavLink, useLocation } from 'react-router-dom';
-import { addbasket } from "../data/addbasket";
 import { useTranslation } from 'react-i18next';
+
+import { ProductContext } from './context';
 function Basket() {
+   const { arrBasket, setArrBasket } = useContext(ProductContext)
    const { t, i18n } = useTranslation();
 
-   const [basketItems, setBasketItems] = useState(addbasket);
 
-   const allCount = basketItems.reduce((all, item) => all + parseFloat(item.cost), 0);
+   useEffect(() => {
+      const store = localStorage.getItem('store');
+      if (store) {
+         setArrBasket(JSON.parse(store))
+      }
+   }, [setArrBasket])
+
+   useEffect(() => {
+      if (arrBasket.length > 0) {
+         localStorage.setItem('store', JSON.stringify([...arrBasket]));
+      }
+      return () => localStorage.removeItem("store");
+
+   }, [arrBasket]);
+
+   const decreaseCount = itemId => {
+      setArrBasket(prevArr => {
+         return prevArr.map(item => {
+            if (item.id === itemId && item.count > 1) {
+               return { ...item, count: item.count - 1 };
+            }
+            return item;
+         });
+      });
+   };
+
+   const increaseCount = itemId => {
+      setArrBasket(prevArr => {
+         return prevArr.map(item => {
+            if (item.id === itemId) {
+               return { ...item, count: item.count + 1 };
+            }
+            return item;
+         });
+      });
+   };
+   const allCount = arrBasket.reduce((all, item) => all + parseFloat(item.cost), 0);
+   let discount = 200;
+   let allSuma = allCount - discount;
 
    const orderLocation = useLocation();
    const orderRender = orderLocation.pathname;
+
+
+   const amountProduct = arrBasket.length;
+
+   function closeProduct(item) {
+      const filteredBasket = arrBasket.filter(product => product.id !== item.id);
+      setArrBasket(filteredBasket);
+   }
+
    return (
+
       <div className="dev_bask_wrapper">
          <section className="basket">
-            <h1 className="basket_state">{!basketItems ? t('basket.title') : t('basket.untitle')}</h1>
+            <h1 className="basket_state">{!arrBasket ? t('basket.title') : t('basket.untitle')}</h1>
             {
-               basketItems.length === 0 ?
+               arrBasket.length === 0 ?
                   <p className="basket_call">{t('basket.addPrompt')}</p>
                   :
                   <div className="basket_item_wrapper">
                      {
-                        basketItems.map((item) => {
+                        arrBasket.map((item) => {
                            return (
                               <article className="basket_item" key={item.id}>
-
                                  <div className="basket_item_img">
                                     <img src={item.img} alt="food" />
                                  </div>
@@ -33,20 +80,25 @@ function Basket() {
                                     <h2 className="basket_item_content_name">{i18n.language === 'ua' ? item.name : item.name_en}</h2>
                                     <div className="basket_item_content_cena">
                                        <div className="basket_item_content_count">
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
-                                             <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
-                                          </svg>
+                                          <button className="product_counter_but" onClick={() => decreaseCount(item.id)}>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
+                                                <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
+                                             </svg>
+                                          </button>
                                           <span>{item.count}</span>
-                                          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                             <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
-                                             <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                             <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
-                                          </svg>
+                                          <button className="product_counter_but" onClick={() => increaseCount(item.id)}>
+                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
+                                                <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                                                <path d="M5.54004 9.77698L15.6623 9.77698" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
+                                             </svg>
+                                          </button>
                                        </div>
                                        <div className="basket_item_content_suma">
                                           {item.cost}
                                        </div>
                                     </div>
+                                    <div className="close" onClick={() => closeProduct(item)}>⨯</div>
                                  </section>
                               </article>
                            )
@@ -58,20 +110,20 @@ function Basket() {
                orderRender === '/order' ?
                   <div className="basket_list_infa">
                      <div className="basket_list_infa_count basket_infa">
-                        <h1 className="basket_list_infa_count_name">1 товар</h1>
-                        <h1 className="basket_list_infa_count_meaning">170 СОМ</h1>
+                        <h1 className="basket_list_infa_count_name"><span>{amountProduct}</span> {t('basket.item')}</h1>
+                        <h1 className="basket_list_infa_count_meaning">{allCount} СОМ</h1>
                      </div>
                      <div className="basket_list_infa_sale basket_infa">
-                        <h1 className="basket_list_infa_count_name">Скидка</h1>
-                        <h1 className="basket_list_infa_count_meaning">0 СОМ</h1>
+                        <h1 className="basket_list_infa_count_name">{t('basket.discount')}</h1>
+                        <h1 className="basket_list_infa_count_meaning"><span>{discount}</span> СОМ</h1>
                      </div>
                      <div className="basket_list_infa_delivery basket_infa">
-                        <h1 className="basket_list_infa_count_name">Доставка</h1>
-                        <h1 className="basket_list_infa_count_meaning">Бесплатно</h1>
+                        <h1 className="basket_list_infa_count_name">{t('basket.shipping')}</h1>
+                        <h1 className="basket_list_infa_count_meaning">{t('basket.free')}</h1>
                      </div>
                      <div className="basket_list_infa_total basket_infa">
-                        <h1 className="basket_list_infa_count_name col">Итого</h1>
-                        <h1 className="basket_list_infa_count_meaning col">{allCount} СОМ</h1>
+                        <h1 className="basket_list_infa_count_name col">{t('basket.total')}</h1>
+                        <h1 className="basket_list_infa_count_meaning col">{allSuma} СОМ</h1>
                      </div>
                   </div>
                   : <></>
@@ -80,7 +132,7 @@ function Basket() {
 
             <div className="basket_button_wrapper">
                {
-                  basketItems.length === 0 ?
+                  arrBasket.length === 0 ?
                      <button className="basket_button">
                         {t('basket.freeShipping')}
                      </button>
@@ -96,7 +148,7 @@ function Basket() {
             </div>
          </section>
          {
-            basketItems.length === 0 && <section className="delivery">
+            arrBasket.length === 0 && <section className="delivery">
                <h1 className="delivery_address">{t('basket.enterAddress')}</h1>
                <p className="delivery_time">{t('basket.deliveryTime')}</p>
                <iframe
@@ -126,6 +178,7 @@ function Basket() {
          }
 
       </div>
+
 
    )
 }

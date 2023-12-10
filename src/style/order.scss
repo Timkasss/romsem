@@ -2,23 +2,70 @@
 
 .order_wrapper {
    display: flex;
-
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
 
    .order {
       background: #F2F2F2;
       width: 100%;
       height: 100%;
 
+      .half_form {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+
+         input {
+            height: 40px;
+            background: #FFF;
+            border-radius: 5px;
+            padding-left: 10px;
+            width: 100%;
+            color: #A4ACAD;
+            font-family: 'DinPro-regular', sans-serif;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+         }
+
+         button {
+            height: 40px;
+            background: #FFF;
+            border-radius: 5px;
+            color: #111;
+            font-family: 'DinPro-regular', sans-serif;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+         }
+
+         textarea {
+            height: 40px;
+            padding-left: 10px;
+            width: 100%;
+            border-radius: 5px;
+
+         }
+
+         textarea::placeholder {}
+      }
 
       .header_contact_phone {
          display: flex;
          border-bottom: solid 0.5px #A4ACAD;
          padding-bottom: 5px;
+         align-items: center;
+         padding-left: 100px;
 
          .header_navigation {
             display: flex;
             align-items: center;
             gap: 10px;
+
          }
 
          .header_contact_phone_inf {
@@ -76,11 +123,12 @@
          border-radius: 8px;
          display: grid;
          grid-template-areas:
-            'name .'
-            'one two'
-            'button button';
+            '. name . .'
+            '. one two .'
+            '. button button .';
          gap: 20px;
-         grid-template-columns: 1fr 1fr;
+         grid-template-columns: repeat(4, 1fr);
+         padding-top: 55px;
 
          #order {
             color: #FFF;
@@ -91,6 +139,7 @@
             line-height: normal;
             border-radius: 5px;
             background: #F46D40;
+            height: 40px;
          }
 
 
@@ -102,21 +151,12 @@
 
          .half_form_one {
             grid-area: one;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
 
             .form-group {
                display: flex;
 
                #cash,
                #card {
-                  font-family: 'DinPro-regular', sans-serif;
-                  font-size: 18px;
-                  font-style: normal;
-                  font-weight: 400;
-                  line-height: normal;
-                  height: 40px;
                   display: flex;
                   align-items: center;
                   justify-content: center;
@@ -125,16 +165,14 @@
                }
 
                #cash {
-                  color: #FFF;
                   border-radius: 5px 0px 0px 5px;
                   background: #FF9846;
+                  color: #FFF;
                   width: 100%;
                }
 
                #card {
-                  color: #111;
                   border-radius: 0px 5px 5px 0px;
-                  background: #FFF;
                }
             }
 
@@ -142,6 +180,12 @@
                display: flex;
                flex-direction: column;
                gap: 10px;
+
+               .counter {
+                  background: transparent;
+                  display: flex;
+                  align-items: center;
+               }
 
                h3 {
                   flex: 1 1 auto;
@@ -151,6 +195,9 @@
                   display: flex;
                   align-items: center;
                   gap: 9px;
+
+
+
                }
 
                #counter2 {
@@ -167,30 +214,27 @@
 
          .half_form_two {
             grid-area: two;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
 
             .form-group {
 
                .button_delivery {
                   width: 50%;
-                  color: #111;
+
                }
 
                .button_time {
                   width: 50%;
-                  color: #111;
+
                }
 
                .color_button {
                   border-radius: 5px 0px 0px 5px;
                   background: #FF9846;
+                  color: #FFF;
                }
 
                #email {
                   width: 100%;
-                  height: 40px;
                }
             }
 
@@ -200,15 +244,11 @@
 
                .form-group_place_one {
                   display: flex;
-                  height: 40px;
-                  gap: 30px;
                   margin-bottom: 20px;
                }
 
                .form-group_place_two {
                   display: flex;
-
-                  height: 40px;
                   gap: 15px;
 
                   .place {
@@ -225,27 +265,17 @@
          label {
             display: flex;
             align-items: center;
-            margin-bottom: 5px;
             width: 100%;
          }
 
          input[type="text"],
          input[type="tel"],
          textarea {
-            width: 100%;
-            padding: 8px;
-            border-radius: 5px;
             border: 1px solid #ccc;
-            height: 40px;
          }
 
          button {
-            padding: 10px 20px;
-            background: #FFF;
-            color: #fff;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
             transition: background-color 0.3s ease;
             grid-area: button;
 

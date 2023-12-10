@@ -17,6 +17,7 @@
          .aside_menu_item {
             display: flex;
             gap: 20px;
+            position: relative;
 
             .aside_menu_link {
                color: #000;
@@ -26,6 +27,32 @@
                font-weight: 400;
                line-height: normal;
                padding-left: 50px;
+
+            }
+
+            .aside_menu_link_events {
+               position: absolute;
+               top: -10px;
+               right: 11px;
+               display: none;
+               align-items: center;
+               justify-content: center;
+               color: #FFF;
+               font-family: 'DinPro-regular', sans-serif;
+               font-size: 11px;
+               font-style: normal;
+               font-weight: 400;
+               line-height: normal;
+               text-transform: uppercase;
+               width: 50px;
+               height: 15px;
+               flex-shrink: 0;
+               border-radius: 10px;
+               background-color: #EB5757;
+            }
+
+            .events_active {
+               display: flex;
             }
 
             .mIcon_1,

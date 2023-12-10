@@ -1,17 +1,19 @@
-import '../style/productItem.scss'
-
-import OrderInf from '../components/OrderInf';
-import { goods } from '../data/sets';
-
-import { useParams } from 'react-router-dom';
-import AdditiveSet from '../components/AdditiveSet';
-import { additives } from '../data/additives';
-
-import { NavLink } from 'react-router-dom';
-
 import { useState, useRef } from 'react';
 import { flushSync } from 'react-dom';
+import { useParams } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+import OrderInf from '../components/OrderInf';
+import AdditiveSet from '../components/AdditiveSet';
 import Product from '../components/Product';
+
+
+import '../style/productItem.scss';
+
+import { goods } from '../data/sets';
+import { additives } from '../data/additives';
+
+
 
 function ProductItem() {
 

@@ -1,12 +1,12 @@
 import { useState } from 'react';
-
-import '../style/goods.scss';
-
-import { goods } from '../data/sets';
+import { useTranslation } from 'react-i18next';
 
 import OrderInf from '../components/OrderInf';
 import ItemSets from '../components/ItemSets';
-import { useTranslation } from 'react-i18next';
+
+import '../style/goods.scss';
+import { goods } from '../data/sets';
+
 
 function Goods() {
    const [filterOpen, setFilterOpen] = useState(false);

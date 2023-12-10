@@ -10,6 +10,7 @@ import ProductItem from './pages/ProductItem';
 import Reviews from './components/Reviews';
 import Order from './pages/Order';
 
+import { useState } from 'react';
 
 import {
   Routes,
@@ -18,36 +19,39 @@ import {
 } from 'react-router-dom';
 import AdaptMenu from './components/AdaptMenu';
 
-
+import { ProductContext } from './components/context';
 function App() {
   const location = useLocation();
   const showOnlyOrder = location.pathname === '/order';
 
+  const [arrBasket, setArrBasket] = useState([])
   return (
-    <div className="wrapper">
-      {showOnlyOrder ? (
-        <Order />
-      ) : (
-        <>
-          <Header />
-          <Menu />
-          <Basket />
-          <main className="main">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/goods" element={<Goods />} />
-              <Route path="/reviews" element={<Reviews />} />
-              <Route path="/set/:id" element={<ProductItem />} />
-            </Routes>
-            <AdaptMenu />
-          </main>
+    <ProductContext.Provider value={{ arrBasket, setArrBasket }}>
+      <div className="wrapper">
+        {showOnlyOrder ? (
+          <Order />
+        ) : (
+          <>
+            <Header />
+            <Menu />
+            <Basket />
+            <main className="main">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/goods" element={<Goods />} />
+                <Route path="/reviews" element={<Reviews />} />
+                <Route path="/set/:id" element={<ProductItem />} />
+              </Routes>
+              <AdaptMenu />
+            </main>
 
-          <Footer />
-        </>
-      )
-      }
+            <Footer />
+          </>
+        )
+        }
 
-    </div>
+      </div>
+    </ProductContext.Provider >
   );
 }
 

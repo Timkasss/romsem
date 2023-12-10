@@ -1,6 +1,7 @@
+import { useTranslation } from 'react-i18next';
+
 import '../style/footer.scss'
 import IMask from "imask"
-import { useTranslation } from 'react-i18next';
 
 function Footer() {
    function maksNumber() {

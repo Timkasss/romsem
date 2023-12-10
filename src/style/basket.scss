@@ -68,6 +68,15 @@
                text-overflow: ellipsis;
                width: 100%;
                padding-right: 42px;
+               position: relative;
+
+               .close {
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  cursor: pointer;
+                  user-select: none;
+               }
 
                .basket_item_content_name {
                   overflow: hidden;
@@ -87,8 +96,13 @@
 
                   .basket_item_content_count {
                      display: flex;
-                     align-items: center;
                      gap: 9px;
+
+                     .product_counter_but {
+                        background: transparent;
+                        display: flex;
+                        align-items: center;
+                     }
 
                      span {
                         color: #000;
@@ -153,13 +167,6 @@
             }
          }
 
-         .basket_list_infa_count {}
-
-         .basket_list_infa_sale {}
-
-         .basket_list_infa_delivery {}
-
-         .basket_list_infa_total {}
       }
 
       .basket_button_wrapper {

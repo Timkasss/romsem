@@ -1,3 +1,11 @@
+import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+
+import Slider from '../components/home-components/Slider';
+import OrderInf from '../components/OrderInf';
+//import Button from '../components/small-components/Button';
+
 import '../style/main.scss';
 import '../style/basket.scss';
 
@@ -6,9 +14,6 @@ import pizza from '../image/pizza.jpg';
 import yger from '../image/ygr.jpg';
 import corn from '../image/corn_dog.jpg';
 import action from '../image/sale.jpg';
-
-import { useTranslation } from 'react-i18next';
-
 import miniPizza from '../image/mobile_img/pizza.jpg';
 import miniSetu from '../image/mobile_img/setu.jpg';
 import miniWok from '../image/mobile_img/wok.jpg';
@@ -18,16 +23,8 @@ import miniSoup from '../image/mobile_img/soup.jpg';
 import miniSalade from '../image/mobile_img/salade.jpg';
 import miniDrink from '../image/mobile_img/drink.jpg';
 
-
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-
-import Slider from '../components/Slider';
-import OrderInf from '../components/OrderInf';
-
 import Swiper from 'swiper';
 import 'swiper/css';
-import Button from '../components/small-components/Button';
 
 
 function Home() {
@@ -40,60 +37,6 @@ function Home() {
          slideToClickedSlide: true,
       });
    }, []);
-
-   // useEffect(() => {
-   //    slider()
-   // });
-   // function slider() {
-
-   //    let isDragging = false;
-   //    let startPosition = 0;
-   //    let currentTranslate = 0;
-
-   //    const slider = document.querySelector('.sliders');
-   //    const slide = document.querySelectorAll('.slider');
-   //    function mouseClick(event) {
-   //       isDragging = true;
-   //       startPosition = event.clientX - slider.offsetLeft;
-   //       currentTranslate = currentTranslate || 0;
-   //       slider.style.cursor = 'grabbing';
-   //    }
-   //    function mouseMove(event) {
-   //       if (!isDragging) return;
-
-   //       let currentPosition = (event.clientX - slider.offsetLeft) - startPosition + currentTranslate;
-
-   //       if (currentPosition <= 0) {
-   //          slider.style.transform = `translate3d(${currentPosition}px, 0px,0px)`;
-   //       }
-   //       let end = (slide.length - 1) * slide[0].offsetWidth;
-   //       if (Math.abs(currentPosition) >= end) {
-   //          slider.style.transform = `translate3d(${-end}px, 0px,0px)`;
-   //       }
-
-   //    }
-
-
-   //    slider.addEventListener('mousedown', mouseClick);
-
-   //    slider.addEventListener('mousemove', mouseMove);
-
-   //    slider.addEventListener('mouseup', (event) => {
-   //       isDragging = false;
-   //       slider.style.cursor = 'grab';
-   //       currentTranslate += event.clientX - slider.offsetLeft - startPosition;
-   //    });
-
-   //    slider.addEventListener('mouseleave', (event) => {
-   //       isDragging = false;
-   //       slider.style.cursor = 'grab';
-   //       currentTranslate += event.clientX - slider.offsetLeft - startPosition;
-   //    });
-   //    slider.ondragstart = function () {
-   //       return false;
-   //    }
-
-   // }
 
    return (
       <>
@@ -114,7 +57,8 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <Button cls="slider_button" />
+                              <button className="slider_button">{t("button.button")}</button>
+                              {/* <Button cls={slider_button}/> */}
                            </div>
                         </article>
                         <article className="slider swiper-slide">
@@ -129,7 +73,7 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <Button cls="slider_button" />
+                              <button className="slider_button">{t("button.button")}</button>
                            </div>
                         </article>
                         <article className="slider swiper-slide">
@@ -144,7 +88,7 @@ function Home() {
                               </p>
                            </div>
                            <div className="slider_button_wrapper">
-                              <Button cls="slider_button" />
+                              <button className="slider_button">{t("button.button")}</button>
                            </div>
                         </article>
                      </div>
@@ -219,28 +163,39 @@ function Home() {
                   </nav>
 
                   <div className="main_food">
-                     <article className="main_food_chiken main_food_pos">
-                        <img src={chiken} alt="chiken" />
-                        <h1 className="main_food_name">{t("home.Chicken")}</h1>
-                     </article>
+                     <a href="#">
+                        <article className="main_food_chiken main_food_pos">
+                           <img src={chiken} alt="chiken" />
+                           <h1 className="main_food_name">{t("home.Chicken")}</h1>
+                        </article>
+                     </a>
+
                      <div className="main_food_pizza_min">
-                        <article className="main_food_yger main_food_pos">
-                           <img src={yger} alt="yger" />
-                           <h1 className="main_food_name">{t("home.With_eel")}</h1>
-                        </article>
-                        <article className="main_food_corn main_food_pos">
-                           <img src={corn} alt="corn" />
-                           <h1 className="main_food_name">{t("home.Corn_dog")}</h1>
-                        </article>
+                        <a href="#">
+                           <article className="main_food_yger main_food_pos">
+                              <img src={yger} alt="yger" />
+                              <h1 className="main_food_name">{t("home.With_eel")}</h1>
+                           </article>
+                        </a>
+                        <a href="#">
+                           <article className="main_food_corn main_food_pos">
+                              <img src={corn} alt="corn" />
+                              <h1 className="main_food_name">{t("home.Corn_dog")}</h1>
+                           </article>
+                        </a>
                      </div>
-                     <article className="main_food_pizza main_food_pos">
-                        <img src={pizza} alt="pizza" />
-                        <h1 className="main_food_name">{t("home.Pizza")}</h1>
-                     </article>
-                     <article className="main_food_action main_food_pos">
-                        <img src={action} alt="action" />
-                        <h1 className="main_food_name">{t("home.Action")}</h1>
-                     </article>
+                     <a href="#">
+                        <article className="main_food_pizza main_food_pos">
+                           <img src={pizza} alt="pizza" />
+                           <h1 className="main_food_name">{t("home.Pizza")}</h1>
+                        </article>
+                     </a>
+                     <a href="#">
+                        <article className="main_food_action main_food_pos">
+                           <img src={action} alt="action" />
+                           <h1 className="main_food_name">{t("home.Action")}</h1>
+                        </article>
+                     </a>
                   </div>
                   <div className="popular_new_food_wrapper">
                      <header className='popular_new_food_header'>

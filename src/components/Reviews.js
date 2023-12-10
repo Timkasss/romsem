@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+
 import '../style/reviews.scss';
 
 import { reviews } from '../data/reviews';

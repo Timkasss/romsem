@@ -63,6 +63,10 @@
                      color: #FF9846;
                      @include adaptiv-value('font-size', 18, 12, 0);
                   }
+
+                  a:hover {
+                     text-decoration: underline;
+                  }
                }
 
 
@@ -119,6 +123,7 @@
             .header_content_contact_inf_city {
                padding-left: 18px;
 
+
                .header_city {
                   color: #A4ACAD;
                   font-family: 'DinPro-light', sans-serif;
@@ -150,7 +155,39 @@
                   display: none;
                }
             }
+
+            .languages {
+               display: flex;
+               flex-direction: column;
+               padding-left: 10px;
+               gap: 10px;
+
+               .lang {
+                  border-radius: 5px;
+                  background-repeat: no-repeat;
+                  background-size: 100% 100%;
+                  width: 25px;
+                  height: 25px;
+                  color: white;
+               }
+
+               .ua {
+                  background-image: url('../image/ua.png');
+               }
+
+               .en {
+                  background-image: url('../image/en.png');
+               }
+            }
+
+            @media (max-width:$tablet) {
+               .languages {}
+            }
+
+
+
          }
+
 
          .header_work_information_nav {
             display: flex;
