@@ -15,7 +15,7 @@ function Order() {
       <div className="order_wrapper">
          <div className="order">
             <div className="header_contact_phone">
-               <NavLink to={'/'}>
+               <NavLink to={'/romsem'}>
                   <div className="header_navigation">
                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                         <circle cx="10" cy="10" r="10" fill="#FF9846" />
