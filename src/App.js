@@ -38,7 +38,7 @@ function App() {
             <Basket />
             <main className="main">
               <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/romsem" element={<Home />} />
                 <Route path="/goods" element={<Goods />} />
                 <Route path="/reviews" element={<Reviews />} />
                 <Route path="/set/:id" element={<ProductItem />} />

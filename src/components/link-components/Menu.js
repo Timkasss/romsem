@@ -17,7 +17,7 @@ function Menu() {
    return (
       <div className="aside_menu_wrapper">
          <header className="aside_logo">
-            <NavLink to="/">
+            <NavLink to="/romsem">
                <img src={AsLogo} alt="logo" />
             </NavLink>
 
