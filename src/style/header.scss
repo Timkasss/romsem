@@ -321,7 +321,7 @@
                         .result_found_name {
                            color: #000;
                            font-family: 'DinPro', sans-serif;
-                           @include adaptiv-value('font-size', 22, 18, 0);
+                           @include adaptiv-value('font-size', 22, 17, 0);
                            font-style: normal;
                            line-height: none;
                         }
@@ -329,7 +329,7 @@
                         .result_found_weight {
                            color: #A4ACAD;
                            font-family: 'DinPro-light', sans-serif;
-                           @include adaptiv-value('font-size', 18, 16, 0);
+                           @include adaptiv-value('font-size', 18, 14, 0);
                            font-style: normal;
                            font-weight: 300;
                            line-height: normal;
@@ -342,7 +342,7 @@
                         .result_found_cost {
                            color: #000;
                            font-family: 'DinPro', sans-serif;
-                           @include adaptiv-value('font-size', 22, 18, 0);
+                           @include adaptiv-value('font-size', 22, 16, 0);
                            font-style: normal;
                            line-height: normal;
                         }
@@ -362,11 +362,14 @@
                      }
                   }
 
+
                   .result_found:hover {
                      background-color: #f8e0e0;
                   }
 
                }
+
+
             }
 
 

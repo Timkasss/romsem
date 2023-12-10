@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom'
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 
-import '../style/menu.scss'
-import AsLogo from '../image/logo.png'
+import '../../style/menu.scss'
+import AsLogo from '../../image/logo.png'
 
 
 function Menu() {

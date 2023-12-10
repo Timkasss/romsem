@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import OrderInf from '../components/OrderInf';
-import ItemSets from '../components/ItemSets';
+import ItemSets from '../components/small-components/ItemSets';
 
 import '../style/goods.scss';
 import { goods } from '../data/sets';

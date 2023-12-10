@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-import ItemSets from "../ItemSets";
+import ItemSets from "../small-components/ItemSets";
 
 import '../../style/slider.scss'
 import { goods } from '../../data/sets';

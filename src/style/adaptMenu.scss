@@ -36,6 +36,12 @@
    }
 }
 
+@media (max-width: 550px) {
+   .basket_wrapper {
+      width: 48vh;
+   }
+}
+
 @keyframes open-model {
    from {
       bottom: -100%;

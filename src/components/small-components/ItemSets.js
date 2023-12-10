@@ -4,13 +4,13 @@ import { useTranslation } from 'react-i18next';
 
 
 
-import Button from './small-components/Button';
+import Button from './Button';
 
-import { goods } from '../data/sets';
+import { goods } from '../../data/sets';
 
-import '../style/itemSets.scss';
+import '../../style/itemSets.scss';
 
-import { ProductContext } from './context';
+import { ProductContext } from '../context';
 export default forwardRef(
 
    function ItemSets(props, ref) {

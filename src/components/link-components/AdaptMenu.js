@@ -2,10 +2,10 @@ import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Basket from './Basket';
+import Basket from '../Basket';
 
 
-import '../style/adaptMenu.scss'
+import '../../style/adaptMenu.scss'
 
 
 
