@@ -13,14 +13,15 @@ const resources = {
    }
 };
 
-
+const defaultLanguage = 'ua';
 const localStoreLanuage = localStorage.getItem('lang');
+const defaultlang = localStoreLanuage || defaultLanguage;
 
 i18n
    .use(initReactI18next)
    .init({
       resources,
-      lng: localStoreLanuage,
+      lng: defaultlang,
 
       interpolation: {
          escapeValue: false
