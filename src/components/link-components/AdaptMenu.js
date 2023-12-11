@@ -13,6 +13,7 @@ function AdaptMenu() {
 
    const [modelBasket, setModelBasket] = useState(false);
 
+
    function openModelBaslet() {
       setModelBasket(!modelBasket)
    }
@@ -30,7 +31,7 @@ function AdaptMenu() {
                <Basket />
             </div>
          }
-         <nav className='adaptive_block_wrapper'>
+         <nav className='adaptive_block_wrapper' >
             <ul className="adaptive_block">
                <li className="adaptive_block_menu adapt_item">
                   <a onClick={openMenu} className='adaptive_block_menu_link style_text'>{t('menuAdapt.menu')}</a>

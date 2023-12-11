@@ -1,13 +1,19 @@
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import Basket from '../components/Basket';
+import AdaptMenu from '../components/link-components/AdaptMenu'
 
 import '../style/order.scss'
 
 function Order() {
    const { t } = useTranslation();
+
+   const orderLocation = useLocation();
+   const basketActive = orderLocation.pathname;
+
 
    const [couter, setCounter] = useState(1);
    const [couter2, setCounter2] = useState(1);
@@ -174,7 +180,11 @@ function Order() {
                {t("order.confirmation_message")} <a href="#"> {t("order.public_offert")}</a>
             </p>
          </div >
-         <Basket />
+         {
+            basketActive === '/order' ?
+               <Basket order={basketActive} /> :
+               <></>
+         }
       </div >
    )
 }

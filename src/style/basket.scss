@@ -51,7 +51,8 @@
             white-space: nowrap;
             display: flex;
             padding-top: 10px;
-            gap: 10px;
+            @include adaptiv-value('gap', 10, 2, 0);
+
 
             .basket_item_img {
                width: 70px;
@@ -92,16 +93,19 @@
                .basket_item_content_cena {
                   display: flex;
                   justify-content: space-between;
-                  gap: 30px;
+                  @include adaptiv-value('gap', 30, 5, 0);
+
 
                   .basket_item_content_count {
                      display: flex;
-                     gap: 9px;
+                     @include adaptiv-value('gap', 9, 4, 0);
+
 
                      .product_counter_but {
                         background: transparent;
                         display: flex;
                         align-items: center;
+
                      }
 
                      span {
@@ -122,6 +126,7 @@
                      font-style: normal;
                      font-weight: 700;
                      line-height: normal;
+
                   }
                }
             }
@@ -192,11 +197,13 @@
                flex: 1 0 40%;
                color: #000;
                text-align: center;
-               font-family: 'DinPro';
-               font-size: 24px;
+               font-family: 'DinPro', sans-serif;
+               @include adaptiv-value('font-size', 24, 18, 0);
                font-style: normal;
                font-weight: 700;
                line-height: normal;
+               white-space: nowrap;
+               padding-right: 5px;
             }
 
             .basket_button_order {
@@ -280,8 +287,21 @@
 @media (max-width:$laptop) {
    .dev_bask_wrapper {
       display: none;
+
+   }
+
+   .active_bask {
+      display: block;
+
+   }
+
+   @media (max-width:425px) {
+      .active_bask {
+         display: none;
+      }
    }
 }
+
 
 @media (max-width:$laptop) {
    .dev_bask_wrapper {

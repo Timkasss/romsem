@@ -3,9 +3,8 @@
 .order_wrapper {
    display: flex;
    position: absolute;
-   left: 0;
-   top: 0;
    height: 100%;
+   width: 100%;
 
    .order {
       background: #F2F2F2;
@@ -59,7 +58,8 @@
          border-bottom: solid 0.5px #A4ACAD;
          padding-bottom: 5px;
          align-items: center;
-         padding-left: 100px;
+         @include adaptiv-value('padding-left', 100, 10, 0);
+
 
          .header_navigation {
             display: flex;
@@ -123,11 +123,11 @@
          border-radius: 8px;
          display: grid;
          grid-template-areas:
-            '. name . .'
-            '. one two .'
-            '. button button .';
+            '. name . '
+            '. one two '
+            '. button button ';
          gap: 20px;
-         grid-template-columns: repeat(4, 1fr);
+         grid-template-columns: 18% 32% 32% 18%;
          padding-top: 55px;
 
          #order {
@@ -285,6 +285,40 @@
             background-color: #2980b9;
          }
 
+      }
+
+      @media (max-width:$laptop) {
+         .order-form {
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: grid;
+            grid-template-areas:
+               ' name . '
+               ' one two '
+               ' button button ';
+            gap: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            padding-top: 55px;
+         }
+      }
+
+      @media (max-width:$tablet) {
+         .order-form {
+            padding: 2px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            display: grid;
+            grid-template-areas:
+               'name'
+               'one '
+               'two'
+               'button';
+            gap: 20px;
+            grid-template-columns: 1fr;
+            padding-top: 55px;
+            background: #F2F2F2;
+         }
       }
 
 

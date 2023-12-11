@@ -35,7 +35,6 @@ function Footer() {
                         </ul>
                      </nav>
                   </div>
-
                   <section className="footer_feedback">
                      <h4 className="footer_feedback_title">{t('footer.enterNumber')}</h4>
                      <input type="tel"

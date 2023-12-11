@@ -73,10 +73,6 @@ body {
 }
 
 .wrapper {
-   // display: flex;
-   // flex-direction: column;
-   // overflow: clip;
-   // min-height: 100%;
    display: grid;
    grid-template-areas:
       'menu header basket'

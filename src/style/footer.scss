@@ -56,14 +56,14 @@
                   border-radius: 10px;
                   animation: open-menu 1s;
                   display: none;
-
-                  .footer_menu {
-                     border: none;
-                  }
                }
 
                .f_menu_active {
                   display: block;
+               }
+
+               .footer_menu {
+                  border-right: none;
                }
 
                @keyframes open-menu {
@@ -76,7 +76,6 @@
                   }
                }
             }
-
 
             .footer_feedback {
                border-right: solid 0.5px #A4ACAD;
@@ -155,11 +154,13 @@
                .footer_feedback {
                   padding-left: 0;
                   border-right: solid 0px #A4ACAD;
+
+                  .footer_list_messenger_nav {
+                     display: flex;
+                     justify-content: center;
+                  }
                }
 
-               .footer_menu {
-                  border-right: solid 0px #A4ACAD;
-               }
             }
 
             .footer_address {

@@ -3,7 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { ProductContext } from './context';
-function Basket() {
+function Basket({ order }) {
    const { arrBasket, setArrBasket } = useContext(ProductContext)
    const { t, i18n } = useTranslation();
 
@@ -61,7 +61,7 @@ function Basket() {
 
    return (
 
-      <div className="dev_bask_wrapper">
+      <div className={`dev_bask_wrapper ${order ? 'active_bask' : ''}`} >
          <section className="basket">
             <h1 className="basket_state">{!arrBasket ? t('basket.title') : t('basket.untitle')}</h1>
             {
@@ -139,7 +139,7 @@ function Basket() {
                      :
                      orderRender !== '/order' ?
                         <div className="basket_button_end">
-                           <p className="basket_cost_full">{allCount}COM</p>
+                           <p className="basket_cost_full">{allCount} COM</p>
                            <NavLink to={'/order'} className="basket_button_order">{t('basket.checkout')}</NavLink>
                         </div>
                         : <></>
@@ -177,7 +177,7 @@ function Basket() {
             </section>
          }
 
-      </div>
+      </div >
 
 
    )
