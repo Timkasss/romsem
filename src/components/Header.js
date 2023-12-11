@@ -50,7 +50,7 @@ function Header() {
          <div className="header__container">
             <header className="header_content">
                <div className="tablet_logo">
-                  <NavLink to={'/'}>
+                  <NavLink to={'/romsem'}>
                      <img src={logoTablet} alt="logo" className="tablet_logo_img" />
                   </NavLink>
 

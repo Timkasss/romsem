@@ -273,10 +273,26 @@
          order: 2;
       }
    }
+
+
 }
 
 @media (max-width:$laptop) {
    .dev_bask_wrapper {
       display: none;
    }
+}
+
+@media (max-width:$laptop) {
+   .dev_bask_wrapper {
+      position: relative;
+
+      .delivery {
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         max-width: none;
+      }
+   }
+
 }
