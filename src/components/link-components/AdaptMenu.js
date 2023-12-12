@@ -1,10 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Basket from '../Basket';
 
-
+import { ProductContext } from '../context';
 import '../../style/adaptMenu.scss'
 
 
@@ -12,7 +12,9 @@ import '../../style/adaptMenu.scss'
 function AdaptMenu() {
 
    const [modelBasket, setModelBasket] = useState(false);
+   const { arrBasket, setArrBasket } = useContext(ProductContext)
 
+   const basketCount = arrBasket.length;
 
    function openModelBaslet() {
       setModelBasket(!modelBasket)
@@ -37,6 +39,7 @@ function AdaptMenu() {
                   <a onClick={openMenu} className='adaptive_block_menu_link style_text'>{t('menuAdapt.menu')}</a>
                </li>
                <li className="adaptive_block_basket adapt_item">
+                  <span id='count-basket'>{basketCount}</span>
                   <a onClick={openModelBaslet} className='adaptive_block_basket_link style_text'>{t('menuAdapt.basket')}</a>
                </li>
                <li className="adaptive_block_reviews adapt_item">

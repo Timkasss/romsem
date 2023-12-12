@@ -7,7 +7,7 @@ import '../style/additiveSet.scss';
 export default forwardRef(
    function AdditiveSet(props, ref) {
       return (
-         <article className="product_slide" ref={ref}>
+         <article className="product_slide swiper-slide" ref={ref}>
             <h3 className="product_slide_name">{props.additives.name}</h3>
             <div className="product_slide_img">
                <img src={props.additives.image} alt="food" />

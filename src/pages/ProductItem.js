@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { flushSync } from 'react-dom';
 import { useParams } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
@@ -13,7 +13,8 @@ import '../style/productItem.scss';
 import { goods } from '../data/sets';
 import { additives } from '../data/additives';
 
-
+import Swiper from 'swiper';
+import 'swiper/css';
 
 function ProductItem() {
 
@@ -65,6 +66,29 @@ function ProductItem() {
       return result;
    }
    let nextId = nextProduct()
+
+   //Знаю, вийшов колхоз зі слайдером у верстці
+   useEffect(() => {
+      const swiper = new Swiper('.swiper', {
+         slidesPerView: 3,
+         simulateTouch: true,
+         grabCursor: true,
+         slideToClickedSlide: true,
+         breakpoints: {
+            320: {
+               slidesPerView: 2,
+            },
+            528: {
+               slidesPerView: 2,
+            },
+            928: {
+               slidesPerView: 3,
+            },
+         },
+      });
+   }, []);
+
+
    return (
       <div className="product_item_wrapper">
          <div className="product_item__container">
@@ -106,8 +130,8 @@ function ProductItem() {
                         </ul>
                      </nav>
                   </header>
-                  <div className="product_slider">
-                     <div className="product_sliders">
+                  <div className="product_slider swiper">
+                     <div className="product_sliders swiper-wrapper">
                         {
                            additives.map((additive, index) => {
                               return (

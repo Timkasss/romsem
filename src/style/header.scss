@@ -215,10 +215,12 @@
                }
             }
 
-            @media (max-width:$laptop) {
-               .header_work_information_list {
-                  display: none;
-               }
+
+         }
+
+         @media (max-width:$laptop) {
+            .header_work_information_nav {
+               display: none;
             }
          }
 
@@ -227,6 +229,7 @@
             border-bottom: 2px solid #A4ACAD;
             transition: all 0.8s ease-in-out;
             width: 600px;
+            margin-left: 10px;
 
             .header_work_information_search {
                position: relative;
@@ -268,9 +271,7 @@
          }
 
          .header_work_information_search_wrapper {
-
             background-color: #fff;
-
             position: relative;
             z-index: 12;
 
@@ -376,12 +377,21 @@
          }
       }
 
+      @media (max-width: $laptop) {
+         .header_content {
+
+            .header_content_contact_inf {
+               flex: 1 1 auto;
+               padding-right: 10px;
+            }
+         }
+      }
+
       @media (max-width: $tablet) {
          .header_content {
             flex-wrap: wrap;
-            column-gap: 30px;
+            @include adaptiv-value('column-gap', 30, 10, 0);
             padding-right: 15px;
-
          }
       }
    }

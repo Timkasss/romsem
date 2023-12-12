@@ -68,6 +68,29 @@
       align-items: flex-end;
       gap: 40px;
 
+      .adaptive_block_basket {
+         position: relative;
+
+         #count-basket {
+            position: absolute;
+            right: -40%;
+            top: -170%;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #e71717;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DinPro-regular', sans-serif;
+            font-size: 16px;
+         }
+      }
+
+
+
+
       .adapt_item {
          padding-bottom: 9px;
 

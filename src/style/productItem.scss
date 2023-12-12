@@ -262,7 +262,7 @@
 
                .product_sliders {
                   display: flex;
-                  @include adaptiv-value('gap', 130, 30, 0);
+                  //@include adaptiv-value('gap', 130, 30, 0);
                   transform: translate3d(0px, 0, 0);
 
                }

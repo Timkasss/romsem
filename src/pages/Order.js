@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import Basket from '../components/Basket';
-import AdaptMenu from '../components/link-components/AdaptMenu'
 
 import '../style/order.scss'
 
@@ -110,13 +109,23 @@ function Order() {
                   <div className="form-group_counter">
                      <div id='counter' >
                         <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
-                        <button className='counter' onClick={() => setCounter(couter > 1 ? couter - 1 : 1)}>
+                        <button className='counter'
+                           onClick={(e) => {
+                              setCounter(couter > 1 ? couter - 1 : 1)
+                              e.preventDefault()
+                           }
+                           }>
                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
                               <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
                            </svg>
                         </button>
                         <span>{couter}</span>
-                        <button className='counter' onClick={() => setCounter(couter + 1)}>
+                        <button className='counter'
+                           onClick={(e) => {
+                              setCounter(couter + 1)
+                              e.preventDefault()
+                           }
+                           }>
                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                               <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
                               <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
@@ -127,13 +136,21 @@ function Order() {
                      </div>
                      <div id='counter2' >
                         <h3>{t("order.chopsticks_and_sauce_holder")}</h3>
-                        <button className='counter' onClick={() => setCounter2(couter2 > 1 ? couter2 - 1 : 1)}>
+                        <button className='counter'
+                           onClick={(e) => {
+                              setCounter2(couter2 > 1 ? couter2 - 1 : 1)
+                              e.preventDefault()
+                           }}>
                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="2" viewBox="0 0 12 2" fill="none">
                               <path d="M1 1L11 1" stroke="#111111" strokeWidth="2" strokeLinecap="round" />
                            </svg>
                         </button>
                         <span>{couter2}</span>
-                        <button className='counter' onClick={() => setCounter2(couter2 + 1)}>
+                        <button className='counter'
+                           onClick={(e) => {
+                              setCounter2(couter2 + 1)
+                              e.preventDefault()
+                           }}>
                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                               <ellipse cx="10.3602" cy="10.2589" rx="9.64029" ry="9.64029" transform="rotate(90 10.3602 10.2589)" fill="#F46D40" />
                               <path d="M10.3604 4.95679V15.0791" stroke="#F2F2F2" strokeWidth="2" strokeLinecap="round" />
